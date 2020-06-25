@@ -1,1 +1,2 @@
-<p>rating works!</p>
+<ng-container *ngIf="rating < 1; else elseBlock"><app-star (click)="onClick(1)"></app-star></ng-container>
+<ng-template #elseBlock><app-star-filled></app-star-filled></ng-template>
