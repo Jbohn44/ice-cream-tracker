@@ -8,7 +8,9 @@ import { IceCream } from '../models/ice-cream.model';
 })
 export class IceCreamCardComponent implements OnInit {
   IceCream: IceCream;
-
+  FlavorRating = "FlavorRating";
+  TextureRating = "TextureRating";
+  ValueRating = "ValueRating";
   constructor() { }
 
   ngOnInit() {

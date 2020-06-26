@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Rating } from '../models/rating.model';
 
 @Component({
   selector: 'app-rating',
@@ -6,15 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rating.component.css']
 })
 export class RatingComponent implements OnInit {
-  rating = 0;
-
+  rating: Rating;
+  @Input() ratingType;
+  @Input() ratingValue;
   constructor() { }
 
   ngOnInit() {
+    this.rating = {
+      RatingType: this.ratingType,
+      RatingValue: 0
+    }
   }
 
   onClick(ratingValue){
-    this.rating = ratingValue;
+    this.rating.RatingValue = ratingValue;
   }
 
 }
