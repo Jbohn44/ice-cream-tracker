@@ -1,3 +1,10 @@
-<app-rating [ratingType] = "FlavorRating"></app-rating>
-<app-rating [ratingType]= "TextureRating"></app-rating>
-<app-rating [ratingType]= "ValueRating"></app-rating>
+<div class="card">
+    <div class="card-header">
+        This is where the ice store name goes
+    </div>
+    <div class="card-body">
+        <div *ngFor="let type of ratingTypes">
+            <app-rating [ratingType]="type"></app-rating>
+        </div>
+    </div>
+</div>

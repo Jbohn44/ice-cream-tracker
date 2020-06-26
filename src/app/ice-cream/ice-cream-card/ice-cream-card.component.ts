@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IceCream } from '../models/ice-cream.model';
+import { RatingTypes } from '../../shared/constants';
 
 @Component({
   selector: 'app-ice-cream-card',
@@ -8,12 +9,11 @@ import { IceCream } from '../models/ice-cream.model';
 })
 export class IceCreamCardComponent implements OnInit {
   IceCream: IceCream;
-  FlavorRating = "FlavorRating";
-  TextureRating = "TextureRating";
-  ValueRating = "ValueRating";
+  ratingTypes = RatingTypes.RatingTypes;
   constructor() { }
 
   ngOnInit() {
+    console.log(this.ratingTypes);
   }
 
 }
