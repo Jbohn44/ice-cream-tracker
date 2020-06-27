@@ -9,13 +9,12 @@ import { Rating } from '../models/rating.model';
 export class RatingComponent implements OnInit {
   rating: Rating;
   @Input() ratingType;
-  @Input() ratingValue;
   constructor() { }
 
   ngOnInit() {
     this.rating = {
-      RatingType: this.ratingType,
-      RatingValue: 0
+      RatingType: this.ratingType.RatingType,
+      RatingValue: this.ratingType.RatingValue
     }
   }
 

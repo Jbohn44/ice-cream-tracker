@@ -1,4 +1,4 @@
 export class Rating {
-    RatingType: number;
+    RatingType: string;
     RatingValue: number;
 }

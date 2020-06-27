@@ -1,10 +1,16 @@
-<div class="card">
-    <div class="card-header">
-        This is where the ice store name goes
-    </div>
-    <div class="card-body">
-        <div *ngFor="let type of ratingTypes">
-            <app-rating [ratingType]="type"></app-rating>
+<div class="row test-css">
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-header c-header-background">
+                <h4>{{this.iceCream.Name}} - {{this.iceCream.Business}} - {{this.iceCream.Location}}</h4>
+            </div>
+            <div class="card-body">
+                <div>
+                    <app-rating [ratingType]="this.iceCream.FlavorRating"></app-rating>
+                    <app-rating [ratingType]="this.iceCream.TextureRating"></app-rating>
+                    <app-rating [ratingType]="this.iceCream.ValueRating"></app-rating>
+                </div>
+            </div>
         </div>
     </div>
 </div>
