@@ -8,10 +8,11 @@ import { IceCreamPageComponent } from './ice-cream-page/ice-cream-page.component
 import { IceCreamCardComponent } from './ice-cream-card/ice-cream-card.component';
 import { RatingComponent } from './rating/rating.component';
 import { IceCreamEditComponent } from './ice-cream-edit/ice-cream-edit.component';
+import { RatingDisplayComponent } from './rating-display/rating-display.component';
 
 
 @NgModule({
-  declarations: [StarComponent, StarFilledComponent, IceCreamPageComponent, IceCreamCardComponent, RatingComponent, IceCreamEditComponent],
+  declarations: [StarComponent, StarFilledComponent, IceCreamPageComponent, IceCreamCardComponent, RatingComponent, IceCreamEditComponent, RatingDisplayComponent],
   imports: [
     CommonModule,
     IceCreamRoutingModule

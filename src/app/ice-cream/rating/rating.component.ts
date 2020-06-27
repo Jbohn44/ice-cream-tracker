@@ -9,6 +9,7 @@ import { Rating } from '../models/rating.model';
 export class RatingComponent implements OnInit {
   rating: Rating;
   @Input() ratingType;
+  editMode = false;
   constructor() { }
 
   ngOnInit() {
@@ -18,8 +19,11 @@ export class RatingComponent implements OnInit {
     }
   }
 
-  onClick(ratingValue){
-    this.rating.RatingValue = ratingValue;
+  onClick(ratingValue) {
+    if (this.editMode === true) {
+      this.rating.RatingValue = ratingValue;
+
+    }
   }
 
 }
