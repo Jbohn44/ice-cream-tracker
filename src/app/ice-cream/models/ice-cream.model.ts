@@ -9,6 +9,7 @@ export class IceCream {
     FlavorRating: Rating;
     TextureRating: Rating;
     ValueRating: Rating;
+    Comments: string;
 
 
 }
