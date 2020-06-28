@@ -1,21 +1,16 @@
-<div class="row test-css">
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-header c-header-background">
-                <h4>{{this.iceCream.Name}} - {{this.iceCream.Business}} - {{this.iceCream.Location}}</h4>
+<div class="card">
+    <div class="card-header c-header-background">
+        <h4>{{this.iceCream.Name}} - {{this.iceCream.Business}} - {{this.iceCream.Location}}</h4>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                <app-rating [rating]="this.iceCream.FlavorRating" [edit]="this.edit"></app-rating>
+                <app-rating [rating]="this.iceCream.TextureRating" [edit]="this.edit"></app-rating>
+                <app-rating [rating]="this.iceCream.ValueRating" [edit]="this.edit"></app-rating>
             </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-4">
-                    <app-rating [ratingType]="this.iceCream.FlavorRating" [edit]="this.edit"></app-rating>
-                    <app-rating [ratingType]="this.iceCream.TextureRating" [edit]="this.edit"></app-rating>
-                    <app-rating [ratingType]="this.iceCream.ValueRating" [edit]="this.edit"></app-rating>
-                    </div>
-                    <div class="col-md-6">
-
-                        {{this.iceCream.Comments}}
-                    </div>
-                </div>
+            <div class="col-md-6">
+                {{this.iceCream.Comments}}
             </div>
         </div>
     </div>
