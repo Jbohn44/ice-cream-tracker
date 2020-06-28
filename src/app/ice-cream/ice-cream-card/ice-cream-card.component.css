@@ -1,8 +1,15 @@
-.test-css{
-    margin-top: 20px;
-    margin-left: 20px;
+.card-format{
+   margin-top: 10px;
+   margin-bottom: 10px;
 }
 
 .c-header-background {
-    background-color:#94e9bb;
+    background-color:#a9eec2;
+}
+
+.text-card-format {
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 5px;
+    padding-bottom: 5px;
 }
