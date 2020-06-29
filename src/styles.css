@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
 .nav-bar{
-    background-color: #7b3f00;
+    background-color: #C2F2D0;
 }
 
 .index-background-color {
     background-color: #fffdce;
+}
+
+.page-margin{
+    margin-right: 50px;
+    margin-left: 50px;
 }

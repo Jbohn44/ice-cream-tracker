@@ -12,7 +12,7 @@ export class IceCreamPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    //for testing
+    //for testing: move to service call
     IceCreamsForTesting.iceCreamList.forEach(x => {
       this.iceCreams.push(x);
     });
