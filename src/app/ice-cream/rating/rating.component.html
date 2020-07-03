@@ -1,13 +1,7 @@
 <div class="d-block r-container">
     <div class="h-container">
-        <div *ngIf="this.rating.RatingType === 'FlavorRating'">
-            <h5 class="r-Type-Header">Flavor</h5>
-        </div>
-        <div *ngIf="this.rating.RatingType === 'TextureRating'">
-            <h5 class="r-Type-Header">Texture</h5>
-        </div>
-        <div *ngIf="this.rating.RatingType === 'ValueRating'">
-            <h5 class="r-Type-Header">Value</h5>
+        <div *ngIf="this.rating.RatingType === 'OverAllRating'">
+            <h5 class="r-Type-Header">Over All Rating</h5>
         </div>
     </div>
     <div>

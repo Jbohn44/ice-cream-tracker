@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IceCreamsForTesting } from '../../shared/constants'
+import { iceCreamList } from '../../shared/constants'
 import { IceCream } from '../models/ice-cream.model';
 import { IceCreamService } from '../services/ice-cream.service';
 
@@ -15,7 +15,7 @@ export class IceCreamPageComponent implements OnInit {
 
   ngOnInit() {
     //for testing: move to service call
-    IceCreamsForTesting.iceCreamList.forEach(x => {
+    iceCreamList.forEach(x => {
       this.iceCreams.push(x);
     });
     this.iceCreamService.getIceCreams(8904).subscribe(x => this.testIceCreamList = <IceCream[]>x);

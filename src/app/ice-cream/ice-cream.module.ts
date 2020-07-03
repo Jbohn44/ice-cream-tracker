@@ -11,10 +11,11 @@ import { IceCreamEditComponent } from './ice-cream-edit/ice-cream-edit.component
 import { RatingDisplayComponent } from './rating-display/rating-display.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SliderRatingComponent } from './slider-rating/slider-rating.component';
 
 
 @NgModule({
-  declarations: [StarComponent, StarFilledComponent, IceCreamPageComponent, IceCreamCardComponent, RatingComponent, IceCreamEditComponent, RatingDisplayComponent],
+  declarations: [StarComponent, StarFilledComponent, IceCreamPageComponent, IceCreamCardComponent, RatingComponent, IceCreamEditComponent, RatingDisplayComponent, SliderRatingComponent],
   imports: [
     CommonModule,
     IceCreamRoutingModule,

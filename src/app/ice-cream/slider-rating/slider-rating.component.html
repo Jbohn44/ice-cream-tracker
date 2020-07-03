@@ -1,0 +1,16 @@
+<div *ngIf="this.rating.RatingType === 'FlavorRating'">
+    <label for="ratings-range">Flavor</label>
+    <input type="range" class="custom-range" min="0" max="5" id="ratings-range">
+</div>
+<div *ngIf="this.rating.RatingType === 'MouthFeelRating'">
+    <label for="ratings-range">Mouth Feel</label>
+    <input type="range" class="custom-range" min="0" max="5" id="ratings-range">
+    <div class="slider-format"><span>icy</span><span class="">creamy</span></div>
+</div>
+<div *ngIf="this.rating.RatingType === 'DensityRating'">
+    <label for="ratings-range">Density</label>
+    <input type="range" class="custom-range" min="0" max="5" id="ratings-range">
+</div>
+
+
+<!--This is not very DRY but trying to think of a solution-->

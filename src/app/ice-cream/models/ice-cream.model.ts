@@ -6,10 +6,9 @@ export class IceCream {
     Location: string;
     Business: string;
     Flavor: string;
+    OverAllRating: Rating;
     FlavorRating: Rating;
-    TextureRating: Rating;
-    ValueRating: Rating;
+    MouthFeelRating: Rating;
+    DensityRating: Rating;
     Comments: string;
-
-
 }

@@ -6,9 +6,10 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-4">
-                    <app-rating [rating]="this.iceCream.FlavorRating" [edit]="this.edit"></app-rating>
-                    <app-rating [rating]="this.iceCream.TextureRating" [edit]="this.edit"></app-rating>
-                    <app-rating [rating]="this.iceCream.ValueRating" [edit]="this.edit"></app-rating>
+                    <app-rating [rating]="this.iceCream.OverAllRating" [edit]="this.edit"></app-rating>
+                    <app-slider-rating [rating]="this.iceCream.FlavorRating"></app-slider-rating>
+                    <app-slider-rating [rating]="this.iceCream.MouthFeelRating"></app-slider-rating>
+                    <app-slider-rating [rating]="this.iceCream.DensityRating"></app-slider-rating>
                 </div>
                 <div class="col-md">
                     <div>
