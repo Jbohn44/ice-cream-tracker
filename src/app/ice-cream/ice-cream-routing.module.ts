@@ -5,7 +5,7 @@ import { RatingComponent } from './rating/rating.component';
 import { IceCreamCardComponent } from './ice-cream-card/ice-cream-card.component';
 
 
-const routes: Routes = [{path: 'ice-creams', component: IceCreamPageComponent}, {path: 'rating', component: RatingComponent}, {path:'card', component: IceCreamCardComponent}];
+const routes: Routes = [{path: '', component: IceCreamPageComponent}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

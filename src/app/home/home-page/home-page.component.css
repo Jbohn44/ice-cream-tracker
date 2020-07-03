@@ -1,0 +1,18 @@
+div{
+    height: 500px;
+}
+.color-div-one{
+    background-color: var(--main-light-pink);
+}
+.color-div-two{
+    background-color: var(--main-pink);
+}
+.color-div-three{
+    background-color: var(--main-dark-pink);
+}
+.color-div-four{
+    background-color: var(--main-purple);
+}
+.color-div-five{
+    background-color: var(--main-dark-purple);
+}
