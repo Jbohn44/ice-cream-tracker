@@ -1,11 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-
+:root {
+    --main-light-pink: #FDDEF3;
+    --main-pink: #F033B4;
+    --main-dark-pink: #AE0D7A;
+    --main-purple: #510639;
+    --main-dark-purple: #340926;
+    --main-black: black; /* place holder*/
+    --header-gradient: linear-gradient(to bottom right,  #FDDEF3 0%, #AE0D7A 100%);
+}
 .nav-bar{
-    background-color: #C2F2D0;
+    background-color: var(--main-dark-pink);
 }
 
 .index-background-color {
-    background-color: #fffdce;
+    background-color: var(--main-pink);
 }
 
 .page-margin{
@@ -20,6 +28,7 @@
 
 .logo-center{
     text-align: center;
-    background-color: #C2F2D0;
+    background: var(--header-gradient);
     padding-top: 10px;
 }
+
