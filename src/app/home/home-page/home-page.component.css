@@ -18,9 +18,9 @@ div{
 }
 
 .fixed-bg{
-    background-image: url("../../../assets/images/ice-cream-logo.png");
+    background-image: url("../../../assets/images/background-image.JPG");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
