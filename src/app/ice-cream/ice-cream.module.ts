@@ -10,6 +10,7 @@ import { RatingComponent } from './rating/rating.component';
 import { IceCreamEditComponent } from './ice-cream-edit/ice-cream-edit.component';
 import { RatingDisplayComponent } from './rating-display/rating-display.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     IceCreamRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ]
 })
 export class IceCreamModule { }

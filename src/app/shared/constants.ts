@@ -6,7 +6,9 @@ export const RatingTypes = {
 
    RatingTypes: ["FlavorRating", "TextureRating", "ValueRating"]
 }
-
+export const apiUrls = {
+  TEST_URL: 'icecreams/{0}'
+}
 // for testing
 export const IceCreamsForTesting = {
    iceCreamList: [{

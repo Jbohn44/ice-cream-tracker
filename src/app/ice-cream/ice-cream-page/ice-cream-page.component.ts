@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IceCreamsForTesting } from '../../shared/constants'
 import { IceCream } from '../models/ice-cream.model';
+import { IceCreamService } from '../services/ice-cream.service';
 
 @Component({
   selector: 'app-ice-cream-page',
@@ -9,13 +10,15 @@ import { IceCream } from '../models/ice-cream.model';
 })
 export class IceCreamPageComponent implements OnInit {
   iceCreams: IceCream[] = [];
-  constructor() { }
+  testIceCreamList: IceCream[] = [];
+  constructor(private iceCreamService: IceCreamService) { }
 
   ngOnInit() {
     //for testing: move to service call
     IceCreamsForTesting.iceCreamList.forEach(x => {
       this.iceCreams.push(x);
     });
+    this.iceCreamService.getIceCreams(8904).subscribe(x => this.testIceCreamList = <IceCream[]>x);
   }
 
 }

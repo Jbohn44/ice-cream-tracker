@@ -15,6 +15,7 @@ export class BaseService {
   }
 
   get(url) {
+    console.log("url: ", url);
     return this.http.get(this.getFullUrl(url));
 
   }
@@ -29,21 +30,10 @@ export class BaseService {
   }
 
   protected getFullUrl(url) {
-    return `${this.baseUrl}${url}`;
+    let fullUrl = `${this.baseUrl}${url}`;
+    console.log("Full URL: ", fullUrl);
+    return fullUrl;
   }
 
-  // url formatter, may need work.  need more test cases
-  formatUrl(...params) {
-    let args = params;
-    let url = args[0];
-    args.shift();
-    console.log("args: ", args)
-    if (args.length > 0) {
-      for(let i = 0; i < args.length; i++){
-        url = url.replace("{" + i + "}", args[i]);
-      }
-
-      return url;
-    }
-  }
+  
 }
