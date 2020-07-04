@@ -9,12 +9,7 @@ div{
 }
 .color-div-three{
     background-color: var(--main-dark-pink);
-}
-.color-div-four{
-    background-color: var(--main-purple);
-}
-.color-div-five{
-    background-color: var(--main-dark-purple);
+    height: 800px;
 }
 
 .fixed-bg{
@@ -23,4 +18,11 @@ div{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.home-info{
+    background-color: var(--main-dark-pink);
+    border-width: 3px;
+    height: 200px;
+    width: 200px;
 }
