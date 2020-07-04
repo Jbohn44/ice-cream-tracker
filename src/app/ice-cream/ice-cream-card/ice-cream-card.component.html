@@ -7,9 +7,18 @@
             <div class="row">
                 <div class="col-md-4">
                     <app-rating [rating]="this.iceCream.OverAllRating" [edit]="this.edit"></app-rating>
-                    <app-slider-rating [rating]="this.iceCream.FlavorRating"></app-slider-rating>
+                    <h6>Flavor:</h6>
+                    <p>{{ this.flavorEnum[this.iceCream.FlavorRating.RatingValue] }}</p>
+                    <hr/>
+                    <h6>Mouth Feel:</h6>
+                    <p>{{ this.mouthFeelEnum[this.iceCream.MouthFeelRating.RatingValue] }}</p>
+                    <hr/>
+                    <h6>Density:</h6>
+                    <p>{{ this.densityEnum[this.iceCream.DensityRating.RatingValue] }}</p>
+                    <hr/>
+                    <!-- <app-slider-rating [rating]="this.iceCream.FlavorRating"></app-slider-rating>
                     <app-slider-rating [rating]="this.iceCream.MouthFeelRating"></app-slider-rating>
-                    <app-slider-rating [rating]="this.iceCream.DensityRating"></app-slider-rating>
+                    <app-slider-rating [rating]="this.iceCream.DensityRating"></app-slider-rating> -->
                 </div>
                 <div class="col-md">
                     <div>

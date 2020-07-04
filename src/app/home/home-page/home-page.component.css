@@ -11,15 +11,7 @@ div{
     background-color: var(--main-dark-pink);
     height: 800px;
 }
-.c-format{
-    border-radius: 0% !important;
-    border-color: var(--main-dark-pink);
-    border-width: 10px;
-    background-color: transparent;
-    height: 300px;
-    width: 700px;
-    margin-top: 50px;
-}
+
 .fixed-bg{
     background-image: url("../../../assets/images/background-image.JPG");
     background-attachment: fixed;
@@ -28,9 +20,18 @@ div{
     background-size: cover;
 }
 
-.home-info{
-    background-color: var(--main-dark-pink);
-    border-width: 3px;
-    height: 200px;
-    width: 200px;
+.h-font{
+    font-size: 35px;
+    font-family: 'Sonsie One';
+    color: var(--main-dark-pink);
+}
+
+.p-font{
+    font-size: 20px;
+    font-family: 'Sonsie One';
+    color: var(--main-dark-pink);
+}
+.div-format{
+    margin-top: 100px;
+    margin-left: 50px;
 }
