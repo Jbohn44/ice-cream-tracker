@@ -8,13 +8,13 @@
                 <div class="col-md-4">
                     <app-rating [rating]="this.iceCream.OverAllRating" [edit]="this.edit"></app-rating>
                     <h6>Flavor:</h6>
-                    <p>{{ this.flavorEnum[this.iceCream.FlavorRating.RatingValue] }}</p>
+                    <p>{{ this.flavorArray[this.iceCream.FlavorRating.RatingValue] }}</p>
                     <hr/>
                     <h6>Mouth Feel:</h6>
-                    <p>{{ this.mouthFeelEnum[this.iceCream.MouthFeelRating.RatingValue] }}</p>
+                    <p>{{ this.mouthFeelArray[this.iceCream.MouthFeelRating.RatingValue] }}</p>
                     <hr/>
                     <h6>Density:</h6>
-                    <p>{{ this.densityEnum[this.iceCream.DensityRating.RatingValue] }}</p>
+                    <p>{{ this.densityArray[this.iceCream.DensityRating.RatingValue] }}</p>
                     <hr/>
                 </div>
                 <div class="col-md">

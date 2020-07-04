@@ -19,6 +19,24 @@
             <input type="text" id="flavorName" class="form-control" >
         </div>
         <div class="form-group">
+            <label for="flavorRating">Flavor Rating</label>
+            <select id="flavorRating" class="form-control" >
+                <!-- <option *ngFor="let rating of this.flavorEnum | keyvalue" [value]="rating.key">{{rating.value}}</option> -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="mouthFeelRating">Mouth Feel Rating</label>
+            <select id="mouthFeelRating" class="form-control" >
+                <!-- <option *ngFor="let rating of this.mouthFeelEnum | keyvalue" [value]="rating.key">{{rating.value}}</option> -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="densityRating">Density Rating</label>
+            <select id="densityRating" class="form-control" >
+                <!-- <option *ngFor="let rating of this.densityEnum | keyvalue" [value]="rating.key">{{rating.value}}</option> -->
+            </select>
+        </div>
+        <div class="form-group">
             <label for="comments">Comments</label>
             <input type="textarea" id="comments" class="form-control" >
         </div>

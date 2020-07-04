@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Rating } from '../models/rating.model';
-import { FlavorEnum } from '../../shared/constants';
-import { MouthFeelEnum } from '../../shared/constants';
-import { DensityEnum } from '../../shared/constants';
+import { FlavorArray } from '../../shared/constants';
+import { MouthFeelArray } from '../../shared/constants';
+import { DensityArray } from '../../shared/constants';
 
 @Component({
   selector: 'app-slider-rating',
@@ -11,9 +11,9 @@ import { DensityEnum } from '../../shared/constants';
 })
 export class SliderRatingComponent implements OnInit {
   @Input() rating: Rating;
-  flavor = FlavorEnum;
-  mouthFeel = MouthFeelEnum;
-  density = DensityEnum;
+  flavor = FlavorArray;
+  mouthFeel = MouthFeelArray;
+  density = DensityArray;
   
   constructor() { }
 
