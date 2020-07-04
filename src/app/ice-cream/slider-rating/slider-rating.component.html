@@ -1,16 +1,19 @@
 <div *ngIf="this.rating.RatingType === 'FlavorRating'">
-    <label for="ratings-range">Flavor</label>
-    <input type="range" class="custom-range" min="0" max="5" id="ratings-range">
+    <label for="ratings-range" class="range-header">Flavor - {{this.rating.RatingValue}}</label>
+    <input type="range" min="0" max="5" id="ratings-range" class="slider" [(ngModel)]="this.rating.RatingValue">
 </div>
 <div *ngIf="this.rating.RatingType === 'MouthFeelRating'">
-    <label for="ratings-range">Mouth Feel</label>
-    <input type="range" class="custom-range" min="0" max="5" id="ratings-range">
-    <div class="slider-format"><span>icy</span><span class="">creamy</span></div>
+    <label for="ratings-range" class="range-header">Mouth Feel - {{this.rating.RatingValue}}</label>
+    <div class="slider-format">
+        <input type="range" min="0" max="5" id="ratings-range" class="slider" [(ngModel)]="this.rating.RatingValue">
+        </div>
 </div>
 <div *ngIf="this.rating.RatingType === 'DensityRating'">
-    <label for="ratings-range">Density</label>
-    <input type="range" class="custom-range" min="0" max="5" id="ratings-range">
+    <label for="ratings-range" class="range-header">Density - {{this.rating.RatingValue}}</label>
+    <div class="slider-format">
+        <input type="range" min="0" max="5" id="ratings-range" class="slider" [(ngModel)]="this.rating.RatingValue">
+        </div>
 </div>
-
+<hr />
 
 <!--This is not very DRY but trying to think of a solution-->
