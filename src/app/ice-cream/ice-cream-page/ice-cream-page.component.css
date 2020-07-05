@@ -13,6 +13,8 @@
     height:100%;
     width: 200px;
     position: fixed;
+    margin-left: 0px;
+    margin-right: 0px;
     /* z-index: 1; */
 }
 
