@@ -8,7 +8,7 @@ import { FlavorArray, MouthFeelArray, DensityArray } from 'src/app/shared/consta
   styleUrls: ['./ice-cream-add.component.css']
 })
 export class IceCreamAddComponent implements OnInit {
-  iceCream: IceCream;
+  iceCream: IceCream = new IceCream();
   flavorArray = FlavorArray;
   mouthFeelArray = MouthFeelArray;
   densityArray = DensityArray;

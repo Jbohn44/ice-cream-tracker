@@ -1,49 +1,61 @@
 <div class="container-fluid">
     <div>
-    {{this.iceCream | json}}
-
+        {{this.iceCream | json}}
         <h1>Ice Cream Form</h1>
-    <form (ngSubmit)="onSubmit()" #iceCreamForm="ngForm">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" class="form-control" [(ngModel)]="this.iceCream.Name" name="name">
-        </div>
-        <div class="form-group">
-            <label for="location">Location</label>
-            <input type="text" id="location" class="form-control" [(ngModel)]="this.iceCream.Location" name="location" >
-        </div>
-        <div class="form-group">
-            <label for="business">Business</label>
-            <input type="text" id="business" class="form-control" [(ngModel)]="this.iceCream.Business" name="business">
-        </div>
-        <div class="form-group">
-            <label for="flavorName">Flavor Name</label>
-            <input type="text" id="flavorName" class="form-control" [(ngModel)]="this.iceCream.Flavor" name="flavor">
-        </div>
-        <div class="form-group">
-            <label for="flavorRating">Flavor Rating</label>
-            <select id="flavorRating" class="form-control" [(ngModel)]="this.iceCream.FlavorRating.RatingValue" name="flavorRating">
-                <option *ngFor="let rating of this.flavorArray" [value]="this.flavorArray.indexOf(rating)">{{rating}} - {{this.flavorArray.indexOf(rating)}}</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="mouthFeelRating">Mouth Feel Rating</label>
-            <select id="mouthFeelRating" class="form-control" [(ngModel)]="this.iceCream.MouthFeelRating.RatingValue" name="mouthFeelRating">
-                <option *ngFor="let rating of this.mouthFeelArray" [value]="this.mouthFeelArray.indexOf(rating)">{{rating}} - {{this.mouthFeelArray.indexOf(rating)}}</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="densityRating">Density Rating</label>
-            <select id="densityRating" class="form-control" [(ngModel)]="this.iceCream.DensityRating.RatingValue" name="densityRating">
-                <option *ngFor="let rating of this.densityArray" [value]="this.densityArray.indexOf(rating)">{{rating}} - {{this.densityArray.indexOf(rating)}}</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="comments">Comments</label>
-            <textarea type="textarea" id="comments" class="form-control"  [(ngModel)]="this.iceCream.Comments" name="comments"></textarea>
-        </div>
-        <button class="btn btn-primary" (click)="submitForm($event)">Submit</button>
-    </form>
-   
+        <form (ngSubmit)="onSubmit()" #iceCreamForm="ngForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control" [(ngModel)]="this.iceCream.Name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" class="form-control" [(ngModel)]="this.iceCream.Location"
+                    name="location">
+            </div>
+            <div class="form-group">
+                <label for="business">Business</label>
+                <input type="text" id="business" class="form-control" [(ngModel)]="this.iceCream.Business"
+                    name="business">
+            </div>
+            <div class="form-group">
+                <label for="flavorName">Flavor Name</label>
+                <input type="text" id="flavorName" class="form-control" [(ngModel)]="this.iceCream.Flavor"
+                    name="flavor">
+            </div>
+            <div class="form-group">
+                <label for="flavorRating">Flavor Rating</label>
+                <select id="flavorRating" class="form-control" [(ngModel)]="this.iceCream.FlavorRating.RatingValue"
+                    name="flavorRating">
+                    <option *ngFor="let rating of this.flavorArray" [value]="this.flavorArray.indexOf(rating)">
+                        {{rating}} - {{this.flavorArray.indexOf(rating)}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mouthFeelRating">Mouth Feel Rating</label>
+                <select id="mouthFeelRating" class="form-control"
+                    [(ngModel)]="this.iceCream.MouthFeelRating.RatingValue" name="mouthFeelRating">
+                    <option *ngFor="let rating of this.mouthFeelArray" [value]="this.mouthFeelArray.indexOf(rating)">
+                        {{rating}} - {{this.mouthFeelArray.indexOf(rating)}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="densityRating">Density Rating</label>
+                <select id="densityRating" class="form-control" [(ngModel)]="this.iceCream.DensityRating.RatingValue"
+                    name="densityRating">
+                    <option *ngFor="let rating of this.densityArray" [value]="this.densityArray.indexOf(rating)">
+                        {{rating}} - {{this.densityArray.indexOf(rating)}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comments">Comments</label>
+                <textarea type="textarea" id="comments" class="form-control" [(ngModel)]="this.iceCream.Comments"
+                    name="comments"></textarea>
+            </div>
+            <div class="form-group">
+                <app-rating [rating]="this.iceCream.OverAllRating" [edit]="true"></app-rating>
+            </div>
+            <button class="btn btn-primary" (click)="submitForm($event)">Submit</button>
+        </form>
+
     </div>
 </div>

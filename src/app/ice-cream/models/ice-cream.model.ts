@@ -1,16 +1,14 @@
 import {Rating} from './rating.model';
 
 export class IceCream {
-
-    constructor(
-    IceCreamId: number,
-    Name: string,
-    Location: string,
-    Business: string,
-    Flavor: string,
-    OverAllRating: Rating,
-    FlavorRating: Rating,
-    MouthFeelRating: Rating,
-    DensityRating: Rating,
-    Comments: string){}
+    IceCreamId: number;
+    Name: string;
+    Location: string;
+    Business: string;
+    Flavor: string;
+    OverAllRating = new Rating("OverAllRating", 0);
+    FlavorRating = new Rating("FlavorRating", 0);
+    MouthFeelRating = new Rating("MouthFeelRating", 0);
+    DensityRating = new Rating("DensityRating", 0);
+    Comments: string;
 }
