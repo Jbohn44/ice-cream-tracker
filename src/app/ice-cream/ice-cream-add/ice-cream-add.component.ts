@@ -8,13 +8,18 @@ import { FlavorArray, MouthFeelArray, DensityArray } from 'src/app/shared/consta
   styleUrls: ['./ice-cream-add.component.css']
 })
 export class IceCreamAddComponent implements OnInit {
-  iceCream: IceCream = new IceCream();
+  iceCream: IceCream;
   flavorArray = FlavorArray;
   mouthFeelArray = MouthFeelArray;
   densityArray = DensityArray;
   constructor() { }
 
   ngOnInit() {
+    console.log("ice cream: ", this.iceCream)
+  }
+
+
+  submitForm($event){
   }
 
 }
