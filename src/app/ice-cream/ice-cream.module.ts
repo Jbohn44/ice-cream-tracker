@@ -13,10 +13,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SliderRatingComponent } from './slider-rating/slider-rating.component';
 import { IceCreamAddComponent } from './ice-cream-add/ice-cream-add.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
 
 
 @NgModule({
-  declarations: [StarComponent, StarFilledComponent, IceCreamPageComponent, IceCreamCardComponent, RatingComponent, IceCreamEditComponent, RatingDisplayComponent, SliderRatingComponent, IceCreamAddComponent],
+  declarations: [StarComponent, StarFilledComponent, IceCreamPageComponent, IceCreamCardComponent, RatingComponent, IceCreamEditComponent, RatingDisplayComponent, SliderRatingComponent, IceCreamAddComponent, SideNavComponent],
   imports: [
     CommonModule,
     IceCreamRoutingModule,
