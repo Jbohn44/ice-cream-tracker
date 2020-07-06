@@ -21,4 +21,9 @@ export class IceCreamPageComponent implements OnInit {
     this.iceCreamService.getIceCreams(8904).subscribe(x => this.testIceCreamList = <IceCream[]>x);
   }
 
+
+  addIceCream(){
+    console.log("fired!");
+  }
+
 }
