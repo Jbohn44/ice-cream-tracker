@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 import { iceCreamList } from '../../shared/constants'
 import { IceCream } from '../models/ice-cream.model';
 import { IceCreamService } from '../services/ice-cream.service';
@@ -25,8 +25,8 @@ export class IceCreamPageComponent implements OnInit {
   ngOnChanges() {
   }
 
-  addIceCream(){
-    // this will handle the new ice cream submitted
+  add(template: TemplateRef<any>){
+    this.iceCreamModalRef = this.modalService.show(template);
   }
 
 }

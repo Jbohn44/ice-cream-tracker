@@ -20,3 +20,14 @@
     margin-left:200px;
     
 }
+
+.btn-border{
+    border-color: var(--main-dark-pink) !important;
+    color: var(--main-dark-pink) !important;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.t-margin{
+    margin-top: 25px;
+}
