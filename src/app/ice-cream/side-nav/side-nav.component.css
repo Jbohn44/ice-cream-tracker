@@ -3,4 +3,17 @@
     height: 100%;
     margin-left: 0px;
     margin-right: 0px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.side-nav-group{
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--main-dark-pink);
+}
+
+.side-nav-group:hover{
+    cursor: pointer;
+    font-size: 19px;
 }

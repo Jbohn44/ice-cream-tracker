@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SliderRatingComponent } from './slider-rating/slider-rating.component';
 import { IceCreamAddComponent } from './ice-cream-add/ice-cream-add.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SideNavComponent } from './side-nav/side-nav.component';
     CommonModule,
     IceCreamRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ModalModule
   ]
 })
 export class IceCreamModule { }
