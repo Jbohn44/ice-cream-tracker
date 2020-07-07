@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { iceCreamList } from '../../shared/constants'
 import { IceCream } from '../models/ice-cream.model';
 import { IceCreamService } from '../services/ice-cream.service';
@@ -11,7 +11,6 @@ import { BsModalService, BsModalRef} from 'ngx-bootstrap/modal';
 })
 export class IceCreamPageComponent implements OnInit {
   iceCreams: IceCream[] = [];
-  testIceCreamList: IceCream[] = [];
   iceCreamModalRef: BsModalRef;
 
   //TODO: maybe get rid of modal service, modal will be call from side nav
@@ -22,9 +21,9 @@ export class IceCreamPageComponent implements OnInit {
     iceCreamList.forEach(x => {
       this.iceCreams.push(x);
     });
-    this.iceCreamService.getIceCreams(8904).subscribe(x => this.testIceCreamList = <IceCream[]>x);
   }
-
+  ngOnChanges() {
+  }
 
   addIceCream(){
     // this will handle the new ice cream submitted

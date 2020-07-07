@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { IceCream } from '../models/ice-cream.model';
 import { FlavorArray, MouthFeelArray, DensityArray } from 'src/app/shared/constants';
+import { IceCreamService } from '../services/ice-cream.service';
 
 @Component({
   selector: 'app-ice-cream-add',
@@ -12,7 +13,7 @@ export class IceCreamAddComponent implements OnInit {
   flavorArray = FlavorArray;
   mouthFeelArray = MouthFeelArray;
   densityArray = DensityArray;
-  constructor() { }
+  constructor(private iceCreamService: IceCreamService) { }
 
   ngOnInit() {
     console.log("ice cream: ", this.iceCream)
@@ -20,6 +21,15 @@ export class IceCreamAddComponent implements OnInit {
 
 
   submitForm($event){
+    console.log(event);
+  }
+
+  onSubmit(){
+    // this handles the submit of the icecream
+    console.log("ice cream", this.iceCream);
+    this.iceCreamService.postIceCream(this.iceCream);
+    // resets the ice cream
+    this.iceCream = new IceCream();
   }
 
 }

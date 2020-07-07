@@ -1,7 +1,5 @@
 <div class="container-fluid">
     <div>
-        {{this.iceCream | json}}
-        <h1>Ice Cream Form</h1>
         <form (ngSubmit)="onSubmit()" #iceCreamForm="ngForm">
             <div class="form-group">
                 <label for="name">Name</label>
@@ -54,7 +52,7 @@
             <div class="form-group">
                 <app-rating [rating]="this.iceCream.OverAllRating" [edit]="true"></app-rating>
             </div>
-            <button class="btn btn-primary" (click)="submitForm($event)">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
     </div>

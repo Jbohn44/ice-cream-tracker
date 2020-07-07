@@ -4,12 +4,15 @@ import { HttpClient } from '@angular/common/http';
 import { formatUrl } from '../../shared/utilities';
 import { apiUrls } from 'src/app/shared/constants';
 import { map } from 'rxjs/operators';
+import { IceCream } from '../models/ice-cream.model';
+import { iceCreamList } from '../../shared/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IceCreamService extends BaseService {
 
+  iceCreamList = iceCreamList;
   constructor(http: HttpClient) { 
     super(http);
   }
@@ -21,5 +24,10 @@ export class IceCreamService extends BaseService {
       {
         return response;
       }));
+  }
+
+  postIceCream(iceCream: IceCream){
+    //TODO: handle http call.  For now we will push to constants iceCreamList.
+    this.iceCreamList.push(iceCream);
   }
 }
