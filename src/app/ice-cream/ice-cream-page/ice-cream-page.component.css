@@ -26,8 +26,18 @@
     color: var(--main-dark-pink) !important;
     margin-left: 2px;
     margin-right: 2px;
+    margin-bottom: 1px;
 }
 
 .t-margin{
     margin-top: 25px;
+}
+
+h5{
+    color: var(--main-dark-pink);
+    font-weight: bold;
+}
+
+.p-header{
+    display: inline;
 }
