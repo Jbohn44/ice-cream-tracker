@@ -1,0 +1,10 @@
+.btn-border{
+    border-color: var(--main-light-pink) !important;
+    color: var(--main-light-pink) !important;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.nav-bar{
+    background-color: var(--main-dark-pink);
+}

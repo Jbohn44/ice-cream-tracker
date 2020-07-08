@@ -35,3 +35,19 @@ div{
     margin-top: 100px;
     margin-left: 50px;
 }
+
+.second-div{
+    float: right;
+}
+
+.h-font-2{
+    font-size: 35px;
+    font-family: 'Sonsie One';
+    color: var(--main-light-pink);
+}
+
+.p-font-2{
+    font-size: 20px;
+    font-family: 'Sonsie One';
+    color: var(--main-light-pink);
+}
