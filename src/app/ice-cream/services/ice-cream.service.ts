@@ -20,14 +20,17 @@ export class IceCreamService extends BaseService {
   //maybe needs work
   getIceCreams(userId){
     console.log("userId", userId);
-    return this.get(formatUrl(apiUrls.TEST_URL, userId)).pipe(map(response => 
+    return this.get(formatUrl(apiUrls.GET_ICE_CREAMS, userId)).pipe(map(response => 
       {
-        return response;
+        return <IceCream[]>response;
       }));
   }
 
   postIceCream(iceCream: IceCream){
-    //TODO: handle http call.  For now we will push to constants iceCreamList.
-    this.iceCreamList.push(iceCream);
+    return this.post(apiUrls.POST_ICE_CREAM, iceCream).pipe(map(response => 
+      {
+        console.log(response)
+        return response
+      }));
   }
 }

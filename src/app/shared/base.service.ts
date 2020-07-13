@@ -19,10 +19,11 @@ export class BaseService {
     return this.http.get(this.getFullUrl(url));
 
   }
-  post(url, params: any[]) {
+  post(url, params: any) {
+    console.log("Url from Base post: ", url)
     return this.http.post(this.getFullUrl(url), params);
   }
-  put(url, params: any[]) {
+  put(url, params: any) {
     return this.http.put(this.getFullUrl(url), params);
   }
   delete(url) {

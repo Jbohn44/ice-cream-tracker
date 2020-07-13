@@ -2,10 +2,10 @@ import {Rating} from './rating.model';
 
 export class IceCream {
     IceCreamId: number;
-    Name: string;
+    UserId: number;
     Location: string;
     Business: string;
-    Flavor: string;
+    FlavorName: string;
     OverAllRating = new Rating("OverAllRating", 0);
     FlavorRating = new Rating("FlavorRating", 0);
     MouthFeelRating = new Rating("MouthFeelRating", 0);

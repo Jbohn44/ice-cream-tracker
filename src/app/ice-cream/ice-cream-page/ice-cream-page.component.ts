@@ -17,9 +17,11 @@ export class IceCreamPageComponent implements OnInit {
   constructor(private iceCreamService: IceCreamService, private modalService: BsModalService) { }
 
   ngOnInit() {
-    //for testing: move to service call
-    iceCreamList.forEach(x => {
-      this.iceCreams.push(x);
+    
+    this.iceCreamService.getIceCreams(0).subscribe(x => {
+        //this may need to be changed
+        console.log("This is x :", x);
+        x.forEach(i => {console.log("this is i: ", i), this.iceCreams.push(i)});
     });
   }
   ngOnChanges() {

@@ -2,10 +2,6 @@
     <div>
         <form (ngSubmit)="onSubmit()" #iceCreamForm="ngForm">
             <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" class="form-control" [(ngModel)]="this.iceCream.Name" name="name">
-            </div>
-            <div class="form-group">
                 <label for="location">Location</label>
                 <input type="text" id="location" class="form-control" [(ngModel)]="this.iceCream.Location"
                     name="location">
@@ -17,7 +13,7 @@
             </div>
             <div class="form-group">
                 <label for="flavorName">Flavor Name</label>
-                <input type="text" id="flavorName" class="form-control" [(ngModel)]="this.iceCream.Flavor"
+                <input type="text" id="flavorName" class="form-control" [(ngModel)]="this.iceCream.FlavorName"
                     name="flavor">
             </div>
             <div class="form-group">

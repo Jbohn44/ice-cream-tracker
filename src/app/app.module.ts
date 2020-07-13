@@ -7,11 +7,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
+import { UserSignInComponent } from './shared/user-sign-in/user-sign-in.component';
+import { UserSignUpComponent } from './shared/user-sign-up/user-sign-up.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
+    UserSignInComponent,
+    UserSignUpComponent,
   ],
   imports: [
     BrowserModule,

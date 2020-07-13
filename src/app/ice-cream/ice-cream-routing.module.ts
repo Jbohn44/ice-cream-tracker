@@ -6,7 +6,7 @@ import { IceCreamCardComponent } from './ice-cream-card/ice-cream-card.component
 import { IceCreamAddComponent } from './ice-cream-add/ice-cream-add.component';
 
 
-const routes: Routes = [{path: '', component: IceCreamPageComponent}, {path: 'form', component: IceCreamAddComponent}];
+const routes: Routes = [{path: '', component: IceCreamPageComponent}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

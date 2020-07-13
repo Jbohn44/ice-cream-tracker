@@ -8,15 +8,16 @@ export const RatingTypes = {
    RatingTypes: ["FlavorRating", "TextureRating", "ValueRating"]
 }
 export const apiUrls = {
-  TEST_URL: 'icecreams/{0}'
+  GET_ICE_CREAMS: "icecream/{0}",
+  POST_ICE_CREAM: "icecream/post"
 }
 // for testing
   export const iceCreamList: IceCream[] = [{
       IceCreamId: 1,
-      Name: "Plain Vanilla",
+      UserId: 1,
       Business: "Business One",
       Location: "Location One",
-      Flavor: "Vanilla",
+      FlavorName: "Vanilla",
       OverAllRating: <Rating>{
         RatingValue: 3,
         RatingType: "OverAllRating"

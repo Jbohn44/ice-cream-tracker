@@ -27,7 +27,7 @@ export class IceCreamAddComponent implements OnInit {
   onSubmit(){
     // this handles the submit of the icecream
     console.log("ice cream", this.iceCream);
-    this.iceCreamService.postIceCream(this.iceCream);
+    this.iceCreamService.postIceCream(this.iceCream).subscribe(x => console.log("response from Add Component: ", x));
     // resets the ice cream
     this.iceCream = new IceCream();
   }
