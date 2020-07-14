@@ -30,3 +30,17 @@
     padding-top: 10px;
 }
 
+.btn-custom-light{
+    border-color: var(--main-light-pink) !important;
+    color: var(--main-light-pink) !important;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.btn-custom-dark{
+    border-color: var(--main-dark-pink) !important;
+    color: var(--main-dark-pink) !important;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+

@@ -2,7 +2,8 @@ import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 import { iceCreamList } from '../../shared/constants'
 import { IceCream } from '../models/ice-cream.model';
 import { IceCreamService } from '../services/ice-cream.service';
-import { BsModalService, BsModalRef} from 'ngx-bootstrap/modal';
+import { BsModalService, BsModalRef, ModalBackdropOptions, ModalOptions} from 'ngx-bootstrap/modal';
+import { config } from 'process';
 
 @Component({
   selector: 'app-ice-cream-page',
@@ -12,9 +13,13 @@ import { BsModalService, BsModalRef} from 'ngx-bootstrap/modal';
 export class IceCreamPageComponent implements OnInit {
   iceCreams: IceCream[] = [];
   iceCreamModalRef: BsModalRef;
-
+  config = {
+    backdrop: true,
+    ignoreBackdropClick: true
+  }
   //TODO: maybe get rid of modal service, modal will be call from side nav
-  constructor(private iceCreamService: IceCreamService, private modalService: BsModalService) { }
+  constructor(private iceCreamService: IceCreamService, private modalService: BsModalService) { 
+  }
 
   ngOnInit() {
     
@@ -28,7 +33,7 @@ export class IceCreamPageComponent implements OnInit {
   }
 
   add(template: TemplateRef<any>){
-    this.iceCreamModalRef = this.modalService.show(template);
+    this.iceCreamModalRef = this.modalService.show(template, this.config);
   }
 
 }

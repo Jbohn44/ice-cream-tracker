@@ -8,6 +8,10 @@ import {BsModalService, BsModalRef} from 'ngx-bootstrap/modal';
 })
 export class NavBarComponent implements OnInit {
 signInModalRef: BsModalRef;
+config = {
+  backdrop: true,
+  ignoreBackdropClick: true
+}
   constructor(private modalService: BsModalService) { }
 
   ngOnInit() {
@@ -15,6 +19,6 @@ signInModalRef: BsModalRef;
 
 
   signInClick(template: TemplateRef<any>){
-    this.signInModalRef = this.modalService.show(template);
+    this.signInModalRef = this.modalService.show(template, this.config);
   }
 }
