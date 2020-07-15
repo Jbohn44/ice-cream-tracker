@@ -3,13 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
+import { UserSignUpComponent } from '../shared/user-sign-up/user-sign-up.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [HomePageComponent],
+  declarations: [HomePageComponent, UserSignUpComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    FormsModule
   ]
 })
 export class HomeModule { }

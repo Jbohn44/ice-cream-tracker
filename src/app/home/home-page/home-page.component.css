@@ -43,3 +43,16 @@ div {
     font-family: 'Sonsie One';
     color: var(--main-light-pink);
 }
+
+.test-align{
+    background-color: blue;
+}
+
+.test-align-2{
+    background-color: green;
+}
+
+.align-text{
+    margin-top: 100px;
+}
+
