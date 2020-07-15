@@ -1,10 +1,12 @@
-div{
+div {
     height: 500px;
 }
 .color-div-one{
+    position: relative;
     background-color: var(--main-light-pink);
 }
 .color-div-two{
+    position: relative;
     background-color: var(--main-pink);
 }
 .color-div-three{
@@ -31,21 +33,11 @@ div{
     font-family: 'Sonsie One';
     color: var(--main-dark-pink);
 }
-.div-format{
-    margin-top: 100px;
-    margin-left: 50px;
-}
-
-.second-div{
-    float: right;
-}
-
 .h-font-2{
     font-size: 35px;
     font-family: 'Sonsie One';
     color: var(--main-light-pink);
 }
-
 .p-font-2{
     font-size: 20px;
     font-family: 'Sonsie One';
