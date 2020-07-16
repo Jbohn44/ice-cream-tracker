@@ -1,6 +1,3 @@
-div {
-    height: 500px;
-}
 .color-div-one{
     position: relative;
     background-color: var(--main-light-pink);
@@ -10,8 +7,8 @@ div {
     background-color: var(--main-pink);
 }
 .color-div-three{
+    position: relative;
     background-color: var(--main-dark-pink);
-    height: 800px;
 }
 
 .fixed-bg{
@@ -54,5 +51,15 @@ div {
 
 .align-text{
     margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
+.picture-div{
+    height: 500px;
+}
+
+.picture-div-1{
+    height: 900px;
+}
