@@ -2,6 +2,8 @@
     <div class="card card-radius-flat shadow">
         <div class="card-header c-header-background">
             <h4>{{this.iceCream.FlavorName}} - {{this.iceCream.Business}} - {{this.iceCream.Location}}</h4>
+            <div class="card-btn" (click)="editIceCream()">edit</div>
+            <div class="card-btn">map</div>
         </div>
         <div class="card-body">
             <div class="row">
@@ -21,7 +23,7 @@
                     <div>
                         <h5>Comments</h5>
                     </div>
-                    <div class="card text-card-format card-radius-flat shadow">
+                    <div class="card text-card-format card-radius-flat shadow-sm">
                         <p class="card-text">
                             {{this.iceCream.Comments}}
                         </p>

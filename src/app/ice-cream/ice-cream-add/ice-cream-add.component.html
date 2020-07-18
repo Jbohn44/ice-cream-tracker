@@ -2,19 +2,19 @@
     <div>
         <form (ngSubmit)="onSubmit()" #iceCreamForm="ngForm">
             <div class="form-group">
+                <label for="flavorName">Flavor Name</label>
+                <input type="text" id="flavorName" class="form-control" required [(ngModel)]="this.iceCream.FlavorName"
+                    name="flavor">
+            </div>
+            <div class="form-group">
                 <label for="location">Location</label>
-                <input type="text" id="location" class="form-control" [(ngModel)]="this.iceCream.Location"
+                <input type="text" id="location" class="form-control" required [(ngModel)]="this.iceCream.Location"
                     name="location">
             </div>
             <div class="form-group">
                 <label for="business">Business</label>
-                <input type="text" id="business" class="form-control" [(ngModel)]="this.iceCream.Business"
+                <input type="text" id="business" class="form-control" required [(ngModel)]="this.iceCream.Business"
                     name="business">
-            </div>
-            <div class="form-group">
-                <label for="flavorName">Flavor Name</label>
-                <input type="text" id="flavorName" class="form-control" [(ngModel)]="this.iceCream.FlavorName"
-                    name="flavor">
             </div>
             <div class="form-group">
                 <label for="flavorRating">Flavor Rating</label>
@@ -48,7 +48,7 @@
             <div class="form-group">
                 <app-rating [rating]="this.iceCream.OverAllRating" [edit]="true"></app-rating>
             </div>
-            <button type="submit" class="btn btn-custom-dark">Submit</button>
+            <button type="submit" class="btn btn-custom-dark" [disabled]="!iceCreamForm.form.valid">Submit</button>
         </form>
 
     </div>

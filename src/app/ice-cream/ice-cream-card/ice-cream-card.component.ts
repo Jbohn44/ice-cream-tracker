@@ -21,4 +21,8 @@ export class IceCreamCardComponent implements OnInit {
  
   }
 
+  editIceCream(){
+    alert(JSON.stringify(this.iceCream));
+  }
+
 }

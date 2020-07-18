@@ -17,3 +17,9 @@
 .card-radius-flat{
     border-radius: 0 !important;
 }
+
+.card-btn:hover{
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--main-dark-pink);
+}
