@@ -26,6 +26,6 @@
         </button>
     </div>
     <div class="modal-body">
-        <app-ice-cream-add></app-ice-cream-add>
+        <app-ice-cream-add [edit]="false" (submitted)="onSubmitted()"></app-ice-cream-add>
     </div>
 </ng-template>

@@ -48,8 +48,14 @@
             <div class="form-group">
                 <app-rating [rating]="this.iceCream.OverAllRating" [edit]="true"></app-rating>
             </div>
-            <button type="submit" class="btn btn-custom-dark" [disabled]="!iceCreamForm.form.valid">Submit</button>
-        </form>
+            <div *ngIf="this.edit === false">
+                <button type="submit" class="btn btn-custom-dark" [disabled]="!iceCreamForm.form.valid">Submit</button>
+            </div>
 
+        </form>
+        <div *ngIf="this.edit === true">
+            <button type="submit" class="btn btn-custom-dark" [disabled]="!iceCreamForm.form.valid"
+                (click)="onSave()">Save</button>
+        </div>
     </div>
 </div>

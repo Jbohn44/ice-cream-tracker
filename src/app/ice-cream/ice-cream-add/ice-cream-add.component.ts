@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { IceCream } from '../models/ice-cream.model';
 import { FlavorArray, MouthFeelArray, DensityArray } from 'src/app/shared/constants';
 import { IceCreamService } from '../services/ice-cream.service';
@@ -9,27 +9,39 @@ import { IceCreamService } from '../services/ice-cream.service';
   styleUrls: ['./ice-cream-add.component.css']
 })
 export class IceCreamAddComponent implements OnInit {
-  iceCream: IceCream = new IceCream();
+  @Input() iceCream: IceCream;
+  @Input() edit: boolean;
+  @Output() submitted: EventEmitter<any> = new EventEmitter();
+  @Output() saved: EventEmitter<any> = new EventEmitter();
   flavorArray = FlavorArray;
   mouthFeelArray = MouthFeelArray;
   densityArray = DensityArray;
   constructor(private iceCreamService: IceCreamService) { }
 
   ngOnInit() {
-    console.log("ice cream: ", this.iceCream)
+    //this can be changed to edit true or false
+    if (this.iceCream === null || this.iceCream === undefined) {
+      this.iceCream = new IceCream();
+    }
   }
 
 
-  submitForm($event){
+  submitForm($event) {
     console.log(event);
   }
 
-  onSubmit(){
+  onSubmit() {
     // this handles the submit of the icecream
     console.log("ice cream", this.iceCream);
     this.iceCreamService.postIceCream(this.iceCream).subscribe(x => console.log("response from Add Component: ", x));
     // resets the ice cream
     this.iceCream = new IceCream();
+    this.submitted.emit();
+  }
+
+  onSave() {
+    this.iceCreamService.putIceCream(this.iceCream).subscribe(x => console.log("saved Ice Cream", x));
+    this.saved.emit();
   }
 
 }

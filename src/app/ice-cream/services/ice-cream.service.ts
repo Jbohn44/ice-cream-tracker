@@ -5,21 +5,18 @@ import { formatUrl } from '../../shared/utilities';
 import { apiUrls } from 'src/app/shared/constants';
 import { map } from 'rxjs/operators';
 import { IceCream } from '../models/ice-cream.model';
-import { iceCreamList } from '../../shared/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IceCreamService extends BaseService {
 
-  iceCreamList = iceCreamList;
   constructor(http: HttpClient) { 
     super(http);
   }
 
   //maybe needs work
   getIceCreams(userId){
-    console.log("userId", userId);
     return this.get(formatUrl(apiUrls.GET_ICE_CREAMS, userId)).pipe(map(response => 
       {
         return <IceCream[]>response;
@@ -32,5 +29,9 @@ export class IceCreamService extends BaseService {
         console.log(response)
         return response
       }));
+  }
+
+  putIceCream(iceCream: IceCream){
+    return this.put(apiUrls.PUT_ICE_CREAM, iceCream).pipe(map(response => {return response}));
   }
 }

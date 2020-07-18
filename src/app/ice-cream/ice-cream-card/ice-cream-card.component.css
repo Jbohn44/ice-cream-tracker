@@ -20,6 +20,6 @@
 
 .card-btn:hover{
     cursor: pointer;
-    font-weight: bold;
+    font-size: 18px;
     color: var(--main-dark-pink);
 }

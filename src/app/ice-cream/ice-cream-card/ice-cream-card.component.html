@@ -1,9 +1,36 @@
 <div class="card-format">
-    <div class="card card-radius-flat shadow">
+    <div class="card card-radius-flat shadow" *ngIf="saveMessage === false">
         <div class="card-header c-header-background">
             <h4>{{this.iceCream.FlavorName}} - {{this.iceCream.Business}} - {{this.iceCream.Location}}</h4>
-            <div class="card-btn" (click)="editIceCream()">edit</div>
-            <div class="card-btn">map</div>
+            <div class="row">
+                <div class="col-1 card-btn">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg" (click)="editIceCream(iceCreamAddTemplate)">
+                        <path
+                            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                        <path fill-rule="evenodd"
+                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                    </svg>
+                </div>
+                <div class="col-1 card-btn">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-alt" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    </svg>
+                </div>
+                <div class="col-1 card-btn">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-images" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M12.002 4h-10a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10z" />
+                        <path
+                            d="M10.648 8.646a.5.5 0 0 1 .577-.093l1.777 1.947V14h-12v-1l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71z" />
+                        <path fill-rule="evenodd"
+                            d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM4 2h10a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1v1a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2h1a1 1 0 0 1 1-1z" />
+                    </svg>
+                </div>
+            </div>
         </div>
         <div class="card-body">
             <div class="row">
@@ -11,13 +38,13 @@
                     <app-rating [rating]="this.iceCream.OverAllRating" [edit]="this.edit"></app-rating>
                     <h6>Flavor:</h6>
                     <p>{{ this.flavorArray[this.iceCream.FlavorRating.RatingValue] }}</p>
-                    <hr/>
+                    <hr />
                     <h6>Mouth Feel:</h6>
                     <p>{{ this.mouthFeelArray[this.iceCream.MouthFeelRating.RatingValue] }}</p>
-                    <hr/>
+                    <hr />
                     <h6>Density:</h6>
                     <p>{{ this.densityArray[this.iceCream.DensityRating.RatingValue] }}</p>
-                    <hr/>
+                    <hr />
                 </div>
                 <div class="col-md">
                     <div>
@@ -32,4 +59,19 @@
             </div>
         </div>
     </div>
+    <div class="card-body" *ngIf="saveMessage === true">
+        ICE CREAM UPDATING...
+    </div>
 </div>
+
+<ng-template #iceCreamAddTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Edit Ice Cream</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="iceCreamModalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <app-ice-cream-add [iceCream]="this.iceCream" [edit]="true" (saved)="onSaved()"></app-ice-cream-add>
+    </div>
+</ng-template>
