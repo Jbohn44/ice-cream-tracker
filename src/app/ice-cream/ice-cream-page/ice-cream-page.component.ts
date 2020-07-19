@@ -24,6 +24,7 @@ export class IceCreamPageComponent implements OnInit {
     this.initPage();
   }
   ngOnChanges() {
+    console.log("THIS IS A CHANGE")
   }
 
   add(template: TemplateRef<any>) {
@@ -45,5 +46,9 @@ export class IceCreamPageComponent implements OnInit {
 
   clearPage(){
     this.iceCreams = [];
+  }
+
+  onDelete($event){
+    this.iceCreams = this.iceCreams.filter(i => i.IceCreamId !== $event);
   }
 }

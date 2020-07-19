@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef, Output, EventEmitter } from '@angular/core';
 import { IceCream } from '../models/ice-cream.model';
 import { RatingTypes, MouthFeelArray, FlavorArray, DensityArray } from '../../shared/constants';
 import { IceCreamService } from '../services/ice-cream.service';
@@ -12,6 +12,7 @@ import { timeout } from 'rxjs/operators';
 })
 export class IceCreamCardComponent implements OnInit {
   @Input() iceCream: IceCream;
+  @Output() deleted: EventEmitter<number> = new EventEmitter();
   ratingTypes = RatingTypes.RatingTypes;
   flavorArray = FlavorArray;
   mouthFeelArray = MouthFeelArray;
@@ -47,10 +48,10 @@ export class IceCreamCardComponent implements OnInit {
     setTimeout(() => {this.saveMessage = false}, 2000);
   }
 
-  onDelete() {
+  onDelete($event) {
+    console.log($event);
+    this.deleted.emit($event);
     this.iceCreamModalRef.hide();
-    this.showDeleteMessage();
-
   }
 
   showDeleteMessage(){

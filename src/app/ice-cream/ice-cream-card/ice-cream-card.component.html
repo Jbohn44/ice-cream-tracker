@@ -74,7 +74,7 @@
         </button>
     </div>
     <div class="modal-body">
-        <app-ice-cream-add [iceCream]="this.iceCream" [edit]="true" (saved)="onSaved()" (deleted)="onDelete()">
+        <app-ice-cream-add [iceCream]="this.iceCream" [edit]="true" (saved)="onSaved()" (deleted)="onDelete($event)">
         </app-ice-cream-add>
     </div>
 </ng-template>

@@ -14,7 +14,7 @@
     <hr>
     <div class="row">
         <div *ngFor="let item of iceCreams" class="col-md-4">
-            <app-ice-cream-card [iceCream]="item" name="iceCreamCard"></app-ice-cream-card>
+            <app-ice-cream-card [iceCream]="item" name="iceCreamCard" (deleted)="onDelete($event)"></app-ice-cream-card>
         </div>
     </div>
 </div>
