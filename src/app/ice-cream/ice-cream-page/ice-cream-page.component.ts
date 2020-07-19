@@ -11,6 +11,7 @@ import { BsModalService, BsModalRef, ModalBackdropOptions, ModalOptions } from '
 export class IceCreamPageComponent implements OnInit {
   iceCreams: IceCream[] = [];
   iceCreamModalRef: BsModalRef;
+  iceCream: IceCream = new IceCream();
   config = {
     backdrop: true,
     ignoreBackdropClick: true
@@ -29,13 +30,20 @@ export class IceCreamPageComponent implements OnInit {
     this.iceCreamModalRef = this.modalService.show(template, this.config);
   }
 
-  onSubmitted() {
+  onSubmitted($event) {
+    console.log("event: ", $event);
+    this.iceCreams.push(<IceCream>$event);
     this.iceCreamModalRef.hide();
   }
 
   initPage() {
+    this.clearPage();
     this.iceCreamService.getIceCreams(0).subscribe(x => {
       x.forEach(i => { this.iceCreams.push(i) });
     });
+  }
+
+  clearPage(){
+    this.iceCreams = [];
   }
 }

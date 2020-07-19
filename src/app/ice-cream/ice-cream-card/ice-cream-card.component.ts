@@ -49,9 +49,13 @@ export class IceCreamCardComponent implements OnInit {
 
   onDelete() {
     this.iceCreamModalRef.hide();
+    this.showDeleteMessage();
+
+  }
+
+  showDeleteMessage(){
     this.deleteMessage = true;
     setTimeout(() => {this.deleteMessage = false}, 2000);
-
   }
 
 }
