@@ -60,7 +60,14 @@
         </div>
     </div>
     <div class="card-body" *ngIf="saveMessage === true">
-        ICE CREAM UPDATING...
+        <div class="spinner-border text-success" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <div class="card-body" *ngIf="deleteMessage === true">
+        <div class="spinner-border text-danger" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
     </div>
 </div>
 
@@ -72,6 +79,7 @@
         </button>
     </div>
     <div class="modal-body">
-        <app-ice-cream-add [iceCream]="this.iceCream" [edit]="true" (saved)="onSaved()"></app-ice-cream-add>
+        <app-ice-cream-add [iceCream]="this.iceCream" [edit]="true" (saved)="onSaved()" (deleted)="onDelete()">
+        </app-ice-cream-add>
     </div>
 </ng-template>

@@ -18,6 +18,7 @@ export class IceCreamCardComponent implements OnInit {
   densityArray = DensityArray;
   iceCreamModalRef: BsModalRef;
   saveMessage = false;
+  deleteMessage = false;
 
   config = {
     backdrop: true,
@@ -44,6 +45,13 @@ export class IceCreamCardComponent implements OnInit {
   showSavedMessage(){
     this.saveMessage = true;
     setTimeout(() => {this.saveMessage = false}, 2000);
+  }
+
+  onDelete() {
+    this.iceCreamModalRef.hide();
+    this.deleteMessage = true;
+    setTimeout(() => {this.deleteMessage = false}, 2000);
+
   }
 
 }

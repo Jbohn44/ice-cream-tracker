@@ -13,6 +13,7 @@ export class IceCreamAddComponent implements OnInit {
   @Input() edit: boolean;
   @Output() submitted: EventEmitter<any> = new EventEmitter();
   @Output() saved: EventEmitter<any> = new EventEmitter();
+  @Output() deleted: EventEmitter<any> = new EventEmitter();
   flavorArray = FlavorArray;
   mouthFeelArray = MouthFeelArray;
   densityArray = DensityArray;
@@ -42,6 +43,11 @@ export class IceCreamAddComponent implements OnInit {
   onSave() {
     this.iceCreamService.putIceCream(this.iceCream).subscribe(x => console.log("saved Ice Cream", x));
     this.saved.emit();
+  }
+
+  onDelete(iceCreamId){
+    this.iceCreamService.deleteIceCream(iceCreamId).subscribe(x => x);
+    this.deleted.emit();
   }
 
 }

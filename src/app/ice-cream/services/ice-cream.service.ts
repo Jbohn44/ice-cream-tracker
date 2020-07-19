@@ -34,4 +34,8 @@ export class IceCreamService extends BaseService {
   putIceCream(iceCream: IceCream){
     return this.put(apiUrls.PUT_ICE_CREAM, iceCream).pipe(map(response => {return response}));
   }
+
+  deleteIceCream(id: number){
+    return this.delete(formatUrl(apiUrls.DELETE_ICE_CREAM, id)).pipe(map(response => {return response}));
+  }
 }

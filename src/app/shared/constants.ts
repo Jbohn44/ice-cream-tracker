@@ -10,7 +10,8 @@ export const RatingTypes = {
 export const apiUrls = {
   GET_ICE_CREAMS: "icecream/{0}",
   POST_ICE_CREAM: "icecream/post",
-  PUT_ICE_CREAM: "icecream/put"
+  PUT_ICE_CREAM: "icecream/put",
+  DELETE_ICE_CREAM: "icecream/delete/{0}"
 }
 
 export const MouthFeelArray = [
