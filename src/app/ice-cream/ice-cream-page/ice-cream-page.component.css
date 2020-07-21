@@ -30,9 +30,8 @@
     float: right;
 }
 
-.t-margin{
-    z-index: 1;
-    background-color: var(--main-light-pink);
+.nav-background{
+    background-color: var(--main-purple);
 }
 
 h5{
@@ -46,4 +45,8 @@ h5{
 
 .div-overflow{
     overflow: scroll;
+}
+
+.nav-item:hover{
+    cursor: pointer;
 }
