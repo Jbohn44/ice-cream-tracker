@@ -1,10 +1,15 @@
-.btn-border{
-    border-color: var(--main-light-pink) !important;
-    color: var(--main-light-pink) !important;
-    margin-left: 2px;
-    margin-right: 2px;
+.nav-link{
+    color: var(--main-dark-pink) !important;
+    font-weight: bold;
 }
 
-.nav-bar{
-    background-color: var(--main-dark-pink);
+.nav-link:hover{
+    cursor: pointer;
+    color: var(--main-pink) !important;
+}
+
+.navbar-brand{
+    color: var(--main-dark-pink) !important;
+    font-size: 30px;
+    font-family: 'Monofett';
 }

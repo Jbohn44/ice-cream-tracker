@@ -31,7 +31,8 @@
 }
 
 .t-margin{
-    margin-top: 25px;
+    z-index: 1;
+    background-color: var(--main-light-pink);
 }
 
 h5{
@@ -41,4 +42,8 @@ h5{
 
 .p-header{
     display: inline;
+}
+
+.div-overflow{
+    overflow: scroll;
 }

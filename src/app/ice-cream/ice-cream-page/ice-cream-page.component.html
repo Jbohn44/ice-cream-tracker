@@ -1,21 +1,14 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12 t-margin">
-            <div class="row">
-                <div class="col">
-                    <h5>Ice Creams</h5>
-                </div>
-                <div class="col">
-                    <button class="btn btn-custom-dark" (click)="add(iceCreamAddTemplate)">Add</button>
-                </div>
-            </div>
+    <div class="row t-margin">
+        <div class="col-4">
+            <h5>Ice Creams</h5>
+        </div>
+        <div class="col-4">
+            <button class="btn btn-custom-dark" (click)="add(iceCreamAddTemplate)">Add</button>
         </div>
     </div>
-    <hr>
-    <div class="row">
-        <div *ngFor="let item of iceCreams" class="col-md-4">
-            <app-ice-cream-card [iceCream]="item" name="iceCreamCard" (deleted)="onDelete($event)"></app-ice-cream-card>
-        </div>
+<div class="row">
+    <div *ngFor="let item of iceCreams" class="col-md-4">
+        <app-ice-cream-card [iceCream]="item" name="iceCreamCard" (deleted)="onDelete($event)"></app-ice-cream-card>
     </div>
 </div>
 <ng-template #iceCreamAddTemplate>

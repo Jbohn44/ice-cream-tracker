@@ -1,15 +1,17 @@
-<nav class="navbar navbar-expand flex-row navbar-light nav-bar sticky-top">
-    <div class="contianer">
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="nav navbar-nav">
-                <button class="btn btn-custom-light nav-item nav-link active" routerLink="">Home</button>
-                <button class="btn btn-custom-light nav-item nav-link active" routerLink="/ice-creams">Ice Creams!</button>
-                <button class="btn btn-custom-light nav-item nav-link" (click)="signInClick(signInTemplate)">Sign In</button>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Ice Cream Tracker</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" routerLink="/ice-creams">Ice Creams!</a>
+            <a class="nav-item nav-link">Statistics</a>
+            <a class="nav-item nav-link" (click)="signInClick(signInTemplate)">Sign In</a>
         </div>
     </div>
 </nav>
-
 <ng-template #signInTemplate>
     <div class="modal-header">
         <h4 class="modal-title pull-left">Sign In</h4>

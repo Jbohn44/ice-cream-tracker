@@ -24,7 +24,6 @@ export class IceCreamPageComponent implements OnInit {
     this.initPage();
   }
   ngOnChanges() {
-    console.log("THIS IS A CHANGE")
   }
 
   add(template: TemplateRef<any>) {
