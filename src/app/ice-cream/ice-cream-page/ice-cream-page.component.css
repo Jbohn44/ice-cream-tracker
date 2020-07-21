@@ -1,37 +1,14 @@
-.p-margins{
-    margin-top: 20px;
-}
-
-.r-margin{
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-}
-
-.sideNav{
+.side-nav-fixed{
     height:100%;
-    width: 200px;
+    width: 300px;
     position: fixed;
     background-color: var(--main-light-pink);
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 .main{
-    margin-left:200px;
-    
-}
-
-.btn-border{
-    border-color: var(--main-dark-pink) !important;
-    color: var(--main-dark-pink) !important;
-    margin-left: 2px;
-    margin-right: 2px;
-    margin-bottom: 1px;
-    float: right;
-}
-
-.nav-background{
-    background-color: var(--main-purple);
+    margin-left: 300px;
 }
 
 h5{
@@ -45,8 +22,4 @@ h5{
 
 .div-overflow{
     overflow: scroll;
-}
-
-.nav-item:hover{
-    cursor: pointer;
 }
