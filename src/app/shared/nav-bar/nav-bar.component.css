@@ -1,15 +1,19 @@
 .nav-link{
-    color: var(--main-dark-pink) !important;
+    color: var(--main-blue-alt) !important;
     font-weight: bold;
 }
 
 .nav-link:hover{
     cursor: pointer;
-    color: var(--main-pink) !important;
+    color: var(--main-light-blue) !important;
 }
 
 .navbar-brand{
-    color: var(--main-dark-pink) !important;
+    color: white !important;
     font-size: 30px;
-    font-family: 'Monofett';
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.navbar{
+    background-color: var(--main-blue) !important;
 }

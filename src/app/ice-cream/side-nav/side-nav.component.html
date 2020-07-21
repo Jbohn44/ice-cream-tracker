@@ -12,7 +12,7 @@
             </span> Add An Ice Cream</a>
     </li>
     <li class="nav-item active">
-        <a class="nav-item nav-link" routerLink="/ice-creams"><span>
+        <a class="nav-item nav-link" routerLink=""><span>
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-emoji-laughing" fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
@@ -37,3 +37,15 @@
             </span> Statistics</a>
     </li>
 </ul>
+
+<ng-template #iceCreamAddTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Create An Ice Cream</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="iceCreamModalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <app-ice-cream-add [edit]="false" (submitted)="onSubmitted($event)"></app-ice-cream-add>
+    </div>
+</ng-template>

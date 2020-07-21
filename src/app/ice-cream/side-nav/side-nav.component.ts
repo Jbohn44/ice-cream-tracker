@@ -9,8 +9,12 @@ import { BsModalService, BsModalRef} from 'ngx-bootstrap/modal';
 
 //TODO: refactor event emitter to update ice cream page when ice cream added
 export class SideNavComponent implements OnInit {
-  @Output("addIceCream") addIceCream: EventEmitter<any> = new EventEmitter();
+  @Output() addIceCream: EventEmitter<any> = new EventEmitter();
   iceCreamModalRef: BsModalRef;
+  config = {
+    backdrop: true,
+    ignoreBackdropClick: true
+  }
   constructor(private modalService: BsModalService) { }
 
   ngOnInit() {
@@ -18,7 +22,13 @@ export class SideNavComponent implements OnInit {
 
 
   add(template: TemplateRef<any>){
-    this.iceCreamModalRef = this.modalService.show(template);
+    this.iceCreamModalRef = this.modalService.show(template, this.config);
   }
 
+  onSubmitted($event){
+    this.addIceCream.emit($event);
+    this.iceCreamModalRef.hide();
+  }
+
+  
 }

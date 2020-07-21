@@ -33,7 +33,6 @@ export class IceCreamPageComponent implements OnInit {
   onSubmitted($event) {
     console.log("event: ", $event);
     this.iceCreams.push(<IceCream>$event);
-    this.iceCreamModalRef.hide();
   }
 
   initPage() {
@@ -43,11 +42,11 @@ export class IceCreamPageComponent implements OnInit {
     });
   }
 
-  clearPage(){
+  clearPage() {
     this.iceCreams = [];
   }
 
-  onDelete($event){
+  onDelete($event) {
     this.iceCreams = this.iceCreams.filter(i => i.IceCreamId !== $event);
   }
 }

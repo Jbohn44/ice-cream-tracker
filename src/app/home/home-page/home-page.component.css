@@ -1,14 +1,14 @@
 .color-div-one{
     position: relative;
-    background-color: var(--main-light-pink);
+    background-color: var(--main-blue);
 }
 .color-div-two{
     position: relative;
-    background-color: var(--main-pink);
+    background-color: var(--main-blue);
 }
 .color-div-three{
     position: relative;
-    background-color: var(--main-dark-pink);
+    background-color: var(--main-blue);
 }
 
 .fixed-bg{
@@ -21,24 +21,24 @@
 
 .h-font{
     font-size: 35px;
-    font-family: 'Sonsie One';
-    color: var(--main-dark-pink);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
 }
 
 .p-font{
     font-size: 20px;
-    font-family: 'Sonsie One';
-    color: var(--main-dark-pink);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
 }
 .h-font-2{
     font-size: 35px;
-    font-family: 'Sonsie One';
-    color: var(--main-light-pink);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
 }
 .p-font-2{
     font-size: 20px;
-    font-family: 'Sonsie One';
-    color: var(--main-light-pink);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
 }
 
 .test-align{

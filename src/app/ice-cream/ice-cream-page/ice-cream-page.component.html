@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-sm-3 sideNav side-nav-fixed hidden-xs">
-        <app-side-nav></app-side-nav>
+        <app-side-nav (addIceCream)="onSubmitted($event)"></app-side-nav>
     </div>
 </div>
 <div class="row main">
@@ -10,9 +10,9 @@
     </div>
 </div>
 
-<ng-template #iceCreamAddTemplate>
+<!-- <ng-template #iceCreamAddTemplate>
     <div class="modal-header">
-        <h4 class="modal-title pull-left">Add An Ice Cream!</h4>
+        <h4 class="modal-title pull-left">Create An Ice Cream</h4>
         <button type="button" class="close pull-right" aria-label="Close" (click)="iceCreamModalRef.hide()">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -20,4 +20,4 @@
     <div class="modal-body">
         <app-ice-cream-add [edit]="false" (submitted)="onSubmitted($event)"></app-ice-cream-add>
     </div>
-</ng-template>
+</ng-template> -->
