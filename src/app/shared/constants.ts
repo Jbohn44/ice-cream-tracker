@@ -11,7 +11,9 @@ export const apiUrls = {
   GET_ICE_CREAMS: "icecream/{0}",
   POST_ICE_CREAM: "icecream/post",
   PUT_ICE_CREAM: "icecream/put",
-  DELETE_ICE_CREAM: "icecream/delete/{0}"
+  DELETE_ICE_CREAM: "icecream/delete/{0}",
+  GET_ALL_USERS: "user/getall",
+  CREATE_USER: "user/create"
 }
 
 export const MouthFeelArray = [

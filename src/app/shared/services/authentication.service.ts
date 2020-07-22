@@ -24,7 +24,7 @@ export class AuthenticationService extends BaseService {
     return this.currentUserSubject.value;
   }
 
-  login(username: string, password: string){
+  login(username: string, password: string) {
   }
 
   logout(){
