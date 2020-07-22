@@ -1,6 +1,6 @@
 .color-div-one{
     position: relative;
-    background-color: var(--main-blue);
+    background-color: var(--main-light-blue);
 }
 .color-div-two{
     position: relative;
@@ -41,14 +41,6 @@
     color: white;
 }
 
-.test-align{
-    background-color: blue;
-}
-
-.test-align-2{
-    background-color: green;
-}
-
 .align-text{
     margin-top: 100px;
     margin-bottom: 100px;
@@ -57,7 +49,7 @@
 }
 
 .picture-div{
-    height: 500px;
+    height: 900px;
 }
 
 .picture-div-1{

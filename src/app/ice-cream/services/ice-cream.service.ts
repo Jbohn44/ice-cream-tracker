@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BaseService } from 'src/app/shared/base.service';
+import { BaseService } from '../../shared/services/base.service';
 import { HttpClient } from '@angular/common/http';
 import { formatUrl } from '../../shared/utilities';
 import { apiUrls } from 'src/app/shared/constants';

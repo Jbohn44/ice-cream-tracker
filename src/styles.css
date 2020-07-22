@@ -24,27 +24,6 @@
     --main-light-grey: #E0E2EB;
 }
 
-
-.index-background-color {
-    background-color: var(--main-pink);
-}
-
-.page-margin{
-    margin-right: 50px;
-    margin-left: 50px;
-}
-
-.image-size {
-    width: 20px;
-    height: 30px;
-}
-
-.logo-center{
-    text-align: center;
-    background: var(--header-gradient);
-    padding-top: 10px;
-}
-
 .btn-custom-light{
     border-color: var(--main-light-blue) !important;
     color: var(--main-light-blue) !important;
@@ -59,3 +38,7 @@
     margin-right: 2px;
 }
 
+.h1, h2, h3, h4, h5, h6{
+    font-weight: bold;
+    color: var(--main-dark-blue);
+}
