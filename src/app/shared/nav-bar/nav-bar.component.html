@@ -46,7 +46,7 @@
             </li> -->
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a class="nav-item nav-link" (click)="signInClick(signInTemplate)"><span>
+            <li><a class="nav-item nav-link" ><span>
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-circle"
                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -55,8 +55,8 @@
                             <path fill-rule="evenodd"
                                 d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
                         </svg>
-                    </span> Sign In</a></li>
-            <li><a class="nav-item nav-link"><span>
+                    </span> Sign Up</a></li>
+            <li><a class="nav-item nav-link" (click)="signInClick(signInTemplate)"><span>
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-arrow-in-right"
                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -65,13 +65,13 @@
                             <path fill-rule="evenodd"
                                 d="M13.5 14.5A1.5 1.5 0 0 0 15 13V3a1.5 1.5 0 0 0-1.5-1.5h-8A1.5 1.5 0 0 0 4 3v1.5a.5.5 0 0 0 1 0V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5h-8A.5.5 0 0 1 5 13v-1.5a.5.5 0 0 0-1 0V13a1.5 1.5 0 0 0 1.5 1.5h8z" />
                         </svg>
-                    </span> LogIn</a></li>
+                    </span> Login</a></li>
         </ul>
     </div>
 </nav>
 <ng-template #signInTemplate>
     <div class="modal-header">
-        <h4 class="modal-title pull-left">Sign In</h4>
+        <h4 class="modal-title pull-left">Login</h4>
         <button type="button" class="close pull-right" aria-label="Close" (click)="signInModalRef.hide()">
             <span aria-hidden="true">&times;</span>
         </button>
