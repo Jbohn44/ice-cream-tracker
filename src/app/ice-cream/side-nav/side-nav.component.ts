@@ -10,6 +10,7 @@ import { BsModalService, BsModalRef} from 'ngx-bootstrap/modal';
 //TODO: refactor event emitter to update ice cream page when ice cream added
 export class SideNavComponent implements OnInit {
   @Output() addIceCream: EventEmitter<any> = new EventEmitter();
+  @Output() switchPage: EventEmitter<any> = new EventEmitter();
   iceCreamModalRef: BsModalRef;
   config = {
     backdrop: true,
@@ -28,6 +29,10 @@ export class SideNavComponent implements OnInit {
   onSubmitted($event){
     this.addIceCream.emit($event);
     this.iceCreamModalRef.hide();
+  }
+
+  pageSwitch($event){
+    this.switchPage.emit($event);
   }
 
   

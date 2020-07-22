@@ -11,14 +11,13 @@ import { IceCreamEditComponent } from './ice-cream-edit/ice-cream-edit.component
 import { RatingDisplayComponent } from './rating-display/rating-display.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { SliderRatingComponent } from './slider-rating/slider-rating.component';
 import { IceCreamAddComponent } from './ice-cream-add/ice-cream-add.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
-  declarations: [StarComponent, StarFilledComponent, IceCreamPageComponent, IceCreamCardComponent, RatingComponent, IceCreamEditComponent, RatingDisplayComponent, SliderRatingComponent, IceCreamAddComponent, SideNavComponent],
+  declarations: [StarComponent, StarFilledComponent, IceCreamPageComponent, IceCreamCardComponent, RatingComponent, IceCreamEditComponent, RatingDisplayComponent, IceCreamAddComponent, SideNavComponent],
   imports: [
     CommonModule,
     IceCreamRoutingModule,

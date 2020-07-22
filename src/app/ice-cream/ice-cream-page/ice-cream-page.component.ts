@@ -12,6 +12,7 @@ export class IceCreamPageComponent implements OnInit {
   iceCreams: IceCream[] = [];
   iceCreamModalRef: BsModalRef;
   iceCream: IceCream = new IceCream();
+  iceCreamPage = true;
   config = {
     backdrop: true,
     ignoreBackdropClick: true
@@ -33,6 +34,7 @@ export class IceCreamPageComponent implements OnInit {
   onSubmitted($event) {
     console.log("event: ", $event);
     this.iceCreams.push(<IceCream>$event);
+    this.iceCreamModalRef.hide();
   }
 
   initPage() {
@@ -49,4 +51,5 @@ export class IceCreamPageComponent implements OnInit {
   onDelete($event) {
     this.iceCreams = this.iceCreams.filter(i => i.IceCreamId !== $event);
   }
+
 }

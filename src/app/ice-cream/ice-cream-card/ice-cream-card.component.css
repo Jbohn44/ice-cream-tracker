@@ -4,7 +4,7 @@
 }
 
 .c-header-background {
-    background-color: var(--main-light-blue);
+    background-color: var(--main-light-grey);
     color: var(--main-dark-blue);
 }
 
@@ -21,6 +21,5 @@
 
 .card-btn:hover{
     cursor: pointer;
-    font-size: 18px;
     color: white;
 }
