@@ -11,6 +11,7 @@ import { UserService } from '../services/user.service';
 export class UserSignUpComponent implements OnInit {
   userSignUp: User = new User();
   currentUserNames: string[];
+  passwordCheck: string;
   constructor(private userService: UserService) { }
 
   ngOnInit() {
@@ -22,7 +23,6 @@ export class UserSignUpComponent implements OnInit {
       }
     });
   }
-
   onSubmit() {
     if (this.checkUserName(this.userSignUp.Username) === true) {
       //show errror message, username already exists
