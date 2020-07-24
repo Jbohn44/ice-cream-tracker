@@ -15,9 +15,11 @@ export class UserSignUpComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getAllUsers().subscribe(x => {
-      x.forEach(i => {
-        this.currentUserNames.push(i.Username.toLowerCase())
-      });
+      if (x.length > 0) {
+        x.forEach(i => {
+          this.currentUserNames.push(i.toLowerCase())
+        });
+      }
     });
   }
 
@@ -30,8 +32,12 @@ export class UserSignUpComponent implements OnInit {
   }
 
   checkUserName(userName: string): boolean {
-    if (this.currentUserNames.includes(userName.toLowerCase())) {
-      return true;
+    if (this.currentUserNames.length > 0) {
+      if (this.currentUserNames.includes(userName.toLowerCase())) {
+        return true;
+      }
+      return false;
+
     }
     return false;
   }

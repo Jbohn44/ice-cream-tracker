@@ -15,7 +15,7 @@ export class UserService extends BaseService {
   }
 
   getAllUsers() {
-    return this.get(apiUrls.GET_ALL_USERS).pipe(map(response => {return <User[]>response}));
+    return this.get(apiUrls.GET_ALL_USERS_NAMES).pipe(map(response => {return <string[]>response}));
   }
 
   createUser(user: User) {
