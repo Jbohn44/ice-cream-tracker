@@ -2,6 +2,7 @@ import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 import { IceCream } from '../models/ice-cream.model';
 import { IceCreamService } from '../services/ice-cream.service';
 import { BsModalService, BsModalRef, ModalBackdropOptions, ModalOptions } from 'ngx-bootstrap/modal';
+import { User } from 'src/app/shared/models/user.model';
 
 @Component({
   selector: 'app-ice-cream-page',
@@ -38,6 +39,8 @@ export class IceCreamPageComponent implements OnInit {
   }
 
   initPage() {
+    const user = localStorage.getItem('currentUser');
+    console.log("user", user);
     this.clearPage();
     this.iceCreamService.getIceCreams(0).subscribe(x => {
       x.forEach(i => { this.iceCreams.push(i) });

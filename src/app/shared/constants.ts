@@ -13,7 +13,8 @@ export const apiUrls = {
   PUT_ICE_CREAM: "icecream/put",
   DELETE_ICE_CREAM: "icecream/delete/{0}",
   GET_ALL_USERS_NAMES: "user/getall",
-  CREATE_USER: "user/create"
+  CREATE_USER: "user/signup",
+  LOGIN_USER: "user/login"
 }
 
 export const MouthFeelArray = [

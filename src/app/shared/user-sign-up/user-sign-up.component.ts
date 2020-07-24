@@ -10,7 +10,7 @@ import { UserService } from '../services/user.service';
 })
 export class UserSignUpComponent implements OnInit {
   userSignUp: User = new User();
-  currentUserNames: string[];
+  currentUserNames: string[] = [];
   passwordCheck: string;
   constructor(private userService: UserService) { }
 
