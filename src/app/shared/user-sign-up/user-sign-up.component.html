@@ -6,7 +6,7 @@
                 <input type="text" id="userName" class="form-control" name="userName"
                     [(ngModel)]="this.userSignUp.Username" required minlength="6" maxlength="16" #userName="ngModel">
                 <div *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="alert alert-danger">
-                    <div *ngIf="userName.errors.minlength || userName.errors.maxlength">
+                    <div>
                         Username must be between 6 and 16 characters long.
                     </div>
                 </div>
@@ -16,7 +16,7 @@
                 <input type="password" id="password" class="form-control" name="password"
                     [(ngModel)]="this.userSignUp.Password" required minlength="8" maxlength="20" #password="ngModel">
                 <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
-                    <div *ngIf="password.errors.minlength">
+                    <div>
                         Password must be at least 8 characters long.
                     </div>
                 </div>
@@ -24,11 +24,14 @@
             <div class="form-group">
                 <label for="confirmPassword">Confirm Password</label>
                 <input type="password" id="confirmPassword" class="form-control" name="confirmPassword"
-                    [(ngModel)]="this.passwordCheck">
+                    [(ngModel)]="this.passwordCheck" #confirmPassword="ngModel">
+                <div *ngIf="this.passwordCheck !== this.userSignUp.Password && (confirmPassword.dirty || confirmPassword.touched)" class="alert alert-danger">
+                    <div>
+                        Passwords do not match.
+                    </div>
+                </div>
             </div>
             <button type="submit" class="btn btn-custom-dark" [disabled]="!signUpForm.form.valid">Submit</button>
         </form>
-        {{this.userSignUp | json}}
-        {{this.passwordCheck | json}}
     </div>
 </div>
