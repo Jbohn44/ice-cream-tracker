@@ -19,7 +19,7 @@ config = {
 
   ngOnInit() {
     if(localStorage.getItem('currentUser')) {
-      this.user = <User>JSON.parse(localStorage.getItem('currentUser'));
+      this.setCurrentUser();
     }
     console.log("currentuser", this.user);
   }
@@ -32,5 +32,14 @@ config = {
   logout() { 
     this.user = null;
     this.authService.logout();
+  }
+
+  signedIn(){
+    this.setCurrentUser();
+    this.signInModalRef.hide();
+  }
+
+  setCurrentUser(){
+    this.user = <User>JSON.parse(localStorage.getItem('currentUser'));
   }
 }

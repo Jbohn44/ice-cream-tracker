@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { IceCream } from '../models/ice-cream.model';
 import { FlavorArray, MouthFeelArray, DensityArray } from 'src/app/shared/constants';
 import { IceCreamService } from '../services/ice-cream.service';
+import { User } from 'src/app/shared/models/user.model';
 
 @Component({
   selector: 'app-ice-cream-add',
@@ -17,12 +18,15 @@ export class IceCreamAddComponent implements OnInit {
   flavorArray = FlavorArray;
   mouthFeelArray = MouthFeelArray;
   densityArray = DensityArray;
+  user: User = new User();
   constructor(private iceCreamService: IceCreamService) { }
 
   ngOnInit() {
+    this.user =  <User>JSON.parse(localStorage.getItem('currentUser'));
     //this can be changed to edit true or false
     if (this.iceCream === null || this.iceCream === undefined) {
       this.iceCream = new IceCream();
+      this.iceCream.UserId = this.user.UserId;
     }
   }
 

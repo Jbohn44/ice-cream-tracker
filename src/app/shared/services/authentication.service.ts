@@ -31,6 +31,7 @@ export class AuthenticationService extends BaseService {
       if(response){
         localStorage.setItem('currentUser', JSON.stringify(response));
         this.currentUserSubject.next(<User>response);
+        this.router.navigate(['dashboard/icecream']);
       }
     }));
   }

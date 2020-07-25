@@ -3,13 +3,13 @@
         <form (ngSubmit)="onSubmit()" #signInForm="ngForm">
             <div class="form-group">
                 <label for="userName">UserName</label>
-                <input type="text" id="userName" class="form-control" name="userName" [(ngModel)]="this.user.Username">
+                <input type="text" id="userName" class="form-control" name="userName" [(ngModel)]="this.user.Username" required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" class="form-control" name="password" [(ngModel)]="this.user.Password">
+                <input type="password" id="password" class="form-control" name="password" [(ngModel)]="this.user.Password" required>
             </div>
-            <button type="submit" class="btn btn-custom-dark">Submit</button>
+            <button type="submit" class="btn btn-custom-dark" [disabled]="!signInForm.form.valid">Submit</button>
         </form>
     </div>
 </div>
