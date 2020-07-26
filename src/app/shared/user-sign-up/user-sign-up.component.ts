@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user.model';
 import { UserService } from '../services/user.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 
 @Component({
@@ -12,7 +13,8 @@ export class UserSignUpComponent implements OnInit {
   userSignUp: User = new User();
   currentUserNames: string[] = [];
   passwordCheck: string;
-  constructor(private userService: UserService) { }
+  usernameWarning = false;
+  constructor(private userService: UserService, private authService: AuthenticationService) { }
 
   ngOnInit() {
     this.userService.getAllUsers().subscribe(x => {
@@ -23,11 +25,14 @@ export class UserSignUpComponent implements OnInit {
       }
     });
   }
+
   onSubmit() {
     if (this.checkUserName(this.userSignUp.Username) === true) {
-      //show errror message, username already exists
+      this.usernameWarning = true;
     } else {
-      this.userService.createUser(this.userSignUp).subscribe(x => x); // need to handle successful user sign up.  authenticate and sign in
+      this.userService.createUser(this.userSignUp).subscribe(x => {
+        this.authService.login(x).subscribe(x => console.log("this is from signup login", x));
+      }); // need to handle successful user sign up.  authenticate and sign in
     }
   }
 
@@ -37,7 +42,6 @@ export class UserSignUpComponent implements OnInit {
         return true;
       }
       return false;
-
     }
     return false;
   }

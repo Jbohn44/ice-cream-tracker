@@ -4,13 +4,14 @@ import { BaseService } from './base.service';
 import { User } from '../models/user.model';
 import { apiUrls } from '../constants';
 import { map } from 'rxjs/internal/operators/map';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService extends BaseService {
 
-  constructor(http: HttpClient) { 
+  constructor(http: HttpClient, private router: Router) { 
     super(http);
   }
 
@@ -19,6 +20,12 @@ export class UserService extends BaseService {
   }
 
   createUser(user: User) {
-    return this.post(apiUrls.CREATE_USER, user).pipe(map(response => {return response}));
+    return this.post(apiUrls.CREATE_USER, user).pipe(map(response => {
+      if(response){
+        this.router.navigate(['dashboard/icecream']);
+      }
+      return response
+    
+    }));
   }
 }
