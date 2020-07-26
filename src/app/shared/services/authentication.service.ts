@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, windowToggle } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { User } from '../models/user.model';
 import { BaseService } from './base.service';
@@ -31,7 +31,7 @@ export class AuthenticationService extends BaseService {
       if(response){
         localStorage.setItem('currentUser', JSON.stringify(response));
         this.currentUserSubject.next(<User>response);
-        this.router.navigate(['dashboard/icecream']);
+        this.router.navigate(['dashboard/icecream']).then(() => window.location.reload());
       }
     }));
   }

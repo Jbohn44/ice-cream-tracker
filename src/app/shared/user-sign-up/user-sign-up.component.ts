@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { User } from '../models/user.model';
 import { UserService } from '../services/user.service';
 import { AuthenticationService } from '../services/authentication.service';
@@ -31,7 +31,7 @@ export class UserSignUpComponent implements OnInit {
       this.usernameWarning = true;
     } else {
       this.userService.createUser(this.userSignUp).subscribe(x => {
-        this.authService.login(x).subscribe(x => console.log("this is from signup login", x));
+        this.authService.login(x).subscribe(x => {console.log("this is from signup login", x)});
       }); // need to handle successful user sign up.  authenticate and sign in
     }
   }

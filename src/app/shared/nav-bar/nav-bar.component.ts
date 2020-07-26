@@ -35,7 +35,6 @@ config = {
   }
 
   signedIn(){
-    this.setCurrentUser();
     this.signInModalRef.hide();
   }
 
