@@ -14,33 +14,38 @@
     position: relative;
     background-color: var(--main-blue);
 }
-
+/* 
 .fixed-bg{
     background-image: url("../../../assets/images/background-image.JPG");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+} */
+
+.bg{
+    background-image: url("../../../assets/images/ice_cream_web_one.JPG");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+
 }
 
 .align-text{
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     margin-left: 50px;
     margin-right: 50px;
+    text-align: center;
 }
-
-.picture-div{
-    height: 900px;
-}
-
-.picture-div-1{
-    height: 900px;
-}
-
 .d-bold{
     font-size: 85px;
     font-weight: bold;
     color: white;
     text-align: center;
+}
+
+.c-row {
+    background-color: var(--main-light-blue);
 }

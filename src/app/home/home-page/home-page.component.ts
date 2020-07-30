@@ -7,6 +7,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
   @ViewChild('lastDiv', {static: false}) lastDiv: ElementRef;
+  
   constructor() { }
 
   ngOnInit() {
