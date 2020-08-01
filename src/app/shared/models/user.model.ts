@@ -1,6 +1,6 @@
 export class User {
     UserId: number;
-    Username: string;
+    UserName: string;
     Password: string;
     Token?: string;
 }

@@ -10,7 +10,6 @@ import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { UserSignInComponent } from './shared/user-sign-in/user-sign-in.component';
 import { JwtInterceptor } from './shared/helpers/jwt.interceptor';
 import { ErrorInterceptor } from './shared/helpers/error.interceptor';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     FormsModule,
     HttpClientModule,
     ModalModule.forRoot(),
-    CarouselModule.forRoot()
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},

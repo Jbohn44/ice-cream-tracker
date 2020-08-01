@@ -27,8 +27,9 @@ export class UserSignUpComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.checkUserName(this.userSignUp.Username) === true) {
+    if (this.checkUserName(this.userSignUp.UserName) === true) {
       this.usernameWarning = true;
+      console.log(this.usernameWarning)
     } else {
       this.userService.createUser(this.userSignUp).subscribe(x => {
         this.authService.login(x).subscribe(x => {console.log("this is from signup login", x)});

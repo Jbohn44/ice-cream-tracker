@@ -1,27 +1,8 @@
-.color-div-one{
-    position: relative;
-    background-color: var(--main-light-blue);
-    font-weight: bold;
-    color: var(--main-blue);
-}
-.color-div-two{
-    position: relative;
-    background-color: var(--main-blue);
-    color: white;
-    font-weight: bold;
-}
-.color-div-three{
+
+.m-row{
     position: relative;
     background-color: var(--main-blue);
 }
-/* 
-.fixed-bg{
-    background-image: url("../../../assets/images/background-image.JPG");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
 
 .bg{
     background-image: url("../../../assets/images/ice_cream_web_one.JPG");
@@ -29,15 +10,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 700px;
+    width: 100%;
 
 }
 
 .align-text{
     margin-top: 50px;
     margin-bottom: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
-    text-align: center;
+    z-index: 1;
 }
 .d-bold{
     font-size: 85px;
@@ -46,6 +26,39 @@
     text-align: center;
 }
 
+.h-bold{
+    margin-top: 250px;
+    font-size: 85px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px){
+    .h-bold{
+        margin-top: 100px;
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+    }
+}
+
 .c-row {
     background-color: var(--main-light-blue);
+}
+.footer-row{
+    background-color: var(--main-dark-blue);
+
+}
+.footer-format{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+    font-size: small;
+    color: white;
+}
+
+.align-test{
+    background-color: red;
 }

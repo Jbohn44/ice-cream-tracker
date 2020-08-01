@@ -5,12 +5,12 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { UserSignUpComponent } from '../shared/user-sign-up/user-sign-up.component';
 import { FormsModule } from '@angular/forms';
-import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { UserSignUpPageComponent } from './user-sign-up-page/user-sign-up-page.component';
 
 
 @NgModule({
-  declarations: [HomePageComponent, UserSignUpComponent, HomeCarouselComponent],
+  declarations: [HomePageComponent, UserSignUpComponent, UserSignUpPageComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
