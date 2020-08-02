@@ -37,13 +37,19 @@
                 <div class="col-md-4">
                     <app-rating [rating]="this.iceCream.OverAllRating" [edit]="this.edit"></app-rating>
                     <h6>Flavor:</h6>
-                    <p>{{ this.flavorArray[this.iceCream.FlavorRating.RatingValue] }}</p>
+                    <p>{{this.iceCream.FlavorRating.RatingValue}}/10</p>
                     <hr />
-                    <h6>Mouth Feel:</h6>
-                    <p>{{ this.mouthFeelArray[this.iceCream.MouthFeelRating.RatingValue] }}</p>
+                    <h6>Creaminess:</h6>
+                    <p>{{this.iceCream.CreaminessRating.RatingValue}}/10</p>
+                    <hr />
+                    <h6>Iciness:</h6>
+                    <p>{{this.iceCream.IcinessRating.RatingValue}}/10</p>
                     <hr />
                     <h6>Density:</h6>
-                    <p>{{ this.densityArray[this.iceCream.DensityRating.RatingValue] }}</p>
+                    <p>{{this.iceCream.DensityRating.RatingValue}}/10</p>
+                    <hr />  
+                    <h6>Value:</h6>
+                    <p>{{this.iceCream.ValueRating.RatingValue}}/10</p>
                     <hr />
                 </div>
                 <div class="col-md">
@@ -55,6 +61,11 @@
                             {{this.iceCream.Comments}}
                         </p>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div *ngFor="let service of this.iceCream.Services">{{service}}</div>
                 </div>
             </div>
         </div>

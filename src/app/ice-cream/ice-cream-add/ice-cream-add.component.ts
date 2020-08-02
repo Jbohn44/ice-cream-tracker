@@ -15,9 +15,7 @@ export class IceCreamAddComponent implements OnInit {
   @Output() submitted: EventEmitter<any> = new EventEmitter();
   @Output() saved: EventEmitter<IceCream> = new EventEmitter();
   @Output() deleted: EventEmitter<number> = new EventEmitter();
-  flavorArray = FlavorArray;
-  mouthFeelArray = MouthFeelArray;
-  densityArray = DensityArray;
+  selectNumberArray = [0, 1, 2, 3, 4, 5, 6, 7, 8 , 9, 10];
   user: User = new User();
   constructor(private iceCreamService: IceCreamService) { }
 

@@ -14,9 +14,6 @@ export class IceCreamCardComponent implements OnInit {
   @Input() iceCream: IceCream;
   @Output() deleted: EventEmitter<number> = new EventEmitter();
   ratingTypes = RatingTypes.RatingTypes;
-  flavorArray = FlavorArray;
-  mouthFeelArray = MouthFeelArray;
-  densityArray = DensityArray;
   iceCreamModalRef: BsModalRef;
   saveMessage = false;
   deleteMessage = false;

@@ -2,65 +2,95 @@
     <div>
         <form (ngSubmit)="onSubmit()" #iceCreamForm="ngForm">
             <div class="form-group">
-                <label for="flavorName">Flavor Name</label>
+                <label for="flavorName"><h6>Flavor</h6></label>
                 <input type="text" id="flavorName" class="form-control" required [(ngModel)]="this.iceCream.FlavorName"
                     name="flavor">
             </div>
             <div class="form-group">
-                <label for="location">Location</label>
+                <label for="location"><h6>Location</h6></label>
                 <input type="text" id="location" class="form-control" required [(ngModel)]="this.iceCream.Location"
                     name="location">
             </div>
             <div class="form-group">
-                <label for="business">Business</label>
+                <label for="business"><h6>Business</h6></label>
                 <input type="text" id="business" class="form-control" required [(ngModel)]="this.iceCream.Business"
                     name="business">
             </div>
             <div class="form-group">
-                <label for="flavorRating">Flavor Rating</label>
+                <label for="flavorRating"><h6>Flavor Rating</h6></label>
                 <select id="flavorRating" class="form-control" [(ngModel)]="this.iceCream.FlavorRating.RatingValue"
                     name="flavorRating">
-                    <option *ngFor="let rating of this.flavorArray" [value]="this.flavorArray.indexOf(rating)">
-                        {{rating}} - {{this.flavorArray.indexOf(rating)}}</option>
+                    <option *ngFor="let rating of this.selectNumberArray" [value]="rating">
+                        {{rating}} out of 10</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="mouthFeelRating">Mouth Feel Rating</label>
-                <select id="mouthFeelRating" class="form-control"
-                    [(ngModel)]="this.iceCream.MouthFeelRating.RatingValue" name="mouthFeelRating">
-                    <option *ngFor="let rating of this.mouthFeelArray" [value]="this.mouthFeelArray.indexOf(rating)">
-                        {{rating}} - {{this.mouthFeelArray.indexOf(rating)}}</option>
+                <label for="creaminessRating"><h6>Creaminess Rating</h6></label>
+                <select id="creaminessRating" class="form-control"
+                    [(ngModel)]="this.iceCream.CreaminessRating.RatingValue" name="creaminessRating">
+                    <option *ngFor="let rating of this.selectNumberArray" [value]="rating">
+                        {{rating}} out of 10</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="densityRating">Density Rating</label>
+                <label for="icinessRating"><h6>Iciness Rating</h6></label>
+                <select id="icinessRating" class="form-control" [(ngModel)]="this.iceCream.IcinessRating.RatingValue"
+                    name="icinessRating">
+                    <option *ngFor="let rating of this.selectNumberArray" [value]="rating">
+                        {{rating}} out of 10</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="densityRating"><h6>Density Rating</h6></label>
                 <select id="densityRating" class="form-control" [(ngModel)]="this.iceCream.DensityRating.RatingValue"
                     name="densityRating">
-                    <option *ngFor="let rating of this.densityArray" [value]="this.densityArray.indexOf(rating)">
-                        {{rating}} - {{this.densityArray.indexOf(rating)}}</option>
+                    <option *ngFor="let rating of this.selectNumberArray" [value]="rating">
+                        {{rating}} out of 10</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="comments">Comments</label>
+                <label for="valueRating"><h6>Value Rating</h6></label>
+                <select id="valueRating" class="form-control" [(ngModel)]="this.iceCream.ValueRating.RatingValue"
+                    name="valueRating">
+                    <option *ngFor="let rating of this.selectNumberArray" [value]="rating">
+                        {{rating}} out of 10</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comments"><h6>Comments</h6></label>
                 <textarea type="textarea" id="comments" class="form-control" [(ngModel)]="this.iceCream.Comments"
                     name="comments"></textarea>
             </div>
             <div class="form-group">
                 <app-rating [rating]="this.iceCream.OverAllRating" [edit]="true"></app-rating>
             </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="dineInCheck">
+                <label class="form-check-label" for="dineInCheck">
+                    <h6>Dine-in</h6>
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                   <h6>Carry-out</h6>
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                    <h6>Drive-thru</h6>
+                </label>
+            </div>
             <div *ngIf="this.edit === false">
                 <button type="submit" class="btn btn-custom-dark" [disabled]="!iceCreamForm.form.valid">Submit</button>
             </div>
-
         </form>
         <div *ngIf="this.edit === true">
             <button type="submit" class="btn btn-custom-dark" [disabled]="!iceCreamForm.form.valid"
                 (click)="onSave()">Save</button>
-                <button type="submit" class="btn btn-custom-dark" (click)="onDelete(this.iceCream.IceCreamId)">Delete</button>
-                <!-- <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg" (click)="onDelete(this.iceCream.IceCreamId)">
-                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                  </svg> -->
+            <button type="submit" class="btn btn-custom-dark"
+                (click)="onDelete(this.iceCream.IceCreamId)">Delete</button>
         </div>
     </div>
 </div>
