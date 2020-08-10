@@ -54,9 +54,9 @@
 .footer-format{
     margin-top: 50px;
     margin-bottom: 50px;
-    margin-left: 20px;
     font-size: small;
     color: white;
+    display: flex;
 }
 
 .align-test{

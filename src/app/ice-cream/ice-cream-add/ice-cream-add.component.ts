@@ -3,6 +3,8 @@ import { IceCream } from '../models/ice-cream.model';
 import { FlavorArray, MouthFeelArray, DensityArray } from 'src/app/shared/constants';
 import { IceCreamService } from '../services/ice-cream.service';
 import { User } from 'src/app/shared/models/user.model';
+import { Service } from '../models/service.model';
+import { addListener } from 'process';
 
 @Component({
   selector: 'app-ice-cream-add',
@@ -17,6 +19,12 @@ export class IceCreamAddComponent implements OnInit {
   @Output() deleted: EventEmitter<number> = new EventEmitter();
   selectNumberArray = [0, 1, 2, 3, 4, 5, 6, 7, 8 , 9, 10];
   user: User = new User();
+  serviceList = [];
+
+  // ServiceId: number;
+  // ServiceTypeId: number;
+  // IceCreamId: number;
+  // ServiceName: string;
   constructor(private iceCreamService: IceCreamService) { }
 
   ngOnInit() {
@@ -25,6 +33,11 @@ export class IceCreamAddComponent implements OnInit {
     if (this.iceCream === null || this.iceCream === undefined) {
       this.iceCream = new IceCream();
       this.iceCream.UserId = this.user.UserId;
+      this.serviceList = [
+        {ServiceTypeId: 1, ServiceName: 'Dine-In', Selected: false}, 
+        {ServiceTypeId: 2, ServiceName: 'Carry-Out', Selected: false}, 
+        {ServiceTypeId: 3, ServiceName: 'Drive-Thru', Selected: false}
+      ];
     }
   }
 
@@ -34,8 +47,13 @@ export class IceCreamAddComponent implements OnInit {
   }
 
   onSubmit() {
+    this.addServices();
+    // const addServicePromise = new Promise(this.addServices);
     // this handles the submit of the icecream
-    this.iceCreamService.postIceCream(this.iceCream).subscribe(x => this.submitted.emit(<IceCream>x));
+    // addServicePromise.then(x =>
+      this.iceCreamService.postIceCream(this.iceCream).subscribe(x => this.submitted.emit(<IceCream>x));
+
+    // );
     // resets the ice cream
   }
 
@@ -49,4 +67,16 @@ export class IceCreamAddComponent implements OnInit {
     this.deleted.emit(iceCreamId);
   }
 
+  addServices(){
+    this.serviceList.forEach(i => {
+      if(i.Selected === true) {
+        let service = <Service>{
+          ServiceTypeId: i.ServiceTypeId
+        };
+        if(!this.iceCream.Services.includes(service)){
+          this.iceCream.Services.push(service);
+        }
+      }
+    });
+  }
 }

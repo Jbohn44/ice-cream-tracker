@@ -1,87 +1,97 @@
 <div class="container-fluid">
     <div>
+        {{this.iceCream|json}}
+    </div>
+    <div>
+        {{this.serviceList|json}}
+    </div>
+    <div>
         <form (ngSubmit)="onSubmit()" #iceCreamForm="ngForm">
             <div class="form-group">
-                <label for="flavorName"><h6>Flavor</h6></label>
+                <label for="flavorName">
+                    <h6>Flavor</h6>
+                </label>
                 <input type="text" id="flavorName" class="form-control" required [(ngModel)]="this.iceCream.FlavorName"
                     name="flavor">
             </div>
             <div class="form-group">
-                <label for="location"><h6>Location</h6></label>
+                <label for="location">
+                    <h6>Location</h6>
+                </label>
                 <input type="text" id="location" class="form-control" required [(ngModel)]="this.iceCream.Location"
                     name="location">
             </div>
             <div class="form-group">
-                <label for="business"><h6>Business</h6></label>
+                <label for="business">
+                    <h6>Business</h6>
+                </label>
                 <input type="text" id="business" class="form-control" required [(ngModel)]="this.iceCream.Business"
                     name="business">
             </div>
             <div class="form-group">
-                <label for="flavorRating"><h6>Flavor Rating</h6></label>
+                <label for="flavorRating">
+                    <h6>Flavor Rating</h6>
+                </label>
                 <select id="flavorRating" class="form-control" [(ngModel)]="this.iceCream.FlavorRating.RatingValue"
                     name="flavorRating">
                     <option *ngFor="let rating of this.selectNumberArray" [value]="rating">
-                        {{rating}} out of 10</option>
+                        {{rating}} </option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="creaminessRating"><h6>Creaminess Rating</h6></label>
+                <label for="creaminessRating">
+                    <h6>Creaminess Rating</h6>
+                </label>
                 <select id="creaminessRating" class="form-control"
                     [(ngModel)]="this.iceCream.CreaminessRating.RatingValue" name="creaminessRating">
                     <option *ngFor="let rating of this.selectNumberArray" [value]="rating">
-                        {{rating}} out of 10</option>
+                        {{rating}} </option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="icinessRating"><h6>Iciness Rating</h6></label>
+                <label for="icinessRating">
+                    <h6>Iciness Rating</h6>
+                </label>
                 <select id="icinessRating" class="form-control" [(ngModel)]="this.iceCream.IcinessRating.RatingValue"
                     name="icinessRating">
                     <option *ngFor="let rating of this.selectNumberArray" [value]="rating">
-                        {{rating}} out of 10</option>
+                        {{rating}} </option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="densityRating"><h6>Density Rating</h6></label>
+                <label for="densityRating">
+                    <h6>Density Rating</h6>
+                </label>
                 <select id="densityRating" class="form-control" [(ngModel)]="this.iceCream.DensityRating.RatingValue"
                     name="densityRating">
                     <option *ngFor="let rating of this.selectNumberArray" [value]="rating">
-                        {{rating}} out of 10</option>
+                        {{rating}} </option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="valueRating"><h6>Value Rating</h6></label>
+                <label for="valueRating">
+                    <h6>Value Rating</h6>
+                </label>
                 <select id="valueRating" class="form-control" [(ngModel)]="this.iceCream.ValueRating.RatingValue"
                     name="valueRating">
                     <option *ngFor="let rating of this.selectNumberArray" [value]="rating">
-                        {{rating}} out of 10</option>
+                        {{rating}} </option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="comments"><h6>Comments</h6></label>
+                <label for="comments">
+                    <h6>Comments</h6>
+                </label>
                 <textarea type="textarea" id="comments" class="form-control" [(ngModel)]="this.iceCream.Comments"
                     name="comments"></textarea>
             </div>
             <div class="form-group">
                 <app-rating [rating]="this.iceCream.OverAllRating" [edit]="true"></app-rating>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="dineInCheck">
-                <label class="form-check-label" for="dineInCheck">
-                    <h6>Dine-in</h6>
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                   <h6>Carry-out</h6>
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                    <h6>Drive-thru</h6>
-                </label>
-            </div>
+            <label class="btn btn-outline-primary btn-custom" *ngFor="let service of this.serviceList">
+                <input type="checkbox" [(ngModel)]="service.Selected" name="{{service.ServiceName}}"> {{service.ServiceName}}
+            </label>
+            <br>
             <div *ngIf="this.edit === false">
                 <button type="submit" class="btn btn-custom-dark" [disabled]="!iceCreamForm.form.valid">Submit</button>
             </div>

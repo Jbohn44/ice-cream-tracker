@@ -7,7 +7,6 @@ import { StarFilledComponent } from './star-filled/star-filled.component';
 import { IceCreamPageComponent } from './ice-cream-page/ice-cream-page.component';
 import { IceCreamCardComponent } from './ice-cream-card/ice-cream-card.component';
 import { RatingComponent } from './rating/rating.component';
-import { IceCreamEditComponent } from './ice-cream-edit/ice-cream-edit.component';
 import { RatingDisplayComponent } from './rating-display/rating-display.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,7 +16,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
-  declarations: [StarComponent, StarFilledComponent, IceCreamPageComponent, IceCreamCardComponent, RatingComponent, IceCreamEditComponent, RatingDisplayComponent, IceCreamAddComponent, SideNavComponent],
+  declarations: [StarComponent, StarFilledComponent, IceCreamPageComponent, IceCreamCardComponent, RatingComponent, RatingDisplayComponent, IceCreamAddComponent, SideNavComponent],
   imports: [
     CommonModule,
     IceCreamRoutingModule,

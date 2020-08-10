@@ -23,3 +23,12 @@
     cursor: pointer;
     color: white;
 }
+
+.service-pill{
+    padding: 10px;
+    background-color: var(--main-light-blue);
+    border-radius: 5px;
+    margin: 1%;
+    color: var(--main-blue);
+    font-weight: bold;
+}

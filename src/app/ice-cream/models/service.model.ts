@@ -1,5 +1,12 @@
 export class Service {
-    ServiceId: number;
+    ServiceId?: number;
     ServiceTypeId: number;
-    ServiceName: string;
+    IceCreamId?: number;
+    ServiceName?: string;
+    constructor(Fields?: Partial<Service>) {
+        this.ServiceId = Fields.ServiceId,
+            this.ServiceTypeId = Fields.ServiceTypeId,
+            this.IceCreamId = Fields.IceCreamId,
+            this.ServiceName = Fields.ServiceName
+    }
 }

@@ -39,6 +39,6 @@ export class AuthenticationService extends BaseService {
   logout(){
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
-    this.router.navigate(['']);
+    this.router.navigate(['']).then(() => {window.location.reload()});
   }
 }
