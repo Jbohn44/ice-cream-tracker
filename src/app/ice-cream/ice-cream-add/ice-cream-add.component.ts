@@ -17,28 +17,23 @@ export class IceCreamAddComponent implements OnInit {
   @Output() submitted: EventEmitter<any> = new EventEmitter();
   @Output() saved: EventEmitter<IceCream> = new EventEmitter();
   @Output() deleted: EventEmitter<number> = new EventEmitter();
-  selectNumberArray = [0, 1, 2, 3, 4, 5, 6, 7, 8 , 9, 10];
+  selectNumberArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   user: User = new User();
   serviceList = [];
-
-  // ServiceId: number;
-  // ServiceTypeId: number;
-  // IceCreamId: number;
-  // ServiceName: string;
   constructor(private iceCreamService: IceCreamService) { }
 
   ngOnInit() {
-    this.user =  <User>JSON.parse(localStorage.getItem('currentUser'));
+    this.user = <User>JSON.parse(localStorage.getItem('currentUser'));
     //this can be changed to edit true or false
     if (this.iceCream === null || this.iceCream === undefined) {
       this.iceCream = new IceCream();
       this.iceCream.UserId = this.user.UserId;
-      this.serviceList = [
-        {ServiceTypeId: 1, ServiceName: 'Dine-In', Selected: false}, 
-        {ServiceTypeId: 2, ServiceName: 'Carry-Out', Selected: false}, 
-        {ServiceTypeId: 3, ServiceName: 'Drive-Thru', Selected: false}
-      ];
     }
+    this.serviceList = [
+      { ServiceTypeId: 1, ServiceName: 'Dine-In' },
+      { ServiceTypeId: 2, ServiceName: 'Carry-Out' },
+      { ServiceTypeId: 3, ServiceName: 'Drive-Thru' }
+    ];
   }
 
 
@@ -47,14 +42,7 @@ export class IceCreamAddComponent implements OnInit {
   }
 
   onSubmit() {
-    this.addServices();
-    // const addServicePromise = new Promise(this.addServices);
-    // this handles the submit of the icecream
-    // addServicePromise.then(x =>
-      this.iceCreamService.postIceCream(this.iceCream).subscribe(x => this.submitted.emit(<IceCream>x));
-
-    // );
-    // resets the ice cream
+    this.iceCreamService.postIceCream(this.iceCream).subscribe(x => this.submitted.emit(<IceCream>x));
   }
 
   onSave() {
@@ -62,21 +50,18 @@ export class IceCreamAddComponent implements OnInit {
     this.saved.emit();
   }
 
-  onDelete(iceCreamId){
+  onDelete(iceCreamId) {
     this.iceCreamService.deleteIceCream(iceCreamId).subscribe(x => x);
     this.deleted.emit(iceCreamId);
   }
 
-  addServices(){
-    this.serviceList.forEach(i => {
-      if(i.Selected === true) {
-        let service = <Service>{
-          ServiceTypeId: i.ServiceTypeId
-        };
-        if(!this.iceCream.Services.includes(service)){
-          this.iceCream.Services.push(service);
-        }
-      }
-    });
+  addService(service) {
+    if (!this.iceCream.Services.includes(service)) {
+      this.iceCream.Services.push(service);
+    }
+  }
+
+  removeService(service) {
+    this.iceCream.Services = this.iceCream.Services.filter(x => x !== service);
   }
 }

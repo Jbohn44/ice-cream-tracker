@@ -49,14 +49,24 @@
 }
 .footer-row{
     background-color: var(--main-dark-blue);
+    display: flex;
+    justify-content: flex-end;
 
 }
+
+@media screen and (max-width: 600px){
+    .footer-row{
+    background-color: var(--main-dark-blue);
+    display: flex;
+    justify-content: center;
+    }
+}
+
 .footer-format{
     margin-top: 50px;
     margin-bottom: 50px;
     font-size: small;
     color: white;
-    display: flex;
 }
 
 .align-test{

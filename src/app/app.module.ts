@@ -10,7 +10,8 @@ import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { UserSignInComponent } from './shared/user-sign-in/user-sign-in.component';
 import { JwtInterceptor } from './shared/helpers/jwt.interceptor';
 import { ErrorInterceptor } from './shared/helpers/error.interceptor';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,10 +20,13 @@ import { ErrorInterceptor } from './shared/helpers/error.interceptor';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ModalModule.forRoot(),
+    BsDatepickerModule.forRoot()
+
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},

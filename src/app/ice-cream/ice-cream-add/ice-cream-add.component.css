@@ -8,3 +8,60 @@
   .btn-custom{
     margin: 1%;
   }
+
+  .service-pill{
+    width: 120px;
+    height: 50px;
+    padding-bottom: 10px;
+    background-color: var(--main-light-blue);
+    border-radius: 5px;
+    margin: 1%;
+    color: var(--main-blue);
+    font-weight: bold;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.pill-label {
+  align-self: center;
+}
+
+.delete{
+  align-self: flex-end;
+  order: -1;
+}
+.delete:hover{
+  cursor: pointer;
+}
+.d-picker{
+  z-index: 9999 !important;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}

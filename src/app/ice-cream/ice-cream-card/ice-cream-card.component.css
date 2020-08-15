@@ -26,9 +26,14 @@
 
 .service-pill{
     padding: 10px;
+    width: 120px;
+    height: 50px;
     background-color: var(--main-light-blue);
-    border-radius: 5px;
     margin: 1%;
     color: var(--main-blue);
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

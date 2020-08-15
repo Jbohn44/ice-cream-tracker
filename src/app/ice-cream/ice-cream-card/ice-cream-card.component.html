@@ -2,6 +2,8 @@
     <div class="card card-radius-flat shadow" *ngIf="saveMessage === false">
         <div class="card-header c-header-background">
             <h4>{{this.iceCream.FlavorName}} - {{this.iceCream.Business}} - {{this.iceCream.Location}}</h4>
+            <h4> Ice Cream Id: {{this.iceCream.IceCreamId}}</h4>
+            <h4>Date Reviewed: {{this.iceCream.ReviewDate | date:'shortDate'}}</h4>
             <div class="row">
                 <div class="col-1 card-btn">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor"
@@ -34,6 +36,15 @@
         </div>
         <div class="card-body">
             <div class="row">
+                <div *ngFor="let service of this.iceCream.Services" class="service-pill">
+                    {{service.ServiceName}}
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                      </svg>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
                 <div class="col-md-4">
                     <app-rating [rating]="this.iceCream.OverAllRating" [edit]="this.edit"></app-rating>
                     <h6>Flavor:</h6>
@@ -52,7 +63,7 @@
                     <p>{{this.iceCream.ValueRating.RatingValue}}/10</p>
                     <hr />
                 </div>
-                <div class="col-md">
+                <div *ngIf="this.iceCream.Comments" class="col-md">
                     <div>
                         <h5>Comments</h5>
                     </div>
@@ -61,20 +72,9 @@
                             {{this.iceCream.Comments}}
                         </p>
                     </div>
-                    <div>{{this.iceCream|json}}</div>
                 </div>
             </div>
-            <div class="row">
-                <div *ngFor="let service of this.iceCream.Services" class="service-pill col-md-3">{{service.ServiceName}}
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check2-square" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
-                        <path fill-rule="evenodd"
-                            d="M1.5 13A1.5 1.5 0 0 0 3 14.5h10a1.5 1.5 0 0 0 1.5-1.5V8a.5.5 0 0 0-1 0v5a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 3v10z" />
-                    </svg>
-                </div>
-            </div>
+          
         </div>
     </div>
     <div class="card-body" *ngIf="saveMessage === true">

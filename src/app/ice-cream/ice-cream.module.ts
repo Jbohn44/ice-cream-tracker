@@ -13,16 +13,24 @@ import { HttpClientModule } from '@angular/common/http';
 import { IceCreamAddComponent } from './ice-cream-add/ice-cream-add.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
-
-
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 @NgModule({
-  declarations: [StarComponent, StarFilledComponent, IceCreamPageComponent, IceCreamCardComponent, RatingComponent, RatingDisplayComponent, IceCreamAddComponent, SideNavComponent],
+  declarations: [StarComponent, 
+    StarFilledComponent, 
+    IceCreamPageComponent, 
+    IceCreamCardComponent, 
+    RatingComponent, 
+    RatingDisplayComponent, 
+    IceCreamAddComponent, 
+    SideNavComponent],
   imports: [
     CommonModule,
     IceCreamRoutingModule,
     FormsModule,
     HttpClientModule,
-    ModalModule
+    ModalModule, 
+    BsDatepickerModule
+
   ]
 })
 export class IceCreamModule { }

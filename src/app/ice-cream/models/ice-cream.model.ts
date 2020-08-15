@@ -15,4 +15,5 @@ export class IceCream {
     ValueRating = new Rating(6, "Value", 0);
     Services: Service[] = [];
     Comments: string;
+    ReviewDate: Date;
 }
