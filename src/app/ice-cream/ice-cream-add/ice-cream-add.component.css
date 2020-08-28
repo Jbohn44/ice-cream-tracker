@@ -62,6 +62,6 @@
   margin-left: -60px;
 }
 
-.tooltip:hover .tooltiptext {
-  visibility: visible;
+.hov-tool:hover{
+  color: green;
 }

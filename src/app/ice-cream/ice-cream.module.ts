@@ -14,6 +14,7 @@ import { IceCreamAddComponent } from './ice-cream-add/ice-cream-add.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { RatingModule } from 'ngx-bootstrap/rating';
 @NgModule({
   declarations: [StarComponent, 
     StarFilledComponent, 
@@ -29,7 +30,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     FormsModule,
     HttpClientModule,
     ModalModule, 
-    BsDatepickerModule
+    BsDatepickerModule,
+    RatingModule
 
   ]
 })

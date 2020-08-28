@@ -12,6 +12,7 @@ import { JwtInterceptor } from './shared/helpers/jwt.interceptor';
 import { ErrorInterceptor } from './shared/helpers/error.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { RatingModule } from 'ngx-bootstrap/rating';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     FormsModule,
     HttpClientModule,
     ModalModule.forRoot(),
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    RatingModule.forRoot()
 
   ],
   providers: [
