@@ -3,8 +3,8 @@
         <div class="card-header c-header-background">
             <h4>{{this.iceCream.FlavorName}} - {{this.iceCream.Business}} - {{this.iceCream.Location}}</h4>
             <h4> Ice Cream Id: {{this.iceCream.IceCreamId}}</h4>
-            <h4>Over All Rating: <rating [(ngModel)]="this.iceCream.OverAllRating.RatingValue" [max]="10"
-                    [readonly]="true"></rating> - {{this.iceCream.OverAllRating.RatingValue}}/10</h4>
+            <h4>Over All Rating: <rating [(ngModel)]="this.iceCream.OverAllRating.RatingValue" [max]="5"
+                    [readonly]="true"></rating> - {{this.iceCream.OverAllRating.RatingValue}}/5</h4>
             <h4>Date Reviewed: {{this.iceCream.ReviewDate | date:'shortDate'}}</h4>
             <div class="row">
                 <div class="col-1 card-btn">
@@ -52,32 +52,32 @@
                 <div class="col-md-4">
                     <h6>Flavor:</h6>
                     <p>
-                        <rating [(ngModel)]="this.iceCream.FlavorRating.RatingValue" [max]="10" [readonly]="true"
-                            style="color: #314ac9;"></rating> {{this.iceCream.FlavorRating.RatingValue}}/10
+                        <rating [(ngModel)]="this.iceCream.FlavorRating.RatingValue" [max]="5" [readonly]="true"
+                            style="color: #314ac9;"></rating> {{this.iceCream.FlavorRating.RatingValue}}/5
                     </p>
                     <hr />
                     <h6>Creaminess:</h6>
                     <p>
-                        <rating [(ngModel)]="this.iceCream.CreaminessRating.RatingValue" [max]="10" [readonly]="true"
-                            style="color: #314ac9;"></rating> {{this.iceCream.CreaminessRating.RatingValue}}/10
+                        <rating [(ngModel)]="this.iceCream.CreaminessRating.RatingValue" [max]="5" [readonly]="true"
+                            style="color: #314ac9;"></rating> {{this.iceCream.CreaminessRating.RatingValue}}/5
                     </p>
                     <hr />
                     <h6>Iciness:</h6>
                     <p>
-                        <rating [(ngModel)]="this.iceCream.IcinessRating.RatingValue" [max]="10" [readonly]="true"
-                            style="color: #314ac9;"></rating> {{this.iceCream.IcinessRating.RatingValue}}/10
+                        <rating [(ngModel)]="this.iceCream.IcinessRating.RatingValue" [max]="5" [readonly]="true"
+                            style="color: #314ac9;"></rating> {{this.iceCream.IcinessRating.RatingValue}}/5
                     </p>
                     <hr />
                     <h6>Density:</h6>
                     <p>
-                        <rating [(ngModel)]="this.iceCream.DensityRating.RatingValue" [max]="10" [readonly]="true"
-                            style="color: #314ac9;"></rating> {{this.iceCream.DensityRating.RatingValue}}/10
+                        <rating [(ngModel)]="this.iceCream.DensityRating.RatingValue" [max]="5" [readonly]="true"
+                            style="color: #314ac9;"></rating> {{this.iceCream.DensityRating.RatingValue}}/5
                     </p>
                     <hr />
                     <h6>Value:</h6>
                     <p>
-                        <rating [(ngModel)]="this.iceCream.ValueRating.RatingValue" [max]="10" [readonly]="true"
-                            style="color: #314ac9;"></rating> {{this.iceCream.ValueRating.RatingValue}}/10
+                        <rating [(ngModel)]="this.iceCream.ValueRating.RatingValue" [max]="5" [readonly]="true"
+                            style="color: #314ac9;"></rating> {{this.iceCream.ValueRating.RatingValue}}/5
                     </p>
                     <hr />
                 </div>
