@@ -147,6 +147,10 @@
             <div *ngIf="this.edit === false">
                 <button type="submit" class="btn btn-custom-dark" [disabled]="!iceCreamForm.form.valid">Submit</button>
             </div>
+            <br />
+            <div>
+                {{this.iceCream|json}}
+            </div>
         </form>
         <div *ngIf="this.edit === true">
             <button type="submit" class="btn btn-custom-dark" [disabled]="!iceCreamForm.form.valid"

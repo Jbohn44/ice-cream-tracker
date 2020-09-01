@@ -58,12 +58,19 @@ export class IceCreamAddComponent implements OnInit {
   }
 
   addService(service) {
-    if (!this.iceCream.Services.includes(service)) {
-      this.iceCream.Services.push(service);
+    console.log(service);
+    let serviceIdList = [];
+    this.iceCream.Services.forEach(s => {
+      serviceIdList.push(s.ServiceTypeId);
+    });
+
+    if(!serviceIdList.includes(service.ServiceTypeId)){
+      this.iceCream.Services.push(<Service>service);
     }
   }
 
   removeService(service) {
+    console.log(service);
     this.iceCream.Services = this.iceCream.Services.filter(x => x !== service);
   }
 }
