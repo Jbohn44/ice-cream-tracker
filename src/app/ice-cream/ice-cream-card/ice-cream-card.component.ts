@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, TemplateRef, Output, EventEmitter } from '@angular/core';
 import { IceCream } from '../models/ice-cream.model';
-import { RatingTypes, MouthFeelArray, FlavorArray, DensityArray } from '../../shared/constants';
+import { RatingTypes} from '../../shared/constants';
 import { IceCreamService } from '../services/ice-cream.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { timeout } from 'rxjs/operators';

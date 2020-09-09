@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { IceCream } from '../models/ice-cream.model';
-import { FlavorArray, MouthFeelArray, DensityArray } from 'src/app/shared/constants';
 import { IceCreamService } from '../services/ice-cream.service';
 import { User } from 'src/app/shared/models/user.model';
 import { Service } from '../models/service.model';

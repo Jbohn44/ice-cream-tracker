@@ -14,29 +14,6 @@ export const apiUrls = {
   DELETE_ICE_CREAM: "icecream/delete/{0}",
   GET_ALL_USERS_NAMES: "user/getall",
   CREATE_USER: "user/signup",
-  LOGIN_USER: "user/login"
+  LOGIN_USER: "user/login",
+  POST_IMAGE: "image/post"
 }
-
-export const MouthFeelArray = [
-  "Very Icey",
-  "Some What Icey",
-  "Standard",
-  "Creamy",
-  "Very Creamy"]
-
-
-export const FlavorArray = [
-  "Very Poor",
-  "Poor",
-  "Standard",
-  "Good",
-  "Very Good"
-]
-
-export const DensityArray = [
-  "Very Airy",
-  "Airy",
-  "Standard",
-  "Some What Dense",
-  "Very Dense"
-]
