@@ -1,7 +1,14 @@
-<label class="image-upload-container btn btn-primary">
+<label class="btn btn-primary">
     <span>Select Image</span>
-    <input #imageInput
-           type="file"
-           accept="image/*"
-           (change)="processFile(imageInput)">
-  </label>
+    <input #imageInput type="file" accept="image/*" multiple (change)="processFile(imageInput.files)">
+</label>
+
+<button type="submit" (click)="onSubmit()">Submit</button>
+
+<div class="row">
+    <div class="col">
+        <div *ngFor="let name of fileList">
+            {{name}}
+        </div>
+    </div>
+</div>

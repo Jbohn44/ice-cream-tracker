@@ -13,19 +13,20 @@ export class ImageService extends BaseService {
     super(http);
   }
 
+  getSingleImage(){
+
+  }
+
   getImages() {
 
   }
 
-  postImages(iceCreamImage: IceCreamImage) {
-    const formData = new FormData();
-    formData.append('image', iceCreamImage.Image, iceCreamImage.Image.name);
-    formData.append('iceCreamId', iceCreamImage.IceCreamId.toString());
-    formData.append('description', iceCreamImage.Description);
+  postImages(formData: FormData) {
+   
     return this.post(apiUrls.POST_IMAGE, formData).pipe(map(x => x));
   }
 
-  deleteImages() {
+  deleteImage() {
 
   }
 }

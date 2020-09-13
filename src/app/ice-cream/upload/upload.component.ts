@@ -9,6 +9,8 @@ import { ImageService } from '../services/image.service';
 export class UploadComponent implements OnInit {
 
   selectedFile: IceCreamImage;
+  fileList: string[] = [];
+  formData = new FormData();
   @Input() iceCreamId: number = 0;
   constructor(private imageService: ImageService) { }
 
@@ -16,27 +18,23 @@ export class UploadComponent implements OnInit {
   }
 
   processFile(imageInput: any) {
-    const file: File = imageInput.files[0];
-    const reader = new FileReader();
+    
+    if (imageInput.length === 0) {
+      alert("no files selected");
+      return;
+    }
 
-    reader.addEventListener('load', (event: any) => {
-      this.selectedFile = <IceCreamImage>{
-        IceCreamId: this.iceCreamId,
-        Src: event.target.result,
-        Image: file
-      };
+    for(let file of imageInput){
+      this.fileList.push(file.name);
+      this.formData.append(file.name, file);
+      console.log("filename list", this.fileList);
+    }
 
-      console.log("selected File", this.selectedFile);
-      this.imageService.postImages(this.selectedFile).subscribe(
-        (res) => {
-        
-        },
-        (err) => {
-        
-        })
-    });
+    this.formData.append('IceCreamId', this.iceCreamId.toString());
+  }
 
-    reader.readAsDataURL(file);
+  onSubmit(){
+    this.imageService.postImages(this.formData).subscribe((res)=>{}, (err)=>{});
   }
 
 }
