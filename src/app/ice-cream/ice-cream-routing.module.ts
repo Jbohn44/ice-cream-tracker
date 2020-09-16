@@ -5,7 +5,7 @@ import { IceCreamAddComponent } from './ice-cream-add/ice-cream-add.component';
 import { UploadComponent } from './upload/upload.component';
 
 
-const routes: Routes = [{path: 'icecream', component: IceCreamPageComponent}, {path: 'addtest', component: IceCreamAddComponent}, {path: 'upload', component: UploadComponent}];
+const routes: Routes = [{path: '', component: IceCreamPageComponent}, {path: 'addtest', component: IceCreamAddComponent}, {path: 'upload/:id', component: UploadComponent}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

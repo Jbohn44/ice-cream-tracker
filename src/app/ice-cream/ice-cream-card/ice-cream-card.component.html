@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-1 card-btn">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-images" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
+                        xmlns="http://www.w3.org/2000/svg" (click)="openImageModal(imageTemplate)">
                         <path fill-rule="evenodd"
                             d="M12.002 4h-10a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zm-10-1a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-10z" />
                         <path
@@ -112,5 +112,17 @@
     <div class="modal-body">
         <app-ice-cream-add [iceCream]="this.iceCream" [edit]="true" (saved)="onSaved()" (deleted)="onDelete($event)">
         </app-ice-cream-add>
+    </div>
+</ng-template>
+
+<ng-template #imageTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Images</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="imageModalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <button class="btn btn-custom-dark" [routerLink]="['../upload', this.iceCream.IceCreamId]" (click)="imageModalRef.hide()">Upload Images</button>
     </div>
 </ng-template>

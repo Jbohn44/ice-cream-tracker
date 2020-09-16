@@ -17,6 +17,7 @@ export class IceCreamCardComponent implements OnInit {
   iceCreamModalRef: BsModalRef;
   saveMessage = false;
   deleteMessage = false;
+  imageModalRef: BsModalRef;
 
   config = {
     backdrop: true,
@@ -56,4 +57,8 @@ export class IceCreamCardComponent implements OnInit {
     setTimeout(() => {this.deleteMessage = false}, 2000);
   }
 
+  openImageModal(templateRef: any){
+    this.imageModalRef = this.modalService.show(templateRef);
+
+  }
 }
