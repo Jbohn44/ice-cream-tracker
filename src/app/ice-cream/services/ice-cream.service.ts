@@ -15,7 +15,6 @@ export class IceCreamService extends BaseService {
     super(http);
   }
 
-  //maybe needs work
   getIceCreams(userId){
     return this.get(formatUrl(apiUrls.GET_ICE_CREAMS, userId)).pipe(map(response => 
       {

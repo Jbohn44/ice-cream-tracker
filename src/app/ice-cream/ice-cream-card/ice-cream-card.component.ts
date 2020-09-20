@@ -19,6 +19,7 @@ export class IceCreamCardComponent implements OnInit {
   saveMessage = false;
   deleteMessage = false;
   imageModalRef: BsModalRef;
+  imageList: IceCreamImage[] = [];
 
   config = {
     backdrop: true,
@@ -59,8 +60,11 @@ export class IceCreamCardComponent implements OnInit {
   }
 
   openImageModal(templateRef: any) {
-    this.imageService.getImages(this.iceCream.IceCreamId).subscribe(res =>{
-    })
+    this.imageService.getImages(this.iceCream.IceCreamId).subscribe(x =>{
+      x.forEach(element => {
+        this.imageList.push(element);
+      });
+    });
     this.imageModalRef = this.modalService.show(templateRef);
 
   }

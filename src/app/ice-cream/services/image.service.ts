@@ -20,7 +20,9 @@ export class ImageService extends BaseService {
   }
 
   getImages(iceCreamId: number) {
-    return this.get(formatUrl(apiUrls.GET_IMAGES, iceCreamId)).pipe(map(x => console.log('api image response', x)));
+    return this.get(formatUrl(apiUrls.GET_IMAGES, iceCreamId)).pipe(map(x =>{
+        return <IceCreamImage[]>x;
+      }));
   }
 
   postImages(formData: FormData) {

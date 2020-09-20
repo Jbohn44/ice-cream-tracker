@@ -9,7 +9,7 @@ import { ImageService } from '../services/image.service';
 })
 export class UploadComponent implements OnInit {
 
-  selectedFile: IceCreamImage;
+  // selectedFile: IceCreamImage;
   fileList: string[] = [];
   formData = new FormData();
   iceCreamId: number;
