@@ -15,5 +15,6 @@ export const apiUrls = {
   GET_ALL_USERS_NAMES: "user/getall",
   CREATE_USER: "user/signup",
   LOGIN_USER: "user/login",
-  POST_IMAGE: "image/post"
+  POST_IMAGE: "image/post",
+  GET_IMAGES: "image/getimages/{0}"
 }

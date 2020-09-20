@@ -4,6 +4,7 @@ import { RatingTypes} from '../../shared/constants';
 import { IceCreamService } from '../services/ice-cream.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { timeout } from 'rxjs/operators';
+import { ImageService } from '../services/image.service';
 
 @Component({
   selector: 'app-ice-cream-card',
@@ -25,7 +26,7 @@ export class IceCreamCardComponent implements OnInit {
   }
   // this is an input into the rating component to disallow editing of ratings on card.  editing will be done it edit section
   edit = false;
-  constructor(private iceCreamService: IceCreamService, private modalService: BsModalService) { }
+  constructor(private iceCreamService: IceCreamService, private modalService: BsModalService, private imageService: ImageService) { }
 
   ngOnInit() {
  
@@ -57,7 +58,9 @@ export class IceCreamCardComponent implements OnInit {
     setTimeout(() => {this.deleteMessage = false}, 2000);
   }
 
-  openImageModal(templateRef: any){
+  openImageModal(templateRef: any) {
+    this.imageService.getImages(this.iceCream.IceCreamId).subscribe(res =>{
+    })
     this.imageModalRef = this.modalService.show(templateRef);
 
   }

@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpEvent } from '@angular/common/http';
 import { BaseService } from 'src/app/shared/services/base.service';
 import { apiUrls } from 'src/app/shared/constants';
 import { map } from 'rxjs/internal/operators/map';
+import { Observable } from 'rxjs';
+import { formatUrl } from 'src/app/shared/utilities';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +19,8 @@ export class ImageService extends BaseService {
 
   }
 
-  getImages() {
-
+  getImages(iceCreamId: number) {
+    return this.get(formatUrl(apiUrls.GET_IMAGES, iceCreamId)).pipe(map(x => console.log('api image response', x)));
   }
 
   postImages(formData: FormData) {
