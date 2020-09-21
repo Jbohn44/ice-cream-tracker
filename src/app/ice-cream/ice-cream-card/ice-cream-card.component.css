@@ -37,3 +37,18 @@
     align-items: center;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.image-child-container{
+    margin: 1%;
+    padding: 1%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--main-light-blue);
+}

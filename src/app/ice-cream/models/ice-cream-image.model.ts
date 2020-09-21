@@ -1,18 +1,13 @@
 class IceCreamImage {
     ImageId?: number;
     IceCreamId?: number;
-    Image: any;
+    Image: string;
     Description?: string;
 
     constructor(Fields?: Partial<IceCreamImage>){
         this.ImageId = Fields.ImageId;
         this.IceCreamId = Fields.IceCreamId;
-        this.Image = new Image();
+        this.Image = Fields.Image;
         this.Description = Fields.Description;
-
-    }
-
-    setImage(imageSource) {
-        this.Image.src = imageSource;
     }
 }

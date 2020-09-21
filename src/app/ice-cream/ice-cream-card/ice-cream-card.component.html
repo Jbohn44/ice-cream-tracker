@@ -123,9 +123,12 @@
         </button>
     </div>
     <div class="modal-body">
-        <button class="btn btn-custom-dark" [routerLink]="['upload', this.iceCream.IceCreamId]" (click)="imageModalRef.hide()">Upload Images</button>
-        <div *ngFor="let image of imageList">
-            <img [src]="image.Image" />
+        <button class="btn btn-custom-dark" [routerLink]="['upload', this.iceCream.IceCreamId]"
+            (click)="imageModalRef.hide()">Upload Images</button>
+        <div class="image-container">
+            <div *ngFor="let image of imageList" class="image-child-container">
+                <img width="460" height="240" [src]="image.src" />
+            </div>
         </div>
     </div>
 </ng-template>
