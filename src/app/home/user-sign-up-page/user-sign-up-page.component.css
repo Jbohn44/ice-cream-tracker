@@ -1,16 +1,19 @@
 .div-container{
     width: 100%;
-    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--main-light-blue);
-
+    flex-direction: column;
+    padding: 2%;
 }
 
-.div-h-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.background-div{
+    position: absolute;
+    width: 100%;
 }
+
+.text-div{
+    padding: 2%;
+}
+
 
