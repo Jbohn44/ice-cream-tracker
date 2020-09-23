@@ -1,9 +1,9 @@
 <div class="card-format">
-    <div class="card card-radius-flat shadow" *ngIf="saveMessage === false">
-        <div class="card-header c-header-background">
+    <div class="card shadow" *ngIf="saveMessage === false">
+        <div class="card-header">
             <h4>{{this.iceCream.FlavorName}} - {{this.iceCream.Business}} - {{this.iceCream.Location}}</h4>
             <h4> Ice Cream Id: {{this.iceCream.IceCreamId}}</h4>
-            <h4>Over All Rating: <rating [(ngModel)]="this.iceCream.OverAllRating.RatingValue" [max]="5"
+            <h4>Over All Rating: <rating style="color: var(--main-yellow);" [(ngModel)]="this.iceCream.OverAllRating.RatingValue" [max]="5"
                     [readonly]="true"></rating> - {{this.iceCream.OverAllRating.RatingValue}}/5</h4>
             <h4>Date Reviewed: {{this.iceCream.ReviewDate | date:'shortDate'}}</h4>
             <div class="row">
@@ -53,31 +53,31 @@
                     <h6>Flavor:</h6>
                     <p>
                         <rating [(ngModel)]="this.iceCream.FlavorRating.RatingValue" [max]="5" [readonly]="true"
-                            style="color: #314ac9;"></rating> {{this.iceCream.FlavorRating.RatingValue}}/5
+                            class="star-rating"></rating> {{this.iceCream.FlavorRating.RatingValue}}/5
                     </p>
                     <hr />
                     <h6>Creaminess:</h6>
                     <p>
                         <rating [(ngModel)]="this.iceCream.CreaminessRating.RatingValue" [max]="5" [readonly]="true"
-                            style="color: #314ac9;"></rating> {{this.iceCream.CreaminessRating.RatingValue}}/5
+                            class="star-rating"></rating> {{this.iceCream.CreaminessRating.RatingValue}}/5
                     </p>
                     <hr />
                     <h6>Iciness:</h6>
                     <p>
                         <rating [(ngModel)]="this.iceCream.IcinessRating.RatingValue" [max]="5" [readonly]="true"
-                            style="color: #314ac9;"></rating> {{this.iceCream.IcinessRating.RatingValue}}/5
+                            class="star-rating"></rating> {{this.iceCream.IcinessRating.RatingValue}}/5
                     </p>
                     <hr />
                     <h6>Density:</h6>
                     <p>
                         <rating [(ngModel)]="this.iceCream.DensityRating.RatingValue" [max]="5" [readonly]="true"
-                            style="color: #314ac9;"></rating> {{this.iceCream.DensityRating.RatingValue}}/5
+                            class="star-rating"></rating> {{this.iceCream.DensityRating.RatingValue}}/5
                     </p>
                     <hr />
                     <h6>Value:</h6>
                     <p>
                         <rating [(ngModel)]="this.iceCream.ValueRating.RatingValue" [max]="5" [readonly]="true"
-                            style="color: #314ac9;"></rating> {{this.iceCream.ValueRating.RatingValue}}/5
+                            class="star-rating"></rating> {{this.iceCream.ValueRating.RatingValue}}/5
                     </p>
                     <hr />
                 </div>
@@ -116,19 +116,28 @@
 </ng-template>
 
 <ng-template #imageTemplate>
+    <div class="modal-lg">
+
     <div class="modal-header">
         <h4 class="modal-title pull-left">Images</h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="imageModalRef.hide()">
+        <button class="btn btn-custom-dark" [routerLink]="['upload', this.iceCream.IceCreamId]"
+            (click)="imageModalRef.hide()">Upload Images</button>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="closeImageModal()">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
     <div class="modal-body">
-        <button class="btn btn-custom-dark" [routerLink]="['upload', this.iceCream.IceCreamId]"
-            (click)="imageModalRef.hide()">Upload Images</button>
+        <div *ngIf="imageList.length === 0" class="image-container">
+            <h1>
+                No Images Uploaded
+            </h1>
+        </div>
         <div class="image-container">
             <div *ngFor="let image of imageList" class="image-child-container">
                 <img width="460" height="240" [src]="image.src" />
             </div>
         </div>
     </div>
+</div>
+
 </ng-template>

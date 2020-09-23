@@ -1,7 +1,7 @@
 
 .m-row{
     position: relative;
-    background-color: var(--main-blue);
+    background-color: var(--main-purple);
 }
 
 .bg{
@@ -45,7 +45,7 @@
 }
 
 .c-row {
-    background-color: var(--main-light-blue);
+    background-color: var(--main-light-purple);
 }
 .footer-row{
     background-color: var(--main-dark-blue);
@@ -66,7 +66,7 @@
     margin-top: 50px;
     margin-bottom: 50px;
     font-size: small;
-    color: white;
+    color: var(--main-light-purple);
 }
 
 .align-test{

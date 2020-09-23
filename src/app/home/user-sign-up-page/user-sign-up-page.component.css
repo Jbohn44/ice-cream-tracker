@@ -4,6 +4,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--main-light-blue);
+
 }
 
 .div-h-container{
@@ -11,3 +13,4 @@
     justify-content: center;
     align-items: center;
 }
+

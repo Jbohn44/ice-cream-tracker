@@ -3,14 +3,14 @@
     --main-light-pink: #FDDEF3;
     --main-pink: #F033B4;
     --main-dark-pink: #AE0D7A;
-    --main-purple: #510639;
     --main-dark-purple: #340926;
     --main-black: black; /* place holder*/
     --header-gradient: linear-gradient(to bottom right,  #FDDEF3 0%, #AE0D7A 100%);
 
     --main-light-yellow: #F7F4D4;
-    --main-yellow: #FDED2A;
+    --main-yellow: #ebe716;
     --main-purple: #700CBC;
+    --main-light-purple: #cc96f5;
     --main-purple-alt: #470977 ;
     --main-dark-purple: #210934;
 
@@ -25,24 +25,29 @@
 }
 
 .btn-custom-light{
-    border-color: var(--main-light-blue) !important;
-    color: var(--main-light-blue) !important;
+    border-color: var(--main-light-purple) !important;
+    color: var(--main-light-purple) !important;
     margin-left: 2px;
     margin-right: 2px;
 }
 
 .btn-custom-dark{
-    border-color: var(--main-blue) !important;
-    color: var(--main-blue) !important;
+    border-color: var(--main-purple) !important;
+    color: var(--main-purple) !important;
     margin-left: 2px;
     margin-right: 2px;
 }
 
 .h1, h2, h3, h4, h5, h6{
     font-weight: bold;
-    color: var(--main-dark-blue);
+    color: var(--main-black);
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .p{
-    color: var(--main-blue);
+    color: var(--main-purple);
+}
+
+.card-header{
+    background-color: var(--main-light-purple);
 }

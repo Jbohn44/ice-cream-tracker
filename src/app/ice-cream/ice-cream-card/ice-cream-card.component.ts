@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, TemplateRef, Output, EventEmitter } from '@angular/core';
 import { IceCream } from '../models/ice-cream.model';
-import { RatingTypes} from '../../shared/constants';
+import { RatingTypes } from '../../shared/constants';
 import { IceCreamService } from '../services/ice-cream.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { timeout } from 'rxjs/operators';
@@ -30,7 +30,7 @@ export class IceCreamCardComponent implements OnInit {
   constructor(private iceCreamService: IceCreamService, private modalService: BsModalService, private imageService: ImageService) { }
 
   ngOnInit() {
- 
+
   }
 
   editIceCream(template: TemplateRef<any>) {
@@ -43,9 +43,9 @@ export class IceCreamCardComponent implements OnInit {
     this.showSavedMessage();
   }
 
-  showSavedMessage(){
+  showSavedMessage() {
     this.saveMessage = true;
-    setTimeout(() => {this.saveMessage = false}, 2000);
+    setTimeout(() => { this.saveMessage = false }, 2000);
   }
 
   onDelete($event) {
@@ -54,15 +54,15 @@ export class IceCreamCardComponent implements OnInit {
     this.iceCreamModalRef.hide();
   }
 
-  showDeleteMessage(){
+  showDeleteMessage() {
     this.deleteMessage = true;
-    setTimeout(() => {this.deleteMessage = false}, 2000);
+    setTimeout(() => { this.deleteMessage = false }, 2000);
   }
 
   openImageModal(templateRef: any) {
-    this.imageService.getImages(this.iceCream.IceCreamId).subscribe(x =>{
+    this.imageService.getImages(this.iceCream.IceCreamId).subscribe(x => {
       x.forEach(element => {
-        console.log(typeof(element.Image));
+        console.log(typeof (element.Image));
         let image = new Image(300, 500);
         image.src = 'data:image/jpg;base64,' + element.Image;
         this.imageList.push(image);
@@ -70,5 +70,14 @@ export class IceCreamCardComponent implements OnInit {
     });
     this.imageModalRef = this.modalService.show(templateRef);
 
+  }
+
+  closeImageModal(){
+    this.imageModalRef.hide();
+    this.clearImageList();
+  }
+  clearImageList() {
+    //right now this is clearing imageList, may be better to cache images instead of reloading them each time?
+    this.imageList = [];
   }
 }
