@@ -6,6 +6,9 @@
 }
 
 .text-card-format {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-left: 20px;
     padding-top: 20px;
     padding-right: 5px;
