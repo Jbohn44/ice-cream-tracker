@@ -4,7 +4,7 @@
     justify-content: center;
     position: fixed;
     height: 100%;
-    width: 12%;
+    width: 10%;
     padding: 0%;
     margin-top: 1%;
 }
@@ -17,11 +17,11 @@
     }
 }
 .page-container{
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 12%;
+    margin-left: 15%;
     position: relative;
     margin-top: 1%;
+    width: 100%;
+    background: red;
 }
 @media screen and (max-width: 768px){
     .page-container{
@@ -30,6 +30,7 @@
         margin-left: 0%;
         margin-top: 10%;
         justify-content: center;
+        align-items: center;
     }
 }
 .nav-link{
@@ -43,4 +44,29 @@
     background: var(--main-purple);
     color: var(--main-light-blue);
     border-radius: 5px;
+}
+.display-card-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.display-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 2px solid var(--main-purple);
+    background: var(--main-light-purple);
+    width: 250px;
+    height: 250px;
+    margin:1%;
+}
+
+.h6{
+    color: var(--main-purple) !important;
+
+}
+.display-card:hover{
+    cursor: pointer;
+    opacity: 75%;
 }

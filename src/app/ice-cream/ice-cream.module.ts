@@ -12,12 +12,13 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { RatingModule } from 'ngx-bootstrap/rating';
 import { UploadComponent } from './upload/upload.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { SingleDisplayComponent } from './single-display/single-display.component';
 @NgModule({
   declarations: [
     IceCreamPageComponent, 
     IceCreamCardComponent, 
     IceCreamAddComponent, 
-    SideNavComponent, UploadComponent, UserProfileComponent],
+    SideNavComponent, UploadComponent, UserProfileComponent, SingleDisplayComponent],
   imports: [
     CommonModule,
     IceCreamRoutingModule,
