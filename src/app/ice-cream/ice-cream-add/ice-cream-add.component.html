@@ -1,114 +1,126 @@
 <div class="container-fluid">
     <div>
         <form (ngSubmit)="onSubmit()" #iceCreamForm="ngForm">
-            <div class="form-group">
-                <label for="dateReviewed">
-                    <h6>Date Reviewed</h6>
-                </label>
+            <div class="form-flex-container">
                 <div class="form-group">
-                    <input type="text" placeholder="Click To Enter" class="form-control" bsDatepicker id="dateReviewed"
-                        name="dateReviewed" placement="bottom" [(ngModel)]="this.iceCream.ReviewDate" name="ReviewDate"
-                        [bsConfig]="{ isAnimated: true }">
+                    <label for="dateReviewed">
+                        <h6>Date Reviewed</h6>
+                    </label>
+                    <div class="form-group">
+                        <input type="text" placeholder="Click To Enter" class="form-control" bsDatepicker
+                            id="dateReviewed" name="dateReviewed" placement="bottom"
+                            [(ngModel)]="this.iceCream.ReviewDate" name="ReviewDate" [bsConfig]="{ isAnimated: true }">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="flavorName">
+                        <h6>Flavor</h6>
+                    </label>
+                    <input type="text" id="flavorName" class="form-control" required
+                        [(ngModel)]="this.iceCream.FlavorName" name="flavor">
+                </div>
+                <div class="form-group">
+                    <label for="business">
+                        <h6>Business</h6>
+                    </label>
+                    <input type="text" id="business" class="form-control" required [(ngModel)]="this.iceCream.Business"
+                        name="business">
+                </div>
+                <div class="form-group">
+                    <label for="location">
+                        <h6>Location</h6>
+                    </label>
+                    <input type="text" id="location" class="form-control" required [(ngModel)]="this.iceCream.Location"
+                        name="location">
                 </div>
             </div>
-            <div class="form-group">
-                <label for="flavorName">
-                    <h6>Flavor</h6>
-                </label>
-                <input type="text" id="flavorName" class="form-control" required [(ngModel)]="this.iceCream.FlavorName"
-                    name="flavor">
-            </div>
-            <div class="form-group">
-                <label for="business">
-                    <h6>Business</h6>
-                </label>
-                <input type="text" id="business" class="form-control" required [(ngModel)]="this.iceCream.Business"
-                    name="business">
-            </div>
-            <div class="form-group">
-                <label for="location">
-                    <h6>Location</h6>
-                </label>
-                <input type="text" id="location" class="form-control" required [(ngModel)]="this.iceCream.Location"
-                    name="location">
-            </div>
+            <div class="form-flex-rating-container">
+                <div class="rating-wrapper">
+                        <div *ngFor="let rating of ratingList" class="rating-card">
+                            <div class="rating-card-header">
+                                {{rating.RatingName}}:
+                            </div>
+                                <rating [(ngModel)]="this.iceCream[rating.RatingType].RatingValue" [max]="5" id="{{rating.RatingName}}"
+                                name="{{rating.RatingName}}" class="star-rating"></rating>
+                        </div>
+                </div>
+                <!-- <div class="rating-wrapper">
 
-            <div class="form-group">
-                <h6> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle hov-tool"
-                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path
-                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
-                        <circle cx="8" cy="4.5" r="1" />
-                    </svg> Flavor Rating: {{this.iceCream.FlavorRating.RatingValue}}</h6>
-                <rating [(ngModel)]="this.iceCream.FlavorRating.RatingValue" [max]="5" id="flavorRating"
-                    name="flavorRating" class="star-rating"></rating>
-            </div>
-            <div class="form-group">
-                <h6> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle hov-tool"
-                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path
-                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
-                        <circle cx="8" cy="4.5" r="1" />
-                    </svg> Creaminess Rating: {{this.iceCream.CreaminessRating.RatingValue}}</h6>
-                <rating [(ngModel)]="this.iceCream.CreaminessRating.RatingValue" [max]="5" id="creaminessRating"
-                    name="creaminessRating" class="star-rating"></rating>
-            </div>
-            <div class="form-group">
-                <h6> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle hov-tool"
-                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path
-                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
-                        <circle cx="8" cy="4.5" r="1" />
-                    </svg> Iciness Rating: {{this.iceCream.IcinessRating.RatingValue}}</h6>
-                <rating [(ngModel)]="this.iceCream.IcinessRating.RatingValue" [max]="5" id="icinessRating"
-                    name="icinessRating" class="star-rating"></rating>
-            </div>
-            <div class="form-group">
+                    <div class="form-group">
+                        <h6> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle hov-tool"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path
+                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                <circle cx="8" cy="4.5" r="1" />
+                            </svg> Creaminess Rating: {{this.iceCream.CreaminessRating.RatingValue}}</h6>
+                        <rating [(ngModel)]="this.iceCream.CreaminessRating.RatingValue" [max]="5" id="creaminessRating"
+                            name="creaminessRating" class="star-rating"></rating>
+                    </div>
+                </div>
+                <div class="rating-wrapper">
 
-                <h6> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle hov-tool"
-                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path
-                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
-                        <circle cx="8" cy="4.5" r="1" />
-                    </svg> Density Rating: {{this.iceCream.DensityRating.RatingValue}}</h6>
-                <rating [(ngModel)]="this.iceCream.DensityRating.RatingValue" [max]="5" id="densityRating"
-                    name="densityRating" class="star-rating"></rating>
-            </div>
-            <div class="form-group">
+                    <div class="form-group">
+                        <h6> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle hov-tool"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path
+                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                <circle cx="8" cy="4.5" r="1" />
+                            </svg> Iciness Rating: {{this.iceCream.IcinessRating.RatingValue}}</h6>
+                        <rating [(ngModel)]="this.iceCream.IcinessRating.RatingValue" [max]="5" id="icinessRating"
+                            name="icinessRating" class="star-rating"></rating>
+                    </div>
+                </div>
+                <div class="rating-wrapper">
 
-                <h6> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle hov-tool"
-                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path
-                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
-                        <circle cx="8" cy="4.5" r="1" />
-                    </svg> Value Rating: {{this.iceCream.ValueRating.RatingValue}}</h6>
-                <rating [(ngModel)]="this.iceCream.ValueRating.RatingValue" [max]="5" id="valueRating"
-                    name="valueRating" class="star-rating"></rating>
-            </div>
-            <div class="form-group">
+                    <div class="form-group">
 
-                <h6> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle hov-tool"
-                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path
-                            d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
-                        <circle cx="8" cy="4.5" r="1" />
-                    </svg> Over All Rating: {{this.iceCream.OverAllRating.RatingValue}}</h6>
-                <rating [(ngModel)]="this.iceCream.OverAllRating.RatingValue" [max]="5" id="overAllRating"
-                    name="overAllRating" class="star-rating"></rating>
-            </div>
+                        <h6> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle hov-tool"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path
+                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                <circle cx="8" cy="4.5" r="1" />
+                            </svg> Density Rating: {{this.iceCream.DensityRating.RatingValue}}</h6>
+                        <rating [(ngModel)]="this.iceCream.DensityRating.RatingValue" [max]="5" id="densityRating"
+                            name="densityRating" class="star-rating"></rating>
+                    </div>
+                </div>
+                <div class="rating-wrapper">
 
+                    <div class="form-group">
+
+                        <h6> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle hov-tool"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path
+                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                <circle cx="8" cy="4.5" r="1" />
+                            </svg> Value Rating: {{this.iceCream.ValueRating.RatingValue}}</h6>
+                        <rating [(ngModel)]="this.iceCream.ValueRating.RatingValue" [max]="5" id="valueRating"
+                            name="valueRating" class="star-rating"></rating>
+                    </div>
+                </div>
+                <div class="rating-wrapper">
+                    <div class="form-group">
+                        <h6> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle hov-tool"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path
+                                    d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+                                <circle cx="8" cy="4.5" r="1" />
+                            </svg> Over All Rating: {{this.iceCream.OverAllRating.RatingValue}}</h6>
+                        <rating [(ngModel)]="this.iceCream.OverAllRating.RatingValue" [max]="5" id="overAllRating"
+                            name="overAllRating" class="star-rating"></rating>
+                    </div>
+                </div> -->
+            </div>
             <div class="form-group">
                 <label for="comments">
                     <h6>Comments</h6>
@@ -144,12 +156,12 @@
             </div>
             <br />
             <br />
-            <div *ngIf="this.edit === false">
+            <div *ngIf="this.edit === false" class="btn-container">
                 <button type="submit" class="btn btn-custom-dark" [disabled]="!iceCreamForm.form.valid">Submit</button>
             </div>
             <br />
         </form>
-        <div *ngIf="this.edit === true">
+        <div *ngIf="this.edit === true" class="btn-container">
             <button type="submit" class="btn btn-custom-dark" [disabled]="!iceCreamForm.form.valid"
                 (click)="onSave()">Save</button>
             <button type="submit" class="btn btn-custom-dark"

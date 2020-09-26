@@ -1,4 +1,6 @@
-
+hr.dashboard{
+    border: 1px solid var(--main-purple);
+}
 .side-bar{
     display: flex;
     justify-content: center;
@@ -21,16 +23,11 @@
     position: relative;
     margin-top: 1%;
     width: 100%;
-    background: red;
 }
 @media screen and (max-width: 768px){
     .page-container{
-        display: flex;
-        flex-wrap: wrap;
         margin-left: 0%;
         margin-top: 10%;
-        justify-content: center;
-        align-items: center;
     }
 }
 .nav-link{
@@ -49,20 +46,28 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+@media screen and (max-width: 768px){
+    .display-card-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
 .display-card{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-    border: 2px solid var(--main-purple);
     background: var(--main-light-purple);
-    width: 250px;
-    height: 250px;
-    margin:1%;
+    width: 300px;
+    height: 200px;
+    margin: 2px;
+    border-radius: 2px;
 }
 
-.h6{
+h6{
     color: var(--main-purple) !important;
 
 }
