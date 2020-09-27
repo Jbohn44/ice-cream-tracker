@@ -10,6 +10,24 @@
         justify-content: center;
     }
 }
+
+.add-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 5px solid var(--main-purple);
+    width: 300px;
+    height: 200px;
+    margin: 2px;
+    border-radius: 2px;
+    background: var(--main-light-purple);
+    opacity: 50%;
+}
+.add-card:hover{
+    cursor: pointer;
+}
 .display-card{
     display: flex;
     justify-content: center;
