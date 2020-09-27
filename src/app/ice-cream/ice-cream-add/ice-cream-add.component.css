@@ -90,43 +90,33 @@ h6{
 .form-flex-rating-container{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-/* @media screen and (max-width: 600px){
-  .form-flex-rating-container{
-    flex-direction: column;
-  }
-} */
-.rating-wrapper{
-  width: 50%;
+  justify-content: center;
 }
 
 @media screen and (max-width: 600px){
-  .rating-wrapper{
+  .form-flex-rating-container{
     width: 100%;
   }
 }
 
+
 input, textarea, select{
-  background: var(--main-purple);
-  color: var(--main-light-blue);
+  color: var(--main-purple);
 }
 
 .rating-card{
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-  padding: 1%;
   margin: 1%;
+  padding: 1%;
   border-radius: 5px;
-  background: var(--main-purple);
+  /* background: var(--main-purple); */
 }
 
 .rating-card-header{
   font-size: 18px;
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
-  color: var(--main-light-blue);
+  color: var(--main-purple);
 }

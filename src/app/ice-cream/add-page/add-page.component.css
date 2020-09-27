@@ -7,10 +7,10 @@
         width: 100%;
     }
 }
-.card-body{
-    background: var(--main-light-blue);
-}
 
+.card-body{
+    background: var(--main-light-grey);
+}
 .page-container{
     display: flex;
     justify-content: center;

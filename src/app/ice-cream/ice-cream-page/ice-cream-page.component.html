@@ -21,58 +21,46 @@
                         <hr class="dashboard" />
                     </div>
                 </div>
-                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
-                        aria-labelledby="v-pills-profile-tab">
-                        <div>
-                            <h5>Reviews</h5>
-                            <hr class="dashboard" />
-                        </div>
-                        <div class="display-card-container">
-                            <div *ngFor="let item of iceCreams" class="display-card">
-                                <h6>Id: {{item.IceCreamId}}</h6>
-                                <h6>Review Date: {{item.ReviewDate | date:'shortDate'}}</h6>
-                                <h6>{{item.FlavorName}}</h6>
-                                <h6>{{item.Business}}</h6>
-                                <h6>{{item.Location}}</h6>
-                            </div>
-                        </div>
-
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <div>
+                        <h5>Reviews</h5>
+                        <hr class="dashboard" />
                     </div>
-                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
-                        aria-labelledby="v-pills-messages-tab">
-                        <div>
-                            <h5>Statistics</h5>
-                            <hr class="dashboard" />
-                        </div>
+                    <app-review-display [userId]="user.UserId"></app-review-display>
+                </div>
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                    <div>
+                        <h5>Statistics</h5>
+                        <hr class="dashboard" />
                     </div>
-                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
-                        aria-labelledby="v-pills-settings-tab">
-                        <div>
-                            <h5>
-                                Add A New Scoop Review
-                            </h5>
-                            <hr class="dashboard" />
-                        </div>
-                        <div>
-                            <app-add-page></app-add-page>
-                        </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                    <div>
+                        <h5>
+                            Add A New Scoop Review
+                        </h5>
+                        <hr class="dashboard" />
+                    </div>
+                    <div>
+                        <app-add-page></app-add-page>
                     </div>
                 </div>
             </div>
-
         </div>
-
 
     </div>
 
-    <ng-template #iceCreamAddTemplate>
-        <div class="modal-header">
-            <h4 class="modal-title pull-left">Create An Ice Cream</h4>
-            <button type="button" class="close pull-right" aria-label="Close" (click)="iceCreamModalRef.hide()">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <app-ice-cream-add [edit]="false" (submitted)="onSubmitted($event)"></app-ice-cream-add>
-        </div>
-    </ng-template>
+
+</div>
+
+<!-- <ng-template #iceCreamAddTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Create An Ice Cream</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="iceCreamModalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <app-ice-cream-add [edit]="false" (submitted)="onSubmitted($event)"></app-ice-cream-add>
+    </div>
+</ng-template> -->

@@ -1,0 +1,9 @@
+<div class="display-card-container">
+    <div *ngFor="let item of iceCreams" class="display-card">
+        <h6>Id: {{item.IceCreamId}}</h6>
+        <h6>Review Date: {{item.ReviewDate | date:'shortDate'}}</h6>
+        <h6>{{item.FlavorName}}</h6>
+        <h6>{{item.Business}}</h6>
+        <h6>{{item.Location}}</h6>
+    </div>
+</div>

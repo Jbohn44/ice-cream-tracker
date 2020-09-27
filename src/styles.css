@@ -21,7 +21,7 @@
     --main-dark-blue-alt: #091034;
 
     --main-dark-grey: #3B3F4E;
-    --main-light-grey: #E0E2EB;
+    --main-light-grey: #fdf6ff;
 }
 
 .btn-custom-light{
@@ -42,7 +42,7 @@
 
 .h1, h2, h3, h4, h5, h6{
     font-weight: bold;
-    color: var(--main-black);
+    color: var(--main-purple);
     font-family: 'Courier New', Courier, monospace;
 }
 
