@@ -11,6 +11,11 @@
     }
 }
 
+.form-card{
+    width: 300px;
+    height: 200px;
+    margin: 2px;
+}
 .add-card{
     display: flex;
     justify-content: center;
