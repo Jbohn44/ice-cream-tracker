@@ -5,27 +5,36 @@ import { formatUrl } from '../../shared/utilities';
 import { apiUrls } from 'src/app/shared/constants';
 import { map } from 'rxjs/operators';
 import { IceCream } from '../models/ice-cream.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IceCreamService extends BaseService {
-
+  // experiment keeping icecream array in this service
+  private IceCreamData: IceCream[] = [];
   constructor(http: HttpClient) { 
     super(http);
   }
 
+  loadIceCreamData(userId){
+    return this.get(formatUrl(apiUrls.GET_ICE_CREAMS, userId)).pipe(map(res => {
+
+     this.IceCreamData = <IceCream[]>res;
+     console.log("this is ice cream data", this.IceCreamData);
+     return this.IceCreamData;
+    }));
+  }
+
   getIceCreams(userId){
-    return this.get(formatUrl(apiUrls.GET_ICE_CREAMS, userId)).pipe(map(response => 
-      {
-        return <IceCream[]>response;
-      }));
+    console.log("this fired")
   }
 
   postIceCream(iceCream: IceCream){
     return this.post(apiUrls.POST_ICE_CREAM, iceCream).pipe(map(response => 
       {
-        console.log(response)
+        this.IceCreamData.push(<IceCream>response);
+        console.log("New Data", this.IceCreamData);
         return response
       }));
   }

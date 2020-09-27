@@ -44,9 +44,7 @@ export class IceCreamPageComponent implements OnInit {
     this.user =  <User>JSON.parse(localStorage.getItem('currentUser'));
     console.log("user",this.user);
     // this.clearPage();
-    // this.iceCreamService.getIceCreams(user.UserId).subscribe(x => {
-    //   x.forEach(i => { this.iceCreams.push(i) });
-    // });
+  //  this.iceCreamService.loadIceCreamData(this.user.UserId).subscribe(x => x);
   }
 
   // clearPage() {

@@ -13,8 +13,8 @@ export class ReviewDisplayComponent implements OnInit {
   constructor(private iceCreamService: IceCreamService) { }
 
   ngOnInit() {
-    this.iceCreamService.getIceCreams(this.userId).subscribe(x => {
-      x.forEach(i => { this.iceCreams.push(i) });
+    this.iceCreamService.loadIceCreamData(this.userId).subscribe(x => {
+      this.iceCreams = x;
     });
   }
 
