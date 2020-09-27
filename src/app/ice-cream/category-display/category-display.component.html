@@ -4,7 +4,7 @@
             this will be the add card
         </div>
         <div *ngIf="categoryAdd === true">
-            <app-category-add [userId]="this.userId"></app-category-add>
+            <app-category-add [userId]="this.userId" (submitted)="onSubmitted($event)"></app-category-add>
         </div>
     </div>
     <div *ngFor="let category of categories" class="display-card">

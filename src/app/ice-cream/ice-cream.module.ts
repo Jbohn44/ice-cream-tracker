@@ -15,21 +15,27 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SingleDisplayComponent } from './single-display/single-display.component';
 import { DisplayCardComponent } from './display-card/display-card.component';
 import { AddPageComponent } from './add-page/add-page.component';
-import { ReviewDisplayComponent } from './review-display/review-display.component';
 import { CategoryDisplayComponent } from './category-display/category-display.component';
 import { CategoryAddComponent } from './category-add/category-add.component';
 @NgModule({
   declarations: [
-    IceCreamPageComponent, 
-    IceCreamCardComponent, 
-    IceCreamAddComponent, 
-    SideNavComponent, UploadComponent, UserProfileComponent, SingleDisplayComponent, DisplayCardComponent, AddPageComponent, ReviewDisplayComponent, CategoryDisplayComponent, CategoryAddComponent],
+    IceCreamPageComponent,
+    IceCreamCardComponent,
+    IceCreamAddComponent,
+    SideNavComponent, 
+    UploadComponent, 
+    UserProfileComponent, 
+    SingleDisplayComponent, 
+    DisplayCardComponent, 
+    AddPageComponent, 
+    CategoryDisplayComponent, 
+    CategoryAddComponent],
   imports: [
     CommonModule,
     IceCreamRoutingModule,
     FormsModule,
     HttpClientModule,
-    ModalModule, 
+    ModalModule,
     BsDatepickerModule,
     RatingModule
 

@@ -1,5 +1,5 @@
 export class Category {
-    CategoryId: number;
+    CategoryId?: number;
     CategoryName: string;
     UserId: number;
 }
