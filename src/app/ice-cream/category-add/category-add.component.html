@@ -9,6 +9,7 @@
                     [(ngModel)]="this.category.CategoryName" name="categoryName">
             </div>
             <button type="submit" class="btn btn-custom-dark" [disabled]="!categoryForm.form.valid">Submit</button>
+            <button type="submit" class="btn btn-custom-dark" (click)="onCancel()">Cancel</button>
         </form>
     </div>
 </div>

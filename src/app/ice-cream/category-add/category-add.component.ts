@@ -10,6 +10,8 @@ import { Category } from '../models/category.model';
 export class CategoryAddComponent implements OnInit {
   @Input() userId: number;
   @Output() submitted: EventEmitter<any> = new EventEmitter();
+  @Output() cancel: EventEmitter<any> = new EventEmitter();
+
   category: Category;
 
   constructor(private categoryService: CategoryService) { }
@@ -30,5 +32,9 @@ export class CategoryAddComponent implements OnInit {
   onSubmit(){
     this.addCategory();
     this.submitted.emit();
+  }
+
+  onCancel(){
+    this.cancel.emit();
   }
 }

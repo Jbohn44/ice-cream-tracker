@@ -10,8 +10,6 @@ import { User } from 'src/app/shared/models/user.model';
   styleUrls: ['./ice-cream-page.component.css']
 })
 export class IceCreamPageComponent implements OnInit {
-  // iceCreams: IceCream[] = [];
-  // iceCreamModalRef: BsModalRef;
   iceCream: IceCream = new IceCream();
   iceCreamPage = true;
   user: User;
@@ -29,16 +27,6 @@ export class IceCreamPageComponent implements OnInit {
   ngOnChanges() {
   }
 
-  // add(template: TemplateRef<any>) {
-  //   this.iceCreamModalRef = this.modalService.show(template, this.config);
-  // }
-
-  // onSubmitted($event) {
-  //   console.log("event: ", $event);
-  //   // this.iceCreams.push(<IceCream>$event);
-  //   this.iceCreamModalRef.hide();
-  // }
-
   initPage() {
     // maybe init user to class variable
     this.user =  <User>JSON.parse(localStorage.getItem('currentUser'));
@@ -46,13 +34,5 @@ export class IceCreamPageComponent implements OnInit {
     // this.clearPage();
   //  this.iceCreamService.loadIceCreamData(this.user.UserId).subscribe(x => x);
   }
-
-  // clearPage() {
-  //   this.iceCreams = [];
-  // }
-
-  // onDelete($event) {
-  //   this.iceCreams = this.iceCreams.filter(i => i.IceCreamId !== $event);
-  // }
 
 }

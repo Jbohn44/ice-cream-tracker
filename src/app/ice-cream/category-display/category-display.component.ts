@@ -27,4 +27,8 @@ export class CategoryDisplayComponent implements OnInit {
   onSubmitted($event){
     this.categoryAdd = false;
   }
+
+  onCancel(){
+    this.categoryAdd = false;
+  }
 }
