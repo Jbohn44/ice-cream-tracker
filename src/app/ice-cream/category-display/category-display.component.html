@@ -1,0 +1,13 @@
+<div class="display-card-container">
+    <div class="add-card">
+        <div *ngIf="categoryAdd !== true" (click)="addClick()">
+            this will be the add card
+        </div>
+        <div *ngIf="categoryAdd === true">
+            <app-category-add [userId]="this.userId"></app-category-add>
+        </div>
+    </div>
+    <div *ngFor="let category of categories" class="display-card">
+        <h6>{{category.CategoryName}}</h6>
+    </div>
+</div>
