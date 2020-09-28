@@ -25,6 +25,7 @@ export class CategoryDisplayComponent implements OnInit {
   }
 
   onSubmitted($event){
+    this.categories.push(<Category>$event);
     this.categoryAdd = false;
   }
 

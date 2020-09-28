@@ -24,14 +24,13 @@ export class CategoryAddComponent implements OnInit {
   }
 
   addCategory(){
-    this.categoryService.addCategory(this.category).subscribe(x => {
-      x;
-    });
+  
   }
 
   onSubmit(){
-    this.addCategory();
-    this.submitted.emit();
+    this.categoryService.addCategory(this.category).subscribe((res) => {
+      this.submitted.emit(res);
+    });
   }
 
   onCancel(){

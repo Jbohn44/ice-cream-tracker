@@ -8,6 +8,8 @@
                     aria-controls="v-pills-profile" aria-selected="false">Reviews</a>
                 <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
                     aria-controls="v-pills-messages" aria-selected="false">Statistics</a>
+                <a class="nav-link" id="v-pills-categories-tab" data-toggle="pill" href="#v-pills-categories" role="tab"
+                    aria-controls="v-pills-categories" aria-selected="false">Categories</a>
             </div>
         </div>
         <div class="page-container">
@@ -23,13 +25,27 @@
                     <div>
                         <h5>Reviews</h5>
                         <hr class="dashboard" />
+                        <div class="row no-gutters">
+                            <div *ngFor="let item of iceCreams" class="col-md-4">
+                                <app-ice-cream-card [iceCream]="item" name="iceCreamCard">
+                                </app-ice-cream-card>
+                            </div>
+                        </div>
                     </div>
-                    <app-category-display [userId]="user.UserId"></app-category-display>
                 </div>
                 <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                     <div>
                         <h5>Statistics</h5>
                         <hr class="dashboard" />
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-categories" role="tabpanel"
+                    aria-labelledby="v-pills-categories-tab">
+                    <div>
+                        <h5>Categories</h5>
+                        <hr class="dashboard" />
+                        <app-category-display [userId]="user.UserId"></app-category-display>
+
                     </div>
                 </div>
             </div>

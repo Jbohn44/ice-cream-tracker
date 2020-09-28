@@ -12,6 +12,7 @@ import { User } from 'src/app/shared/models/user.model';
 export class IceCreamPageComponent implements OnInit {
   iceCream: IceCream = new IceCream();
   iceCreamPage = true;
+  iceCreams: IceCream[] = [];
   user: User;
   config = {
     backdrop: true,
@@ -32,7 +33,7 @@ export class IceCreamPageComponent implements OnInit {
     this.user =  <User>JSON.parse(localStorage.getItem('currentUser'));
     console.log("user",this.user);
     // this.clearPage();
-  //  this.iceCreamService.loadIceCreamData(this.user.UserId).subscribe(x => x);
+   this.iceCreamService.loadIceCreamData(this.user.UserId).subscribe(x => {this.iceCreams = x});
   }
 
 }

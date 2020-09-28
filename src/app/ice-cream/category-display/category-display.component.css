@@ -22,12 +22,9 @@
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-    border: 5px solid var(--main-purple);
     width: 300px;
-    height: 200px;
     margin: 2px;
     border-radius: 2px;
-    background: var(--main-light-purple);
     color: var(--main-purple);
     opacity: 25%;
 }
@@ -42,9 +39,8 @@
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-    background: var(--main-light-purple);
+    color: var(--main-purple);
     width: 300px;
-    height: 200px;
     margin: 2px;
     border-radius: 2px;
 }
