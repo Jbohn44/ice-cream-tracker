@@ -25,7 +25,7 @@
                     <div>
                         <h5>Reviews</h5>
                         <hr class="dashboard" />
-                        <app-sort></app-sort>
+                        <app-sort (value)="onSort($event)"></app-sort>
                         <div class="row no-gutters">
                             <div *ngFor="let item of iceCreams" class="col-md-4">
                                 <app-ice-cream-card [iceCream]="item" name="iceCreamCard" (deleted)="delete($event)">

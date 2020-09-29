@@ -30,14 +30,55 @@ export class IceCreamPageComponent implements OnInit {
 
   initPage() {
     // maybe init user to class variable
-    this.user =  <User>JSON.parse(localStorage.getItem('currentUser'));
-    console.log("user",this.user);
+    this.user = <User>JSON.parse(localStorage.getItem('currentUser'));
+    console.log("user", this.user);
     // this.clearPage();
-   this.iceCreamService.loadIceCreamData(this.user.UserId).subscribe(x => {this.iceCreams = x});
+    this.iceCreamService.loadIceCreamData(this.user.UserId).subscribe(x => { this.iceCreams = x });
   }
 
-  delete($event){
+  delete($event) {
     console.log($event);
     this.iceCreams = this.iceCreams.filter(x => x.IceCreamId !== $event);
+  }
+
+  onSort($event) {
+    console.log($event);
+    switch ($event) {
+      case 1:
+        this.iceCreams.sort(function (a, b) {
+          var nameA = a.FlavorName.toUpperCase(); // ignore upper and lowercase
+          var nameB = b.FlavorName.toUpperCase(); // ignore upper and lowercase
+          if (nameA > nameB) {
+            return -1;
+          }
+          if (nameA < nameB) {
+            return 1;
+          }
+
+          // names must be equal
+          return 0;
+        });
+        break;
+      case 2:
+        this.iceCreams.sort(function (a, b) {
+          var nameA = a.FlavorName.toUpperCase(); // ignore upper and lowercase
+          var nameB = b.FlavorName.toUpperCase(); // ignore upper and lowercase
+          if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+
+          // names must be equal
+          return 0;
+        });
+        break;
+      case 3:
+        break;
+      case 4:
+        break;
+    }
+
   }
 }

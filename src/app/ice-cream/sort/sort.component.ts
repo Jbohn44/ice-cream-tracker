@@ -18,6 +18,6 @@ export class SortComponent implements OnInit {
   }
 
   onSort(value){
-    console.log(value);
+    this.value.emit(value);
   }
 }
