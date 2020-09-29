@@ -50,8 +50,9 @@ export class IceCreamCardComponent implements OnInit {
 
   onDelete($event) {
     console.log($event);
-    this.deleted.emit($event);
-    this.iceCreamModalRef.hide();
+    
+    this.iceCreamService.deleteIceCream(this.iceCream.IceCreamId).subscribe(x => x);
+    this.deleted.emit(this.iceCream.IceCreamId);
   }
 
   showDeleteMessage() {

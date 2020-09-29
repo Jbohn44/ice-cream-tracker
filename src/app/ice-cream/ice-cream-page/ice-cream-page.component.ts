@@ -36,4 +36,8 @@ export class IceCreamPageComponent implements OnInit {
    this.iceCreamService.loadIceCreamData(this.user.UserId).subscribe(x => {this.iceCreams = x});
   }
 
+  delete($event){
+    console.log($event);
+    this.iceCreams = this.iceCreams.filter(x => x.IceCreamId !== $event);
+  }
 }

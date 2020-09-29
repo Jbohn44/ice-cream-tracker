@@ -89,8 +89,6 @@
         <div *ngIf="this.edit === true" class="btn-container">
             <button type="submit" class="btn btn-custom-dark" [disabled]="!iceCreamForm.form.valid"
                 (click)="onSave()">Save</button>
-            <button type="submit" class="btn btn-custom-dark"
-                (click)="onDelete(this.iceCream.IceCreamId)">Delete</button>
         </div>
     </div>
 </div>

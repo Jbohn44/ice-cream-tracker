@@ -1,0 +1,14 @@
+.sort-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+    height: 4em;
+    padding: 1%;
+    border-radius: 5px;
+    background: var(--main-light-pink);
+}
+
+select{
+    width: 100px;
+}

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DisplayCardComponent } from './display-card.component';
+import { SortComponent } from './sort.component';
 
-describe('DisplayCardComponent', () => {
-  let component: DisplayCardComponent;
-  let fixture: ComponentFixture<DisplayCardComponent>;
+describe('SortComponent', () => {
+  let component: SortComponent;
+  let fixture: ComponentFixture<SortComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DisplayCardComponent ]
+      declarations: [ SortComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DisplayCardComponent);
+    fixture = TestBed.createComponent(SortComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

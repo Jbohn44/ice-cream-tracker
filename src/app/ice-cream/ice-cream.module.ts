@@ -12,11 +12,11 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { RatingModule } from 'ngx-bootstrap/rating';
 import { UploadComponent } from './upload/upload.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { SingleDisplayComponent } from './single-display/single-display.component';
-import { DisplayCardComponent } from './display-card/display-card.component';
 import { AddPageComponent } from './add-page/add-page.component';
 import { CategoryDisplayComponent } from './category-display/category-display.component';
 import { CategoryAddComponent } from './category-add/category-add.component';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { SortComponent } from './sort/sort.component';
 @NgModule({
   declarations: [
     IceCreamPageComponent,
@@ -25,11 +25,9 @@ import { CategoryAddComponent } from './category-add/category-add.component';
     SideNavComponent, 
     UploadComponent, 
     UserProfileComponent, 
-    SingleDisplayComponent, 
-    DisplayCardComponent, 
     AddPageComponent, 
     CategoryDisplayComponent, 
-    CategoryAddComponent],
+    CategoryAddComponent, SortComponent],
   imports: [
     CommonModule,
     IceCreamRoutingModule,
@@ -37,7 +35,9 @@ import { CategoryAddComponent } from './category-add/category-add.component';
     HttpClientModule,
     ModalModule,
     BsDatepickerModule,
-    RatingModule
+    RatingModule,
+    AccordionModule.forRoot(),
+
 
   ]
 })

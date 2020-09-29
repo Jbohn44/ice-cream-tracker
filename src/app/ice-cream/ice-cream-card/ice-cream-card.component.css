@@ -59,3 +59,14 @@ img:hover{
     color: var(--main-yellow);
     font-size: 18px;
 }
+
+.delete-container{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    color: var(--main-purple);
+}
+
+svg:hover{
+    cursor: pointer;
+}

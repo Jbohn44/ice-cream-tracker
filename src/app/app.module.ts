@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { RatingModule } from 'ngx-bootstrap/rating';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
     HttpClientModule,
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),
-    RatingModule.forRoot()
+    RatingModule.forRoot(),
+    AccordionModule.forRoot()
 
   ],
   providers: [
