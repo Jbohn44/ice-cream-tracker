@@ -27,6 +27,12 @@
                         <hr class="dashboard" />
                         <app-sort (value)="onSort($event)"></app-sort>
                         <div class="row no-gutters">
+                            <div class="add-container" *ngIf="addBoolean !== true" (click)="addClick()">
+                                <h5>Click Here To Add A Scoop</h5>
+                            </div>
+                            <div class="form-card" *ngIf="addBoolean === true">
+                                <app-ice-cream-add [edit]="false" (submitted)="onSubmitted($event)"></app-ice-cream-add>
+                            </div>
                             <div *ngFor="let item of iceCreams" class="col-md-4">
                                 <app-ice-cream-card [iceCream]="item" name="iceCreamCard" (deleted)="delete($event)">
                                 </app-ice-cream-card>

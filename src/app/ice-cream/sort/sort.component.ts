@@ -11,7 +11,8 @@ export class SortComponent implements OnInit {
   sortOptions = [{ Name: "A-Z", Value: 1 }, 
   { Name: "Z-A", Value: 2 }, 
   { Name: "Best Over All", Value: 3 }, 
-  { Name: "Worst Over All", Value: 4 }];
+  { Name: "Worst Over All", Value: 4 },
+  { Name: "Newest", Value: 5}];
   constructor() { }
 
   ngOnInit() {

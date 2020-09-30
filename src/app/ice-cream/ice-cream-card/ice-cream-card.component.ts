@@ -20,6 +20,7 @@ export class IceCreamCardComponent implements OnInit {
   deleteMessage = false;
   imageModalRef: BsModalRef;
   imageList: any[] = [];
+  deleteModalRef: BsModalRef;
 
   config = {
     backdrop: true,
@@ -50,7 +51,7 @@ export class IceCreamCardComponent implements OnInit {
 
   onDelete($event) {
     console.log($event);
-    
+    this.deleteModalRef.hide();
     this.iceCreamService.deleteIceCream(this.iceCream.IceCreamId).subscribe(x => x);
     this.deleted.emit(this.iceCream.IceCreamId);
   }
@@ -80,5 +81,10 @@ export class IceCreamCardComponent implements OnInit {
   clearImageList() {
     //right now this is clearing imageList, may be better to cache images instead of reloading them each time?
     this.imageList = [];
+  }
+
+  openDeleteModal(templateRef: any){
+    this.deleteModalRef = this.modalService.show(templateRef);
+
   }
 }

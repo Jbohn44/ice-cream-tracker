@@ -42,3 +42,20 @@ hr.dashboard{
     color: var(--main-light-blue);
     border-radius: 5px;
 }
+
+.add-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--main-light-purple);
+    width: 400px;
+    height: 800px;
+    opacity: 50%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.add-container:hover{
+    cursor: pointer;
+    opacity: 100%;
+}

@@ -40,7 +40,7 @@
 
 }
 
-.h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6{
     font-weight: bold;
     color: var(--main-purple);
     font-family: 'Courier New', Courier, monospace;
@@ -52,4 +52,8 @@
 
 .card-header{
     background-color: var(--main-light-purple);
+}
+
+.flex-container-space{
+    display: flex;
 }
