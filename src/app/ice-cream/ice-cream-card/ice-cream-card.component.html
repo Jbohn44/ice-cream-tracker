@@ -69,19 +69,22 @@
                     <h6>Creaminess:</h6>
                     <p>
                         <rating [(ngModel)]="this.iceCream.CreaminessRating.RatingValue" [max]="5" [readonly]="true"
-                            class="star-rating"></rating> {{this.iceCream.CreaminessRating.RatingValue}}/5
+                            class="star-rating"></rating>
+                        {{this.iceCream.CreaminessRating.RatingValue}}/5
                     </p>
                     <hr />
                     <h6>Iciness:</h6>
                     <p>
                         <rating [(ngModel)]="this.iceCream.IcinessRating.RatingValue" [max]="5" [readonly]="true"
-                            class="star-rating"></rating> {{this.iceCream.IcinessRating.RatingValue}}/5
+                            class="star-rating"></rating>
+                        {{this.iceCream.IcinessRating.RatingValue}}/5
                     </p>
                     <hr />
                     <h6>Density:</h6>
                     <p>
                         <rating [(ngModel)]="this.iceCream.DensityRating.RatingValue" [max]="5" [readonly]="true"
-                            class="star-rating"></rating> {{this.iceCream.DensityRating.RatingValue}}/5
+                            class="star-rating"></rating>
+                        {{this.iceCream.DensityRating.RatingValue}}/5
                     </p>
                     <hr />
                     <h6>Value:</h6>
@@ -92,17 +95,21 @@
                     <hr />
                 </div>
                 <div *ngIf="this.iceCream.Comments" class="col-md">
-                    <div>
-                        <h5>Comments</h5>
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <h5>Comments</h5>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                {{this.iceCream.Comments}}
+                            </p>
+                        </div>
                     </div>
-                    <div class="card text-card-format shadow-sm">
-                        <p class="card-text">
-                            {{this.iceCream.Comments}}
-                        </p>
-                    </div>
+
                 </div>
             </div>
-
         </div>
     </div>
     <div class="card-body" *ngIf="saveMessage === true">
@@ -158,14 +165,14 @@
         </div>
         <div class="modal-body">
             <div class="flex-container-space">
-                <button class="btn btn-custom-dark" (click)="onDelete()" >
+                <button class="btn btn-custom-dark" (click)="onDelete()">
                     Yes
                 </button>
                 <button class="btn btn-custom-dark" (click)="this.deleteModalRef.hide()">
                     No
                 </button>
             </div>
-          
+
         </div>
     </div>
 </ng-template>

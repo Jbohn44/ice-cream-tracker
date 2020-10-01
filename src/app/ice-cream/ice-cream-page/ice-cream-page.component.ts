@@ -48,6 +48,10 @@ export class IceCreamPageComponent implements OnInit {
     this.addBoolean = false;
     this.iceCreams.push(<IceCream>$event);
   }
+
+  closeAdd(){
+    this.addBoolean = false;
+  }
   onSort($event) {
     //sort functions. figure out how to make this more DRY
     switch ($event) {
@@ -56,10 +60,10 @@ export class IceCreamPageComponent implements OnInit {
         this.iceCreams.sort(function (a, b) {
           var nameA = a.FlavorName.toUpperCase(); // ignore upper and lowercase
           var nameB = b.FlavorName.toUpperCase(); // ignore upper and lowercase
-          if (nameA > nameB) {
+          if (nameA < nameB) {
             return -1;
           }
-          if (nameA < nameB) {
+          if (nameA > nameB) {
             return 1;
           }
 
@@ -72,10 +76,10 @@ export class IceCreamPageComponent implements OnInit {
         this.iceCreams.sort(function (a, b) {
           var nameA = a.FlavorName.toUpperCase(); // ignore upper and lowercase
           var nameB = b.FlavorName.toUpperCase(); // ignore upper and lowercase
-          if (nameA < nameB) {
+          if (nameA > nameB) {
             return -1;
           }
-          if (nameA > nameB) {
+          if (nameA < nameB) {
             return 1;
           }
 
