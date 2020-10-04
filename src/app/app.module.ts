@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
-import { UserSignInComponent } from './shared/user-sign-in/user-sign-in.component';
 import { JwtInterceptor } from './shared/helpers/jwt.interceptor';
 import { ErrorInterceptor } from './shared/helpers/error.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,8 +16,6 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent,
-    UserSignInComponent,
     PageNotFoundComponent,
   ],
   imports: [

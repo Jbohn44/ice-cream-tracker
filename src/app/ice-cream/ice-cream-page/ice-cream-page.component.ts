@@ -3,6 +3,7 @@ import { IceCream } from '../models/ice-cream.model';
 import { IceCreamService } from '../services/ice-cream.service';
 import { BsModalService, BsModalRef, ModalBackdropOptions, ModalOptions } from 'ngx-bootstrap/modal';
 import { User } from 'src/app/shared/models/user.model';
+import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 
 @Component({
   selector: 'app-ice-cream-page',
@@ -20,7 +21,7 @@ export class IceCreamPageComponent implements OnInit {
     ignoreBackdropClick: true
   }
   //TODO: maybe get rid of modal service, modal will be call from side nav
-  constructor(private iceCreamService: IceCreamService, private modalService: BsModalService) {
+  constructor(private iceCreamService: IceCreamService, private authService: AuthenticationService, private modalService: BsModalService) {
   }
 
   ngOnInit() {
@@ -48,7 +49,10 @@ export class IceCreamPageComponent implements OnInit {
     this.addBoolean = false;
     this.iceCreams.push(<IceCream>$event);
   }
-
+  logOut(){
+    this.user = null;
+    this.authService.logout();
+  }
   closeAdd(){
     this.addBoolean = false;
   }

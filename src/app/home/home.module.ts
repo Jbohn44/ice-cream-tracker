@@ -7,10 +7,12 @@ import { UserSignUpComponent } from '../shared/user-sign-up/user-sign-up.compone
 import { FormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { UserSignUpPageComponent } from './user-sign-up-page/user-sign-up-page.component';
+import { NavBarComponent } from '../shared/nav-bar/nav-bar.component';
+import { UserSignInComponent } from '../shared/user-sign-in/user-sign-in.component';
 
 
 @NgModule({
-  declarations: [HomePageComponent, UserSignUpComponent, UserSignUpPageComponent],
+  declarations: [HomePageComponent, UserSignUpComponent, UserSignUpPageComponent, NavBarComponent, UserSignInComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

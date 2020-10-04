@@ -1,5 +1,5 @@
 .nav-link{
-    color: var(--main-light-blue) !important;
+    color: var(--main-purple) !important;
     font-weight: bold;
 }
 
@@ -9,14 +9,14 @@
 }
 
 .navbar-brand{
-    color: var(--main-light-blue) !important;
+    color: var(--main-purple) !important;
     font-size: 30px;
     font-weight: bolder;
     font-family: 'Courier New', Courier, monospace;
 }
 
 .navbar{
-    background-color: var(--main-purple) !important;
+    background-color: transparent !important;
 }
 
 .li{
