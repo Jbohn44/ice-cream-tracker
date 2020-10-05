@@ -1,6 +1,6 @@
-<div class="card-format">
+<div class="card-container">
     <div class="card" *ngIf="saveMessage === false">
-        <div class="card-header">
+        <div class="card-body">
             <div class="delete-container">
                 <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-x-square" fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg" (click)="openDeleteModal(deleteTemplate)">
@@ -45,8 +45,6 @@
                     </svg>
                 </div>
             </div>
-        </div>
-        <div class="card-body">
             <div class="row">
                 <div *ngFor="let service of this.iceCream.Services" class="service-pill">
                     {{service.ServiceName}}

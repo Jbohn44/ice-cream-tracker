@@ -8,6 +8,7 @@
     height: 800px;
     width: 100%;
 }
+
 .info-div{
     display: flex;
     align-items: center;
@@ -19,17 +20,6 @@
     background: var(--main-purple);
 }
 
-.heading-text{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    font-size: 85px;
-    font-weight: bold;
-    color: var(--main-purple);
-    font-family: 'Courier New', Courier, monospace;
-
-}
 .sign-up-text{
     display: flex;
     align-items: center;
