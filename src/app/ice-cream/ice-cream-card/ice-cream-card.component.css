@@ -69,6 +69,10 @@ img:hover{
     color: var(--main-purple);
 }
 
+svg{
+    opacity: 75%;
+}
 svg:hover{
     cursor: pointer;
+    opacity: 100%;
 }

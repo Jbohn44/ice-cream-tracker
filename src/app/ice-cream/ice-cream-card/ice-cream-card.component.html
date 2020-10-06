@@ -1,5 +1,5 @@
-<div class="card-container">
-    <div class="card" *ngIf="saveMessage === false">
+<div class="card-container" *ngIf="loading === false">
+    <div class="card">
         <div class="card-body">
             <div class="delete-container">
                 <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-x-square" fill="currentColor"
@@ -55,43 +55,26 @@
                     </svg>
                 </div>
             </div>
-            <hr>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Type</th>
+                        <th scope="col">Star Rating</th>
+                        <th scope="col">Numerical Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let rating of ratingList">
+                        <td>{{rating.RatingName}}</td>
+                        <td>
+                            <rating [(ngModel)]="this.iceCream[rating.RatingType].RatingValue" [max]="5"
+                                [readonly]="true" class="star-rating"></rating>
+                        </td>
+                        <td>{{this.iceCream[rating.RatingType].RatingValue}}/5</td>
+                    </tr>
+                </tbody>
+            </table>
             <div class="row">
-                <div class="col-md-4">
-                    <h6>Flavor:</h6>
-                    <p>
-                        <rating [(ngModel)]="this.iceCream.FlavorRating.RatingValue" [max]="5" [readonly]="true"
-                            class="star-rating"></rating> {{this.iceCream.FlavorRating.RatingValue}}/5
-                    </p>
-                    <hr />
-                    <h6>Creaminess:</h6>
-                    <p>
-                        <rating [(ngModel)]="this.iceCream.CreaminessRating.RatingValue" [max]="5" [readonly]="true"
-                            class="star-rating"></rating>
-                        {{this.iceCream.CreaminessRating.RatingValue}}/5
-                    </p>
-                    <hr />
-                    <h6>Iciness:</h6>
-                    <p>
-                        <rating [(ngModel)]="this.iceCream.IcinessRating.RatingValue" [max]="5" [readonly]="true"
-                            class="star-rating"></rating>
-                        {{this.iceCream.IcinessRating.RatingValue}}/5
-                    </p>
-                    <hr />
-                    <h6>Density:</h6>
-                    <p>
-                        <rating [(ngModel)]="this.iceCream.DensityRating.RatingValue" [max]="5" [readonly]="true"
-                            class="star-rating"></rating>
-                        {{this.iceCream.DensityRating.RatingValue}}/5
-                    </p>
-                    <hr />
-                    <h6>Value:</h6>
-                    <p>
-                        <rating [(ngModel)]="this.iceCream.ValueRating.RatingValue" [max]="5" [readonly]="true"
-                            class="star-rating"></rating> {{this.iceCream.ValueRating.RatingValue}}/5
-                    </p>
-                    <hr />
-                </div>
                 <div *ngIf="this.iceCream.Comments" class="col-md">
                     <div class="card">
                         <div class="card-header">
@@ -105,14 +88,13 @@
                             </p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-    <div class="card-body" *ngIf="saveMessage === true">
-
-    </div>
+</div>
+<div class="card-body" *ngIf="loading === true">
+    loading....
 </div>
 
 <ng-template #iceCreamAddTemplate>

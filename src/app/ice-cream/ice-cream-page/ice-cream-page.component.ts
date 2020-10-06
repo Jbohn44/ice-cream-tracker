@@ -14,6 +14,7 @@ export class IceCreamPageComponent implements OnInit {
   iceCream: IceCream = new IceCream();
   iceCreamPage = true;
   iceCreams: IceCream[] = [];
+  ratingList = [];
   user: User;
   addBoolean: boolean = false;
   config = {
@@ -26,6 +27,8 @@ export class IceCreamPageComponent implements OnInit {
 
   ngOnInit() {
     this.initPage();
+
+   
   }
   ngOnChanges() {
   }

@@ -1,84 +1,91 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="side-bar">
-            <div class="nav flex-column nav" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
-                    aria-controls="v-pills-home" aria-selected="true">Profile</a>
-                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
-                    aria-controls="v-pills-profile" aria-selected="false">Reviews</a>
-                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
-                    aria-controls="v-pills-messages" aria-selected="false">Statistics</a>
-                <a class="nav-link" id="v-pills-categories-tab" data-toggle="pill" href="#v-pills-categories" role="tab"
-                    aria-controls="v-pills-categories" aria-selected="false">Categories</a>
-                <a class="nav-link" id="v-pills-logout-tab" data-toggle="pill" role="tab"
-                    aria-controls="v-pills-logout" aria-selected="false" (click)="logOut()">Log Out</a>
+<div class="screen-div">
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="side-bar">
+                <div class="nav flex-column nav" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+                        aria-controls="v-pills-home" aria-selected="true">Profile</a>
+                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+                        aria-controls="v-pills-profile" aria-selected="false">Reviews</a>
+                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
+                        aria-controls="v-pills-messages" aria-selected="false">Statistics</a>
+                    <a class="nav-link" id="v-pills-categories-tab" data-toggle="pill" href="#v-pills-categories"
+                        role="tab" aria-controls="v-pills-categories" aria-selected="false">Categories</a>
+                    <a class="nav-link" id="v-pills-logout-tab" data-toggle="pill" role="tab"
+                        aria-controls="v-pills-logout" aria-selected="false" (click)="logOut()">Log Out</a>
+                </div>
             </div>
-        </div>
-        <div class="page-container">
-            <div class="tab-content" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                    aria-labelledby="v-pills-home-tab">
-                    <div>
-                        <div class="section-head">
-                            <h5>Profile</h5>
-                        </div>
-                        <hr class="dashboard" />
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                    <div>
-                        <div class="section-head">
-                            <h5>Reviews</h5>
-                        </div>
-                        <hr class="dashboard" />
-                        <app-sort (value)="onSort($event)"></app-sort>
-                        <div class="add-container">
-                            <div class="add-card" *ngIf="addBoolean !== true" (click)="addClick()">
-                                <div>
-                                    <h5>Click Here To Add A Scoop</h5>
-                                </div>
+            <div class="page-container">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab">
+                        <div>
+                            <div class="section-head">
+                                <h5>Profile</h5>
                             </div>
+                            <hr class="dashboard" />
                         </div>
-                        <div class="row no-gutters">
-                            <div class="form-container" *ngIf="addBoolean === true">
-                                <div class="form-card">
-                                    <div class="delete-container">
-                                        <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-x"
-                                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd"
-                                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-                                                (click)="closeAdd()" />
-                                        </svg>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab">
+                        <div>
+                            <div class="section-head">
+                                <h5>Reviews</h5>
+                            </div>
+                            <hr class="dashboard" />
+                            <app-sort (value)="onSort($event)"></app-sort>
+                            <div class="add-container">
+                                <div class="add-card" *ngIf="addBoolean !== true" (click)="addClick()">
+                                    <div>
+                                        <h5>Click Here To Add A Scoop</h5>
                                     </div>
-                                    <app-ice-cream-add [edit]="false" (submitted)="onSubmitted($event)">
-                                    </app-ice-cream-add>
                                 </div>
                             </div>
+                            <div class="row no-gutters">
+                                <div class="form-container" *ngIf="addBoolean === true">
+                                    <div class="form-card">
+                                        <div class="delete-container">
+                                            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-x"
+                                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd"
+                                                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                                                    (click)="closeAdd()" />
+                                            </svg>
+                                        </div>
+                                        <app-ice-cream-add [edit]="false" (submitted)="onSubmitted($event)">
+                                        </app-ice-cream-add>
+                                    </div>
+                                </div>
 
-                            <div *ngFor="let item of iceCreams" class="col-12">
-                                <app-ice-cream-card [iceCream]="item" name="iceCreamCard" (deleted)="delete($event)">
-                                </app-ice-cream-card>
+                                <div *ngFor="let item of iceCreams" class="col-12">
+                                    <app-ice-cream-card [iceCream]="item" name="iceCreamCard"
+                                        (deleted)="delete($event)">
+                                    </app-ice-cream-card>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                    <div>
-                        <div class="section-head">
-                            <h5>Statistics</h5>
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                        aria-labelledby="v-pills-messages-tab">
+                        <div>
+                            <div class="section-head">
+                                <h5>Statistics</h5>
+                            </div>
+                            <hr class="dashboard" />
                         </div>
-                        <hr class="dashboard" />
                     </div>
-                </div>
-                <div class="tab-pane fade" id="v-pills-categories" role="tabpanel"
-                    aria-labelledby="v-pills-categories-tab">
-                    <div>
-                        <div class="section-head">
-                            <h5>Categories</h5>
-                        </div>
-                        <hr class="dashboard" />
-                        <app-category-display [userId]="user.UserId"></app-category-display>
+                    <div class="tab-pane fade" id="v-pills-categories" role="tabpanel"
+                        aria-labelledby="v-pills-categories-tab">
+                        <div>
+                            <div class="section-head">
+                                <h5>Categories</h5>
+                            </div>
+                            <hr class="dashboard" />
+                            <app-category-display [userId]="user.UserId"></app-category-display>
 
+                        </div>
                     </div>
                 </div>
             </div>

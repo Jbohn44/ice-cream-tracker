@@ -1,6 +1,9 @@
 hr.dashboard{
     border: 1px solid var(--main-purple);
 }
+
+.container-fluid{
+}
 .side-bar{
     display: flex;
     justify-content: center;
