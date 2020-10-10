@@ -2,7 +2,10 @@ hr.dashboard{
     border: 1px solid var(--main-purple);
 }
 
-.container-fluid{
+.screen-div{
+    padding: 1%;
+    height: 100vh;
+    width: 100%;
 }
 .side-bar{
     display: flex;
@@ -61,17 +64,17 @@ hr.dashboard{
     width: 33%;
     height: 75px;
     opacity: 50%;
-    border-radius: 5px;
     margin-top: 5px;
     transition: 0.5s;
 }
 
 .add-card:hover{
     cursor: pointer;
-    border: 5px solid var(--main-light-purple);
+    border: 20px solid var(--main-purple);
     opacity: 100%;
-    width: 100%;
-    height: 200px;
+    width: 50%;
+    height: 100px;
+    background: var(--main-light-blue);
 }
 
 .form-container {

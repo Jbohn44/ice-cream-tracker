@@ -2,11 +2,7 @@
     margin: 1%;
 }
 
-.card-container{
-    background: var(--main-purple);
-    padding: 1%;
-    margin: 1%;
-}
+
 .text-card-format {
     display: flex;
     justify-content: center;

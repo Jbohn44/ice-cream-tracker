@@ -17,6 +17,8 @@ import { CategoryDisplayComponent } from './category-display/category-display.co
 import { CategoryAddComponent } from './category-add/category-add.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { SortComponent } from './sort/sort.component';
+import { IceCreamTableCardComponent } from './ice-cream-table-card/ice-cream-table-card.component';
+import { IceCreamDetailComponent } from './ice-cream-detail/ice-cream-detail.component';
 @NgModule({
   declarations: [
     IceCreamPageComponent,
@@ -27,7 +29,7 @@ import { SortComponent } from './sort/sort.component';
     UserProfileComponent, 
     AddPageComponent, 
     CategoryDisplayComponent, 
-    CategoryAddComponent, SortComponent],
+    CategoryAddComponent, SortComponent, IceCreamTableCardComponent, IceCreamDetailComponent],
   imports: [
     CommonModule,
     IceCreamRoutingModule,

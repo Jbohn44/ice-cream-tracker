@@ -23,7 +23,10 @@
     --main-dark-grey: #3B3F4E;
     --main-light-grey: #fdf6ff;
 }
-
+* {
+    font-family: "VT323" !important;
+    font-weight: bolder;
+}
 .btn-custom-light{
     border-color: var(--main-light-blue) !important;
     color: var(--main-light-blue) !important;
@@ -43,7 +46,6 @@
 h1, h2, h3, h4, h5, h6{
     font-weight: bold;
     color: var(--main-purple);
-    font-family: 'Courier New', Courier, monospace;
 }
 
 .p{

@@ -1,0 +1,18 @@
+<div class="display-container">
+    <div class="image-container"><div>No Image Selected</div></div>
+    <div class="detail-container">
+        <div>{{this.iceCream.ReviewDate | date:'shortDate'}}</div>
+        <div>{{this.iceCream.FlavorName}}--{{this.iceCream.Business}}</div>
+        <div>
+            Over All Rating:
+            <rating [(ngModel)]="this.iceCream.OverAllRating.RatingValue" [max]="5" [readonly]="true"
+            class="star-rating"></rating>
+        </div>
+        <div *ngFor="let service of this.iceCream.Services">
+            -{{service.ServiceName}}
+        </div>
+    </div>
+    <div class="detail-click">
+        Details >>
+    </div>
+</div>
