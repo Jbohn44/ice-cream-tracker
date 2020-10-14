@@ -11,7 +11,6 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { RatingModule } from 'ngx-bootstrap/rating';
 import { UploadComponent } from './upload/upload.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AddPageComponent } from './add-page/add-page.component';
 import { CategoryDisplayComponent } from './category-display/category-display.component';
 import { CategoryAddComponent } from './category-add/category-add.component';
@@ -26,7 +25,6 @@ import { IceCreamDetailComponent } from './ice-cream-detail/ice-cream-detail.com
     IceCreamAddComponent,
     SideNavComponent, 
     UploadComponent, 
-    UserProfileComponent, 
     AddPageComponent, 
     CategoryDisplayComponent, 
     CategoryAddComponent, SortComponent, IceCreamTableCardComponent, IceCreamDetailComponent],

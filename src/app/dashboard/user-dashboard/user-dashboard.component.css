@@ -1,0 +1,26 @@
+.row.content {
+    height: 100%;
+    padding: 1%;
+}
+.profile-stats-col{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.data-feed{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.user-feed{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: purple;
+}
+
+.container-fluid{
+    background: var(--main-light-grey);
+}

@@ -13,9 +13,13 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { RatingModule } from 'ngx-bootstrap/rating';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
+import { UserSignInComponent } from './shared/user-sign-in/user-sign-in.component';
 @NgModule({
   declarations: [
     AppComponent,
+    NavBarComponent,
+    UserSignInComponent,
     PageNotFoundComponent,
   ],
   imports: [
