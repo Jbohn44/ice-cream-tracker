@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5%;
+    flex: 100%;
 }
 
 .info-container{
@@ -10,10 +10,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 700px;
-    height: 700px;
+    /* width: 100%;
+    height: 700px; */
     border: 3px solid var(--main-purple);
 }
 .card{
-    margin: 1%;
+    flex: 100%;
+    height: 700px;
 }
