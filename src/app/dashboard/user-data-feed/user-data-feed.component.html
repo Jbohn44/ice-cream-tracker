@@ -1,9 +1,18 @@
 <div class="card">
     <div class="card-body">
+        <!-- <div class="detail-container">
+                <div class="my-review-link">Reviews >></div>
+            </div> -->
         <div class="info-container">
-            <div>This will be a container</div>
-            <div>For a data feed Information</div>
-            <div>And Links To reviews and Stuff</div>
+            <h1>My Latest Reviews!</h1>
+            <div>
+                <hr />
+            </div>
+            <div *ngFor="let iceCream of iceCreams" class="data-feed-card">
+                <h2>{{iceCream.FlavorName}} {{iceCream.Business}} {{iceCream.ReviewDate| date: 'shortDate'}}</h2>
+            </div>
+            <div class="my-review-link">All Reviews >></div>
+
         </div>
     </div>
 </div>

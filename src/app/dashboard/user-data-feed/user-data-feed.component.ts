@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IceCream } from 'src/app/ice-cream/models/ice-cream.model';
+import { IceCreamService } from 'src/app/ice-cream/services/ice-cream.service';
 
 @Component({
   selector: 'app-user-data-feed',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-data-feed.component.css']
 })
 export class UserDataFeedComponent implements OnInit {
-
-  constructor() { }
+  @Input() userId: number;
+  iceCreams: IceCream[] = [];
+  constructor(private iceCreamService: IceCreamService) { }
 
   ngOnInit() {
+    this.iceCreamService.getDataFeed(this.userId).subscribe(x => { this.iceCreams = x });
+
   }
 
 }

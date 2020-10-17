@@ -26,6 +26,11 @@ export class IceCreamService extends BaseService {
     }));
   }
 
+  getDataFeed(userId){
+    return this.get(formatUrl(apiUrls.GET_DATA_FEED, userId)).pipe(map(res => {
+      return <IceCream[]>res;
+    }));
+  }
   getIceCreams(userId){
     console.log("this fired")
   }

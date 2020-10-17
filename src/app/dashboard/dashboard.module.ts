@@ -8,14 +8,22 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserDataFeedComponent } from './user-data-feed/user-data-feed.component';
 import { OtherUserFeedComponent } from './other-user-feed/other-user-feed.component';
 import { UserStatsComponent } from './user-stats/user-stats.component';
+import { RatingModule } from 'ngx-bootstrap/rating';
 
 
 @NgModule({
-  declarations: [UserDashboardComponent, UserProfileComponent, UserDataFeedComponent, OtherUserFeedComponent, UserStatsComponent],
+  declarations: [
+    UserDashboardComponent, 
+    UserProfileComponent, 
+    UserDataFeedComponent, 
+    OtherUserFeedComponent, 
+    UserStatsComponent
+  ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    IceCreamModule
+    IceCreamModule,
+    RatingModule
   ]
 })
 export class DashboardModule { }
