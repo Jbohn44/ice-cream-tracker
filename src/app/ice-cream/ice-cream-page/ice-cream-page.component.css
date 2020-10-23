@@ -123,3 +123,10 @@ svg:hover{
         justify-content: center;
     }
 }
+.container-fluid{
+    animation: page-animation 2s;
+}
+@keyframes page-animation{
+    from{opacity: 0%;}
+    to{opacity: 100%;}
+}

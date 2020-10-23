@@ -34,16 +34,14 @@
     background: var(--main-purple);
     color: var(--main-light-blue);
     font-size: 18px;
-    opacity: 80%;
-    transition: 0.2s;
+    transition: 1s;
 }
 .detail-click:hover{
     cursor: pointer;
-    height: 60px;
-    width: 110px;
-    opacity: 100%;
+    background: var(--main-orange);
+    color: var(--main-purple);
 }
 .star-rating{
-    color: var(--main-yellow);
+    color: var(--main-orange);
     font-size: 25px;
 }

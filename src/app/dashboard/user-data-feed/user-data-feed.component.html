@@ -1,8 +1,5 @@
 <div class="card">
     <div class="card-body">
-        <!-- <div class="detail-container">
-                <div class="my-review-link">Reviews >></div>
-            </div> -->
         <div class="info-container">
             <h1>My Latest Reviews!</h1>
             <div>
@@ -11,8 +8,7 @@
             <div *ngFor="let iceCream of iceCreams" class="data-feed-card">
                 <h2>{{iceCream.FlavorName}} {{iceCream.Business}} {{iceCream.ReviewDate| date: 'shortDate'}}</h2>
             </div>
-            <div class="my-review-link">All Reviews >></div>
-
+            <div class="my-review-link" routerLink="icecream">All Reviews >></div>
         </div>
     </div>
 </div>

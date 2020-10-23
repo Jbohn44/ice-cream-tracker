@@ -36,6 +36,13 @@
     padding: 2%;
     width: 50%;
     margin: 1%;
+    transition: 1s;
+}
+
+.my-review-link:hover{
+    cursor: pointer;
+    background: var(--main-orange);
+    color: var(--main-purple);
 }
 
 .data-feed-card{
