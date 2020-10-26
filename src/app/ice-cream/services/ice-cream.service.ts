@@ -35,6 +35,11 @@ export class IceCreamService extends BaseService {
     console.log("this fired")
   }
 
+  getSingelIceCream(iceCreamId){
+    return this.get(formatUrl(apiUrls.GET_DETAIL_VIEW, iceCreamId)).pipe(map(res => {
+      return <IceCream>res;
+    }))
+  }
   postIceCream(iceCream: IceCream){
     return this.post(apiUrls.POST_ICE_CREAM, iceCream).pipe(map(response => 
       {

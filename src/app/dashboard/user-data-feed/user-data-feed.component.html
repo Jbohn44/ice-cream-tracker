@@ -5,7 +5,7 @@
             <div>
                 <hr />
             </div>
-            <div *ngFor="let iceCream of iceCreams" class="data-feed-card">
+            <div *ngFor="let iceCream of iceCreams" class="data-feed-card" [routerLink]="['../detail', this.iceCream.IceCreamId]">
                 <h2>{{iceCream.FlavorName}} {{iceCream.Business}} {{iceCream.ReviewDate| date: 'shortDate'}}</h2>
             </div>
             <div class="my-review-link" routerLink="icecream">All Reviews >></div>

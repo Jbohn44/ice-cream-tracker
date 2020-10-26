@@ -19,5 +19,6 @@ export const apiUrls = {
   GET_IMAGES: "image/getimages/{0}",
   GET_CATEGORIES: "category/getcategories/{0}",
   ADD_CATEGORY: "category/addcategory",
-  GET_DATA_FEED: "icecream/datafeed/{0}"
+  GET_DATA_FEED: "icecream/datafeed/{0}",
+  GET_DETAIL_VIEW: "icecream/detail/{0}"
 }
