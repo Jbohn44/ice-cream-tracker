@@ -6,7 +6,6 @@ import { IceCreamCardComponent } from './ice-cream-card/ice-cream-card.component
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { IceCreamAddComponent } from './ice-cream-add/ice-cream-add.component';
-import { SideNavComponent } from './side-nav/side-nav.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { RatingModule } from 'ngx-bootstrap/rating';
@@ -23,7 +22,6 @@ import { IceCreamDetailComponent } from './ice-cream-detail/ice-cream-detail.com
     IceCreamPageComponent,
     IceCreamCardComponent,
     IceCreamAddComponent,
-    SideNavComponent, 
     UploadComponent, 
     AddPageComponent, 
     CategoryDisplayComponent, 

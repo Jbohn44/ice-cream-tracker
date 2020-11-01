@@ -1,5 +1,7 @@
 <div class="container-fluid">
-    <h1>Scoop Reviews</h1>
+    <div class="head-container">
+        <h1>Reviews</h1>
+    </div>
     <app-sort (value)="onSort($event)"></app-sort>
     <div class="add-container">
         <div class="add-card" *ngIf="addBoolean !== true" (click)="addClick()">

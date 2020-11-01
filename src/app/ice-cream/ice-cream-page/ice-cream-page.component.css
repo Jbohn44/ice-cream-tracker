@@ -1,56 +1,9 @@
-hr.dashboard{
-    border: 1px solid var(--main-purple);
-}
 
-.screen-div{
-    padding: 1%;
-    height: 100vh;
-    width: 100%;
-}
-.side-bar{
+.head-container{
     display: flex;
+    align-content: center;
     justify-content: center;
-    position: fixed;
-    height: 100%;
-    width: 14%;
-    padding: 2%;
-    background: var(--main-light-purple);
 }
-@media screen and (max-width: 768px){
-    .side-bar{
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
-    }
-}
-.page-container{
-    margin-left: 15%;
-    position: relative;
-    margin-top: 1%;
-    width: 100%;
-}
-@media screen and (max-width: 768px){
-    .page-container{
-        margin-left: 0%;
-        margin-top: 10%;
-    }
-}
-.nav-link{
-    font-family: 'Courier New', Courier, monospace;
-    color: var(--main-purple);
-    font-weight: bold;
-}
-
-.nav-link:hover{
-    cursor: pointer;
-    background: var(--main-purple);
-    color: var(--main-light-blue);
-    border-radius: 5px;
-}
-
 .add-container{
     display: flex;
     justify-content: center;
