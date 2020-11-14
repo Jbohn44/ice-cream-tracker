@@ -1,25 +1,18 @@
 .nav-link{
-    color: var(--main-light-blue) !important;
+    color: var(--main-purple) !important;
     font-weight: bold;
 }
 
 .nav-link:hover{
     cursor: pointer;
-    color: var(--main-light-blue) !important;
 }
 
 .navbar-brand{
-    color: var(--main-light-blue) !important;
+    color: var(--main-purple) !important;
     font-size: 30px;
     font-weight: bolder;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 .navbar{
-    background-color: var(--main-purple) !important;
-}
-
-.li{
-    font-family: 'Courier New', Courier, monospace;
-
+    background-color: var(--main-orange) !important;
 }

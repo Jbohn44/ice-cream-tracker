@@ -6,26 +6,36 @@ import { IceCreamCardComponent } from './ice-cream-card/ice-cream-card.component
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { IceCreamAddComponent } from './ice-cream-add/ice-cream-add.component';
-import { SideNavComponent } from './side-nav/side-nav.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { RatingModule } from 'ngx-bootstrap/rating';
 import { UploadComponent } from './upload/upload.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AddPageComponent } from './add-page/add-page.component';
+import { CategoryDisplayComponent } from './category-display/category-display.component';
+import { CategoryAddComponent } from './category-add/category-add.component';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { SortComponent } from './sort/sort.component';
+import { IceCreamTableCardComponent } from './ice-cream-table-card/ice-cream-table-card.component';
+import { IceCreamDetailComponent } from './ice-cream-detail/ice-cream-detail.component';
 @NgModule({
   declarations: [
-    IceCreamPageComponent, 
-    IceCreamCardComponent, 
-    IceCreamAddComponent, 
-    SideNavComponent, UploadComponent, UserProfileComponent],
+    IceCreamPageComponent,
+    IceCreamCardComponent,
+    IceCreamAddComponent,
+    UploadComponent, 
+    AddPageComponent, 
+    CategoryDisplayComponent, 
+    CategoryAddComponent, SortComponent, IceCreamTableCardComponent, IceCreamDetailComponent],
   imports: [
     CommonModule,
     IceCreamRoutingModule,
     FormsModule,
     HttpClientModule,
-    ModalModule, 
+    ModalModule,
     BsDatepickerModule,
-    RatingModule
+    RatingModule,
+    AccordionModule.forRoot(),
+
 
   ]
 })

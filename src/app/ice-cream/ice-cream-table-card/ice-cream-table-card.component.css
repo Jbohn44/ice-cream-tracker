@@ -1,0 +1,47 @@
+.display-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 1%;
+
+}
+
+.image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: lightgray;
+    color: white;
+    height: 200px;
+    width: 200px;
+}
+
+.detail-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: var(--main-purple);
+    font-size: 18px;
+}
+
+.detail-click{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100px;
+    background: var(--main-purple);
+    color: var(--main-light-blue);
+    font-size: 18px;
+    transition: 1s;
+}
+.detail-click:hover{
+    cursor: pointer;
+    background: var(--main-orange);
+    color: var(--main-purple);
+}
+.star-rating{
+    color: var(--main-orange);
+    font-size: 25px;
+}

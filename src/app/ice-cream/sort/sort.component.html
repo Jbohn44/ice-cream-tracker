@@ -1,0 +1,7 @@
+<div class="sort-container">
+        <h5>Sort:&nbsp;</h5>
+    <select id="sort" class="form-control" name="sort">
+        <option *ngFor="let option of this.sortOptions" [value]="option.Value" (click)="onSort(option.Value)">
+            {{option.Name}} </option>
+    </select>
+</div>

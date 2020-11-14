@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="card-body">
+        <form (ngSubmit)="onSubmit()" #categoryForm="ngForm">
+            <div class="form-group">
+                <label for="categoryName">
+                    <h6>Name</h6>
+                </label>
+                <input type="text" id="categoryName" class="form-control" required
+                    [(ngModel)]="this.category.CategoryName" name="categoryName">
+            </div>
+            <button type="submit" class="btn btn-custom-dark" [disabled]="!categoryForm.form.valid">Submit</button>
+            <button type="submit" class="btn btn-custom-dark" (click)="onCancel()">Cancel</button>
+        </form>
+    </div>
+</div>

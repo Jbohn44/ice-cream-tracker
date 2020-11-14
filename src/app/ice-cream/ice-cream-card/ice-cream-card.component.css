@@ -1,9 +1,8 @@
-.card-format{
-   margin-top: 10px;
-   margin-bottom: 10px;
-   margin-left: 1px;
-   margin-right: 1px;
+.card{
+    margin: 1%;
+    border: 3px solid var(--main-purple);
 }
+
 
 .text-card-format {
     display: flex;
@@ -56,6 +55,21 @@ img:hover{
 }
 
 .star-rating{
-    color: var(--main-yellow);
+    color: var(--main-orange);
     font-size: 18px;
+}
+
+.delete-container{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    color: var(--main-purple);
+}
+
+svg{
+    opacity: 75%;
+}
+svg:hover{
+    cursor: pointer;
+    opacity: 100%;
 }

@@ -16,11 +16,12 @@ export class IceCreamCardComponent implements OnInit {
   @Output() deleted: EventEmitter<number> = new EventEmitter();
   ratingTypes = RatingTypes.RatingTypes;
   iceCreamModalRef: BsModalRef;
-  saveMessage = false;
+  loading = false;
   deleteMessage = false;
   imageModalRef: BsModalRef;
   imageList: any[] = [];
-
+  deleteModalRef: BsModalRef;
+  ratingList = []; // move to constants as it's used in more than one place
   config = {
     backdrop: true,
     ignoreBackdropClick: true
@@ -30,7 +31,14 @@ export class IceCreamCardComponent implements OnInit {
   constructor(private iceCreamService: IceCreamService, private modalService: BsModalService, private imageService: ImageService) { }
 
   ngOnInit() {
-
+    this.ratingList = [
+      {RatingType: "FlavorRating", RatingName: "Flavor"},
+      {RatingType: "CreaminessRating", RatingName: "Creaminess"},
+      {RatingType: "IcinessRating", RatingName: "Iciness"},
+      {RatingType: "DensityRating", RatingName: "Density"},
+      {RatingType: "ValueRating", RatingName: "Value"},
+      {RatingType: "OverAllRating", RatingName: "Over All"}
+    ]
   }
 
   editIceCream(template: TemplateRef<any>) {
@@ -44,14 +52,15 @@ export class IceCreamCardComponent implements OnInit {
   }
 
   showSavedMessage() {
-    this.saveMessage = true;
-    setTimeout(() => { this.saveMessage = false }, 2000);
+    this.loading = true;
+    setTimeout(() => { this.loading = false }, 2000);
   }
 
   onDelete($event) {
     console.log($event);
-    this.deleted.emit($event);
-    this.iceCreamModalRef.hide();
+    this.deleteModalRef.hide();
+    this.iceCreamService.deleteIceCream(this.iceCream.IceCreamId).subscribe(x => x);
+    this.deleted.emit(this.iceCream.IceCreamId);
   }
 
   showDeleteMessage() {
@@ -79,5 +88,10 @@ export class IceCreamCardComponent implements OnInit {
   clearImageList() {
     //right now this is clearing imageList, may be better to cache images instead of reloading them each time?
     this.imageList = [];
+  }
+
+  openDeleteModal(templateRef: any){
+    this.deleteModalRef = this.modalService.show(templateRef);
+
   }
 }

@@ -21,27 +21,32 @@
     --main-dark-blue-alt: #091034;
 
     --main-dark-grey: #3B3F4E;
-    --main-light-grey: #E0E2EB;
+    --main-light-grey: #b6b6b6;
+    --main-orange: #ffaf00;
 }
-
+* {
+    font-family: "VT323" !important;
+    font-weight: bolder;
+}
 .btn-custom-light{
-    border-color: var(--main-light-purple) !important;
-    color: var(--main-light-purple) !important;
+    border-color: var(--main-light-blue) !important;
+    color: var(--main-light-blue) !important;
     margin-left: 2px;
     margin-right: 2px;
+
 }
 
 .btn-custom-dark{
-    border-color: var(--main-purple) !important;
-    color: var(--main-purple) !important;
+    border-color: var(--main-dark-blue) !important;
+    color: var(--main-dark-blue) !important;
     margin-left: 2px;
     margin-right: 2px;
+
 }
 
-.h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6{
     font-weight: bold;
-    color: var(--main-black);
-    font-family: 'Courier New', Courier, monospace;
+    color: var(--main-purple);
 }
 
 .p{
@@ -50,4 +55,8 @@
 
 .card-header{
     background-color: var(--main-light-purple);
+}
+
+.flex-container-space{
+    display: flex;
 }

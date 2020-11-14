@@ -14,19 +14,19 @@ export class BaseService {
     this.baseUrl = environment.baseUrl;
   }
 
-  get(url) {
+  protected get(url) {
     console.log("url: ", url);
     return this.http.get(this.getFullUrl(url));
 
   }
-  post(url, params: any) {
+  protected post(url, params: any) {
     console.log("Url from Base post: ", url)
     return this.http.post(this.getFullUrl(url), params);
   }
-  put(url, params: any) {
+  protected put(url, params: any) {
     return this.http.put(this.getFullUrl(url), params);
   }
-  delete(url) {
+  protected delete(url) {
     return this.http.delete(this.getFullUrl(url));
   }
 

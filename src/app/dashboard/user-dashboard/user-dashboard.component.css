@@ -1,0 +1,8 @@
+.row.content {
+    height: 100%;
+    padding: 1%;
+}
+
+.container-fluid{
+    background: var(--main-purple);
+}

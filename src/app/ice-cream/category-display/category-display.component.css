@@ -1,0 +1,55 @@
+.display-card-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px){
+    .display-card-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.form-card{
+    width: 300px;
+    height: 200px;
+    margin: 2px;
+}
+.add-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 300px;
+    margin: 2px;
+    border-radius: 2px;
+    color: var(--main-purple);
+    opacity: 25%;
+}
+
+.add-card:hover{
+    cursor: pointer;
+    opacity: 100%;
+}
+.display-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: var(--main-purple);
+    width: 300px;
+    margin: 2px;
+    border-radius: 2px;
+}
+
+h6{
+    color: var(--main-purple) !important;
+
+}
+.display-card:hover{
+    cursor: pointer;
+    opacity: 75%;
+}

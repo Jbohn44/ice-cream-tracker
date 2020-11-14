@@ -1,109 +1,38 @@
 <div class="container-fluid">
-    <!-- <ul class="nav nav-text-format mb-3 sticky-top" id="pills-tab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
-                aria-controls="pills-home" aria-selected="true"><span>
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-emoji-laughing" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path fill-rule="evenodd"
-                            d="M12.331 9.5a1 1 0 0 1 0 1A4.998 4.998 0 0 1 8 13a4.998 4.998 0 0 1-4.33-2.5A1 1 0 0 1 4.535 9h6.93a1 1 0 0 1 .866.5z" />
-                        <path
-                            d="M7 6.5c0 .828-.448 0-1 0s-1 .828-1 0S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 0-1 0s-1 .828-1 0S9.448 5 10 5s1 .672 1 1.5z" />
-                    </svg>
-                </span> Review Board</a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
-                aria-controls="pills-profile" aria-selected="false"><span>
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-graph-up" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 0h1v16H0V0zm1 15h15v1H1v-1z" />
-                        <path fill-rule="evenodd"
-                            d="M14.39 4.312L10.041 9.75 7 6.707l-3.646 3.647-.708-.708L7 5.293 9.959 8.25l3.65-4.563.781.624z" />
-                        <path fill-rule="evenodd"
-                            d="M10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4h-3.5a.5.5 0 0 1-.5-.5z" />
-                    </svg>
-                </span> Statistics</a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" id="pills-contact-tab" href="void(0)" data-toggle="pill" role="tab"
-                aria-controls="pills-contact" aria-selected="false" (click)="add(iceCreamAddTemplate)"><span>
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-square" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z" />
-                        <path fill-rule="evenodd"
-                            d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z" />
-                        <path fill-rule="evenodd"
-                            d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
-                    </svg>
-                </span> New Scoop Review</a>
-        </li>
-    </ul>
-    <div class="tab-content tab-format" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-            <div class="row no-gutters">
-                <div *ngFor="let item of iceCreams" class="col-md-4">
-                    <app-ice-cream-card [iceCream]="item" name="iceCreamCard" (deleted)="onDelete($event)">
-                    </app-ice-cream-card>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-            stats page coming soon...
-        </div>
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"></div>
-    </div> -->
-    <div class="row">
-        <div class="side-bar">
-            <div class="nav flex-column nav" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
-                    aria-controls="v-pills-home" aria-selected="true">Profile</a>
-                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
-                    aria-controls="v-pills-profile" aria-selected="false">Reviews</a>
-                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
-                    aria-controls="v-pills-messages" aria-selected="false">Statistics</a>
-                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
-                    aria-controls="v-pills-settings" aria-selected="false">Add A Scoop</a>
-            </div>
-        </div>
-        <div class="page-container">
-            <div class="tab-content" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                    aria-labelledby="v-pills-home-tab">
-                    Profile Coming Soon...</div>
-                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                    <div class="row no-gutters">
-                        <div *ngFor="let item of iceCreams" class="col-md-4">
-                            <app-ice-cream-card [iceCream]="item" name="iceCreamCard" (deleted)="onDelete($event)">
-                            </app-ice-cream-card>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                    Stats Page Coming Soon...
-                </div>
-                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                    ...
-                </div>
-            </div>
-        </div>
-
+    <div class="head-container">
+        <h1>Reviews</h1>
     </div>
-
-
+    <app-sort (value)="onSort($event)"></app-sort>
+    <div class="add-container">
+        <div class="add-card" *ngIf="addBoolean !== true" (click)="addClick()">
+            <div>
+                <h5>Click Here To Add A Scoop</h5>
+            </div>
+        </div>
+    </div>
+    <div class="row no-gutters">
+        <div class="form-container" *ngIf="addBoolean === true">
+            <div class="form-card">
+                <div class="delete-container">
+                    <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                            (click)="closeAdd()" />
+                    </svg>
+                </div>
+                <app-ice-cream-add [edit]="false" (submitted)="onSubmitted($event)">
+                </app-ice-cream-add>
+            </div>
+        </div>
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let iceCream of iceCreams">
+                    <td>
+                        <app-ice-cream-table-card [iceCream]="iceCream"></app-ice-cream-table-card>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
-<ng-template #iceCreamAddTemplate>
-    <div class="modal-header">
-        <h4 class="modal-title pull-left">Create An Ice Cream</h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="iceCreamModalRef.hide()">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-body">
-        <app-ice-cream-add [edit]="false" (submitted)="onSubmitted($event)"></app-ice-cream-add>
-    </div>
-</ng-template>

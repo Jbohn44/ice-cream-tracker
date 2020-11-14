@@ -16,9 +16,9 @@ export class IceCreamAddComponent implements OnInit {
   @Output() submitted: EventEmitter<any> = new EventEmitter();
   @Output() saved: EventEmitter<IceCream> = new EventEmitter();
   @Output() deleted: EventEmitter<number> = new EventEmitter();
-  selectNumberArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   user: User = new User();
-  serviceList = [];
+  serviceList = []; // try to move this to icecream class
+  ratingList = [];  // try to move this to icecream class
   max: number = 10;
   rate: number = 0;
   constructor(private iceCreamService: IceCreamService) { }
@@ -35,6 +35,15 @@ export class IceCreamAddComponent implements OnInit {
       { ServiceTypeId: 2, ServiceName: 'Carry-Out' },
       { ServiceTypeId: 3, ServiceName: 'Drive-Thru' }
     ];
+
+    this.ratingList = [
+      {RatingType: "FlavorRating", RatingName: "Flavor"},
+      {RatingType: "CreaminessRating", RatingName: "Creaminess"},
+      {RatingType: "IcinessRating", RatingName: "Iciness"},
+      {RatingType: "DensityRating", RatingName: "Density"},
+      {RatingType: "ValueRating", RatingName: "Value"},
+      {RatingType: "OverAllRating", RatingName: "Over All"}
+    ]
   }
 
 
@@ -42,6 +51,7 @@ export class IceCreamAddComponent implements OnInit {
     console.log(event);
   }
 
+  //create toasts for submittal and errors
   onSubmit() {
     this.iceCreamService.postIceCream(this.iceCream).subscribe(x => this.submitted.emit(<IceCream>x));
   }

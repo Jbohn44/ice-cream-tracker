@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './shared/helpers/auth.guard'
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 const routes: Routes = [
-  { path: 'dashboard', loadChildren: () => import('./ice-cream/ice-cream.module').then(m => m.IceCreamModule), canActivate: [AuthGuard] },
+  { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule), canActivate: [AuthGuard]},
   { path: '', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
   { path: '**', component: PageNotFoundComponent },
 ];
