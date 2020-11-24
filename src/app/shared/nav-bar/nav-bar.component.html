@@ -52,7 +52,9 @@
                                 d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
                         </svg>
                     </span> Sign Up</a></li>
-            <li *ngIf="!this.user"><a class="nav-item nav-link"><app-user-sign-in></app-user-sign-in></a></li>
+            <li *ngIf="!this.user"><a class="nav-item nav-link">
+                    <app-user-sign-in></app-user-sign-in>
+                </a></li>
 
             <li *ngIf="this.user"><a class="nav-item nav-link" (click)="logout()"><span>
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-arrow-in-left"
@@ -67,14 +69,3 @@
         </ul>
     </div>
 </nav>
-<ng-template #signInTemplate>
-    <div class="modal-header">
-        <h4 class="modal-title pull-left">Login</h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="signInModalRef.hide()">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-body">
-        <app-user-sign-in (signedIn)="signedIn()"></app-user-sign-in>
-    </div>
-</ng-template>
