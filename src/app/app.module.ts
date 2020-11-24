@@ -15,6 +15,19 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { UserSignInComponent } from './shared/user-sign-in/user-sign-in.component';
+import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
+
+let config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider("Google-OAuth-ClientId")
+  }
+]);
+
+export function provideConfig() {
+  return config;
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,12 +44,14 @@ import { UserSignInComponent } from './shared/user-sign-in/user-sign-in.componen
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),
     RatingModule.forRoot(),
-    AccordionModule.forRoot()
+    AccordionModule.forRoot(),
+    SocialLoginModule
 
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: AuthServiceConfig, useFactory: provideConfig }
   ],
   bootstrap: [AppComponent]
 })
