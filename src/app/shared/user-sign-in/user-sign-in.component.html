@@ -1,18 +1,3 @@
-<!-- <div class="card">
-    <div class="card-body">
-        <form (ngSubmit)="onSubmit()" #signInForm="ngForm">
-            <div class="form-group">
-                <label for="userName">UserName</label>
-                <input type="text" id="userName" class="form-control" name="userName" [(ngModel)]="this.user.UserName" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" class="form-control" name="password" [(ngModel)]="this.user.Password" required>
-            </div>
-            <button type="submit" class="btn btn-custom-dark" [disabled]="!signInForm.form.valid">Submit</button>
-        </form>
-    </div>
-</div> -->
 
 <span (click)="googleSignIn()">
     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-arrow-in-right" fill="currentColor"
@@ -24,3 +9,10 @@
             d="M13.5 14.5A1.5 1.5 0 0 0 15 13V3a1.5 1.5 0 0 0-1.5-1.5h-8A1.5 1.5 0 0 0 4 3v1.5a.5.5 0 0 0 1 0V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5h-8A.5.5 0 0 1 5 13v-1.5a.5.5 0 0 0-1 0V13a1.5 1.5 0 0 0 1.5 1.5h8z" />
     </svg> Login With Google
 </span>
+
+<span (click)="signOut()">sign out of google</span>
+
+
+<div>
+    {{user|json}}
+</div>

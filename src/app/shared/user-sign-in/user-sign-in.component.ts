@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { User } from '../models/user.model';
-import { AuthService, GoogleLoginProvider } from 'angularx-social-login';
+import { AuthService, GoogleLoginProvider, SocialUser } from 'angularx-social-login';
 
 @Component({
   selector: 'app-user-sign-in',
@@ -9,11 +9,17 @@ import { AuthService, GoogleLoginProvider } from 'angularx-social-login';
   styleUrls: ['./user-sign-in.component.css']
 })
 export class UserSignInComponent implements OnInit {
-  user = new User();
   @Output() signedIn: EventEmitter<any> = new EventEmitter();
+  user: SocialUser;
+  loggedIn: boolean
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.authService.authState.subscribe((user)=>{
+      this.user = user;
+      this.loggedIn = (user !== null);
+    });
+    console.log("Google User", this.user);
   }
 
   googleSignIn(){
