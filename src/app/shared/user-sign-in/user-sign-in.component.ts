@@ -12,14 +12,14 @@ export class UserSignInComponent implements OnInit {
   @Output() signedIn: EventEmitter<any> = new EventEmitter();
   user: SocialUser;
   loggedIn: boolean
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private backEndAuth: AuthenticationService) { }
 
   ngOnInit() {
     this.authService.authState.subscribe((user)=>{
       this.user = user;
       this.loggedIn = (user !== null);
+      this.backEndAuth.setGoogleUser(user);
     });
-    console.log("Google User", this.user);
   }
 
   googleSignIn(){
