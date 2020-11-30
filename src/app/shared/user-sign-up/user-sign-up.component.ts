@@ -32,7 +32,8 @@ export class UserSignUpComponent implements OnInit {
       console.log(this.usernameWarning)
     } else {
       this.userService.createUser(this.userSignUp).subscribe(x => {
-        this.authService.login(x).subscribe(x => {console.log("this is from signup login", x)});
+        x
+        // this.authService.login(x).subscribe(x => {console.log("this is from signup login", x)});
       }); // need to handle successful user sign up.  authenticate and sign in
     }
   }

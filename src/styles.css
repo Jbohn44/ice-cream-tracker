@@ -37,8 +37,8 @@
 }
 
 .btn-custom-dark{
-    border-color: var(--main-dark-blue) !important;
-    color: var(--main-dark-blue) !important;
+    border-color: var(--main-purple) !important;
+    color: var(--main-purple) !important;
     margin-left: 2px;
     margin-right: 2px;
 

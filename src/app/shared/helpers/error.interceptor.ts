@@ -16,7 +16,7 @@ export class ErrorInterceptor implements HttpInterceptor {
                 this.authenticationService.logout();
                 location.reload(true);
             }
-
+            alert("Something went wrong... very very wrong... oh god... noo... noo.. NOOOOOO..... <> LOGIN FAILED")
             const error = err.error.message || err.statusText;
             return throwError(error);
         }))

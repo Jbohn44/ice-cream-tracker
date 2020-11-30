@@ -15,18 +15,24 @@ export class UserSignInComponent implements OnInit {
   constructor(private authService: AuthService, private backEndAuth: AuthenticationService) { }
 
   ngOnInit() {
-    this.authService.authState.subscribe((user)=>{
-      this.user = user;
-      this.loggedIn = (user !== null);
-      this.backEndAuth.setGoogleUser(user);
-    });
+    this.setAuthState();
   }
 
   googleSignIn(){
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(() => {this.setAuthState()});
   }
 
   signOut() {
     this.authService.signOut();
+    this.backEndAuth.logout();
+  }
+
+
+  setAuthState(){
+    this.authService.authState.subscribe((user)=>{
+      this.user = user;
+      this.loggedIn = (user !== null);
+      this.backEndAuth.login(user).subscribe(x => x);
+    });
   }
 }

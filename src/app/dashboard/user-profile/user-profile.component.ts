@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AuthService } from 'angularx-social-login';
 import { User } from 'src/app/shared/models/user.model';
+import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -8,9 +10,12 @@ import { User } from 'src/app/shared/models/user.model';
 })
 export class UserProfileComponent implements OnInit {
   @Input() user: User;
-  constructor() { }
+  imagesource: string;
+  constructor(private authService: AuthenticationService) { }
 
   ngOnInit() {
+    this.imagesource = this.authService.getPhotoUrl();
+    console.log("imagesource", this.imagesource)
   }
 
 }

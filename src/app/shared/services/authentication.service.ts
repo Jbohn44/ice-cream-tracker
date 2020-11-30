@@ -7,46 +7,54 @@ import { User } from '../models/user.model';
 import { BaseService } from './base.service';
 import { apiUrls } from '../constants';
 import { Router } from '@angular/router';
-import { SocialUser } from 'angularx-social-login';
+import { AuthService, SocialUser } from 'angularx-social-login';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService extends BaseService {
-  private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
-  public googleUser: User = new User();
-  constructor(http: HttpClient, private router: Router) {
+  private googleUserSubject: BehaviorSubject<User>;
+  public photoUrl: string;
+  constructor(http: HttpClient, private router: Router, private googleAuth: AuthService) {
     super(http);
-    this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
-    this.currentUser = this.currentUserSubject.asObservable();
+    this.googleUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+    this.currentUser = this.googleUserSubject.asObservable();
   }
 
-  public get currentUserValue(): User {
-    return this.currentUserSubject.value;
-  }
   public get googleUserValue(): User {
-    return this.googleUser;
+    return this.googleUserSubject.value;
   }
-  login(user) {
-    return this.post(apiUrls.LOGIN_USER, user).pipe(map(response => {
+  public getPhotoUrl(): string {
+    return this.photoUrl;
+  }
+  login(user: SocialUser) {
+    let backEndUser = new User();
+    backEndUser.IdToken = user.idToken;
+    return this.post(apiUrls.LOGIN_USER, backEndUser).pipe(map(response => {
       console.log("login response", response);
-      if(response){
+      if (response) {
         localStorage.setItem('currentUser', JSON.stringify(response));
-        this.currentUserSubject.next(<User>response);
-        this.router.navigate(['dashboard']).then(() => window.location.reload());
+        this.googleUserSubject.next(<User>response);
+        this.setGoogleUser(user);
+
+        // this.router.navigate(['dashboard']).then(() => window.location.reload());
+        this.router.navigate(['dashboard']);
       }
     }));
   }
 
-  logout(){
+  logout() {
+    this.googleAuth.signOut();
     localStorage.removeItem('currentUser');
-    this.currentUserSubject.next(null);
-    this.router.navigate(['']).then(() => {window.location.reload()});
+    this.googleUserSubject.next(null);
+    this.router.navigate(['']).then(() => { window.location.reload() });
   }
 
-  setGoogleUser(user: SocialUser){
-    debugger;
-    this.googleUser.Token = user.authToken;
+  private setGoogleUser(user: SocialUser) {
+    this.googleUserSubject.value.Token = user.authToken;
+    this.googleUserSubject.value.PhotoUrl = user.photoUrl;
+    this.photoUrl = user.photoUrl;
+    console.log('photourl', user.photoUrl);
   }
 }
