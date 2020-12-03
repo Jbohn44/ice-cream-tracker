@@ -34,10 +34,10 @@ export class AuthenticationService extends BaseService {
     return this.post(apiUrls.LOGIN_USER, backEndUser).pipe(map(response => {
       console.log("login response", response);
       if (response) {
-        localStorage.setItem('currentUser', JSON.stringify(response));
+        // localStorage.setItem('currentUser', JSON.stringify(response));
         this.googleUserSubject.next(<User>response);
         this.setGoogleUser(user);
-
+        localStorage.setItem('currentUser', JSON.stringify(<User>this.googleUserSubject.value));
         // this.router.navigate(['dashboard']).then(() => window.location.reload());
         this.router.navigate(['dashboard']);
       }
@@ -53,8 +53,8 @@ export class AuthenticationService extends BaseService {
 
   private setGoogleUser(user: SocialUser) {
     this.googleUserSubject.value.Token = user.authToken;
+    this.googleUserSubject.value.IdToken = user.idToken;
     this.googleUserSubject.value.PhotoUrl = user.photoUrl;
     this.photoUrl = user.photoUrl;
-    console.log('photourl', user.photoUrl);
   }
 }

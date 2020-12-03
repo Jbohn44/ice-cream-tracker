@@ -11,11 +11,10 @@ import { AuthenticationService } from 'src/app/shared/services/authentication.se
 export class UserProfileComponent implements OnInit {
   @Input() user: User;
   imagesource: string;
-  constructor(private authService: AuthenticationService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.imagesource = this.authService.getPhotoUrl();
-    console.log("imagesource", this.imagesource)
+    this.imagesource = this.user.PhotoUrl;
   }
 
 }

@@ -6,3 +6,7 @@
 .container-fluid{
     background: var(--main-purple);
 }
+
+body {
+    background: var(--main-purple);
+}
