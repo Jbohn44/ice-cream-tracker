@@ -4,9 +4,13 @@
 }
 
 .container-fluid{
+    height: 100vh;
     background: var(--main-purple);
 }
 
-body {
+@media screen and (max-width: 600px){
+    .container-fluid{
+    height: 100%;
     background: var(--main-purple);
+    }
 }

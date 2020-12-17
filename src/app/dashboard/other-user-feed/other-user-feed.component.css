@@ -23,7 +23,6 @@
 
 }
 @keyframes user-feed-animation{
-    0%{transform: rotate(0deg);}
-    50%{transform: rotate(-20deg);}
-    100%{transform: rotate(360deg)}
+    from{height: 0px}
+    to{height: 700px}
 }

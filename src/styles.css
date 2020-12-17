@@ -28,11 +28,15 @@
     font-family: "VT323" !important;
     font-weight: bolder;
 }
-.btn-custom-light{
+.button-custom-light{
     border-color: var(--main-light-blue) !important;
+    background: transparent;
     color: var(--main-light-blue) !important;
     margin-left: 2px;
     margin-right: 2px;
+    padding: 3%;
+    border-radius: 5px;
+    border: 1px solid var(--main-light-blue);
 
 }
 

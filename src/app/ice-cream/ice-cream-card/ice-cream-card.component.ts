@@ -31,6 +31,7 @@ export class IceCreamCardComponent implements OnInit {
   constructor(private iceCreamService: IceCreamService, private modalService: BsModalService, private imageService: ImageService) { }
 
   ngOnInit() {
+    console.log("icecream comin in", this.iceCream)
     this.ratingList = [
       {RatingType: "FlavorRating", RatingName: "Flavor"},
       {RatingType: "CreaminessRating", RatingName: "Creaminess"},

@@ -48,7 +48,8 @@ export class AuthenticationService extends BaseService {
     this.googleAuth.signOut();
     localStorage.removeItem('currentUser');
     this.googleUserSubject.next(null);
-    this.router.navigate(['']).then(() => { window.location.reload() });
+    // this.router.navigate(['']).then(() => { window.location.reload() });
+    
   }
 
   private setGoogleUser(user: SocialUser) {

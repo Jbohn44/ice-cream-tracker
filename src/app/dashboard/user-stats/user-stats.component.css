@@ -17,5 +17,11 @@
     height: 400px;
     border-radius: 0% !important;
     border: 10px solid var(--main-purple);
+    animation: stat-animation 2s;
 
+}
+
+@keyframes stat-animation{
+    from{height: 0px;}
+    to{height: 400px;}
 }

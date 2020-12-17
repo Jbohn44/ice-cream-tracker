@@ -16,7 +16,11 @@ export class IceCreamDetailComponent implements OnInit {
   ngOnInit() {
     this.iceCreamId = this.route.snapshot.params['id'];
     //TODO: get single ice cream here.
-    this.iceCreamService.getSingelIceCream(this.iceCreamId).subscribe(i => this.iceCream = i);
+    this.iceCreamService.getSingelIceCream(this.iceCreamId).subscribe((res) => {
+      console.log("res", res);
+      this.iceCream = res;
+    });
+    console.log("ice cream", this.iceCream);
   }
 
 

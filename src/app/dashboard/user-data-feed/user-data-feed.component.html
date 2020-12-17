@@ -1,11 +1,10 @@
 <div class="card">
     <div class="card-body">
-        <div class="info-container">
-            <h1>My Latest Reviews!</h1>
-            <div *ngFor="let iceCream of iceCreams" class="data-feed-card" [routerLink]="['detail', this.iceCream.IceCreamId]">
-                <h2>{{iceCream.FlavorName}} {{iceCream.Business}} {{iceCream.ReviewDate| date: 'shortDate'}}</h2>
-            </div>
-            <div class="my-review-link" routerLink="icecream">All Reviews >></div>
+        <h1>My Latest Reviews!</h1>
+        <div *ngFor="let iceCream of iceCreams" class="data-feed-card"
+            [routerLink]="['detail', this.iceCream.IceCreamId]">
+            <h2>{{iceCream.FlavorName}} {{iceCream.Business}} {{iceCream.ReviewDate| date: 'shortDate'}}</h2>
         </div>
+        <div class="my-review-link" routerLink="icecream">All Reviews >></div>
     </div>
 </div>

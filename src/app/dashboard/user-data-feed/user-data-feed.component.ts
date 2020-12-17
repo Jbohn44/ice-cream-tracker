@@ -14,7 +14,6 @@ export class UserDataFeedComponent implements OnInit {
 
   ngOnInit() {
     this.iceCreamService.getDataFeed(this.userId).subscribe(x => { this.iceCreams = x });
-
   }
 
 }

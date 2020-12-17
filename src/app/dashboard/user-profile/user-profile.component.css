@@ -29,4 +29,11 @@
     border: 5px solid var(--main-purple);
     border-radius: 100%;
     background: lightgrey;
+    animation: profile-pic-animation 5s;
+}
+
+@keyframes profile-pic-animation{
+    0%{opacity: 0%;}
+    50%{opacity: 0%;}
+    100%{opacity: 100%;}
 }
