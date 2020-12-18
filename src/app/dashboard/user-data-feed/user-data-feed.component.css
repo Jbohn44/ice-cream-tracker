@@ -1,23 +1,15 @@
 .card-body{
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
-    flex: 100%;
+    overflow-y: scroll;
 }
 
 .card{
-    flex: 100%;
-    border: 10px solid var(--main-purple);
-    border-radius: 0% !important;
-
+    height: 300px;
+    /* border-radius: 0% !important; */
     animation: data-animation 2s;
 
-}
-.detail-container{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
 }
 .my-review-link{
     display: flex;
@@ -25,7 +17,7 @@
     justify-content: center;
     background: var(--main-purple);
     color: var(--main-light-blue);
-    font-size: 20px;
+    font-size: 15px;
     padding: 2%;
     width: 50%;
     margin: 1%;
@@ -41,11 +33,14 @@
 .data-feed-card{
     display: flex;
     align-items: center;
-    padding: 2%;
+    font-size: 12px;
+    color: var(--main-purple);
+    padding: 1%;
     margin: 1%;
-    width: 100%;
+    width: 75%;
+    border-radius: 5px;
     background: var(--main-light-purple);
-    border: 5px solid var(--main-purple);
+    border: 3px solid var(--main-purple);
     transition: .75s;
 
 }

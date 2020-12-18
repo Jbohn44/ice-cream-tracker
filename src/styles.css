@@ -25,7 +25,7 @@
     --main-orange: #ffaf00;
 }
 * {
-    font-family: "VT323" !important;
+    font-family: "Verdana" !important;
     font-weight: bolder;
 }
 .button-custom-light{
@@ -40,14 +40,19 @@
 
 }
 
+
 .btn-custom-dark{
-    border-color: var(--main-purple) !important;
-    color: var(--main-purple) !important;
-    margin-left: 2px;
-    margin-right: 2px;
-
+    border: none;
+    padding: 1%;
+    background: var(--main-purple);
+    color: var(--main-light-blue);
+    transition: 1s;
 }
-
+.btn-custom-dark:hover{
+    cursor: pointer;
+    background: var(--main-orange);
+    color: var(--main-purple);
+}
 h1, h2, h3, h4, h5, h6{
     font-weight: bold;
     color: var(--main-purple);
@@ -64,3 +69,25 @@ h1, h2, h3, h4, h5, h6{
 .flex-container-space{
     display: flex;
 }
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--main-light-blue); 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--main-orange); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--main-dark-purple);
+    cursor: pointer;
+  }

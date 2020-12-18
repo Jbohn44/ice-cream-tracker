@@ -33,22 +33,7 @@
     font-size: 18px;
 }
 
-.detail-click{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    width: 100px;
-    background: var(--main-purple);
-    color: var(--main-light-blue);
-    font-size: 18px;
-    transition: 1s;
-}
-.detail-click:hover{
-    cursor: pointer;
-    background: var(--main-orange);
-    color: var(--main-purple);
-}
+
 .star-rating{
     color: var(--main-orange);
     font-size: 25px;

@@ -4,7 +4,6 @@
 }
 
 .container-fluid{
-    height: 100vh;
     background: var(--main-purple);
 }
 
