@@ -1,5 +1,9 @@
-<div class="card">
+<div class="card shadow">
     <div class="card-body">
+        <div class="graphics-container">
+            <div class="graphics">
+            </div>
+        </div>
         <h1>My Latest Reviews!</h1>
         <div *ngFor="let iceCream of iceCreams" class="data-feed-card"
             [routerLink]="['detail', this.iceCream.IceCreamId]">

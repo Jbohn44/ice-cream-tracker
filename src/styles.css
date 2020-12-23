@@ -23,10 +23,7 @@
     --main-dark-grey: #3B3F4E;
     --main-light-grey: #b6b6b6;
     --main-orange: #ffaf00;
-}
-* {
-    font-family: "Verdana" !important;
-    font-weight: bolder;
+    --main-purple-opac: rgba(112, 12, 188, .75);
 }
 .button-custom-light{
     border-color: var(--main-light-blue) !important;
@@ -42,6 +39,7 @@
 
 
 .btn-custom-dark{
+    border-radius: 5px;
     border: none;
     padding: 1%;
     background: var(--main-purple);
@@ -58,7 +56,7 @@ h1, h2, h3, h4, h5, h6{
     color: var(--main-purple);
 }
 
-.p{
+p{
     color: var(--main-purple);
 }
 
@@ -91,3 +89,23 @@ h1, h2, h3, h4, h5, h6{
     background: var(--main-dark-purple);
     cursor: pointer;
   }
+
+  .graphics-container{
+    width: 100px;
+    height: 100px;
+    align-self: flex-start;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.graphics{
+    border-radius: 5%;
+    position: absolute;
+    background: var(--main-purple);
+    height: 50px;
+    width: 50px;
+    box-shadow: -20px -20px 0 0 var(--main-orange);
+}

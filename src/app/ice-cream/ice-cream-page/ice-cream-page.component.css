@@ -1,4 +1,6 @@
-
+.card{
+    margin: 2%;
+}
 .head-container{
     display: flex;
     align-content: center;
@@ -6,18 +8,19 @@
 }
 .add-container{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin: 1%;
 }
 .add-card{
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid var(--main-purple);
-    width: 33%;
-    height: 75px;
+    width: 20%;
+    height: 50px;
     opacity: 50%;
-    margin-top: 5px;
+    margin-top: 2px;
     transition: 0.5s;
 }
 
@@ -26,7 +29,7 @@
     border: 20px solid var(--main-purple);
     opacity: 100%;
     width: 50%;
-    height: 100px;
+    height: 75px;
     background: var(--main-light-blue);
 }
 
@@ -77,6 +80,7 @@ svg:hover{
     }
 }
 .container-fluid{
+    background: var(--main-purple);
     animation: page-animation 2s;
 }
 @keyframes page-animation{

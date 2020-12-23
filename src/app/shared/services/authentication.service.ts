@@ -39,7 +39,8 @@ export class AuthenticationService extends BaseService {
         this.setGoogleUser(user);
         localStorage.setItem('currentUser', JSON.stringify(<User>this.googleUserSubject.value));
         // this.router.navigate(['dashboard']).then(() => window.location.reload());
-        this.router.navigate(['dashboard']);
+        // this.router.navigate(['dashboard']);
+        // need to figure this out, on refresh it logs in again and redirects to dashboard
       }
     }));
   }
@@ -48,7 +49,8 @@ export class AuthenticationService extends BaseService {
     this.googleAuth.signOut();
     localStorage.removeItem('currentUser');
     this.googleUserSubject.next(null);
-    // this.router.navigate(['']).then(() => { window.location.reload() });
+    // for now this is what will handle logouts
+    this.router.navigate(['']).then(() => { window.location.reload() });
     
   }
 
