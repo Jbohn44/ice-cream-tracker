@@ -87,3 +87,7 @@ svg:hover{
     from{opacity: 0%;}
     to{opacity: 100%;}
 }
+
+.container-fluid{
+    background-image: var(--background-gradient-one);
+}

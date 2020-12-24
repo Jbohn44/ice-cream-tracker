@@ -17,6 +17,7 @@
 .card{
     flex: 100%;
     height: 400px;
+    /* background-image: var(--card-gradient); */
     /* border-radius: 0% !important; */
     animation: user-feed-animation 2s;
 

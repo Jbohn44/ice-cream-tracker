@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
     --main-light-pink: #FDDEF3;
-    --main-pink: #F033B4;
+    --main-pink: #f033b4;
     --main-dark-pink: #AE0D7A;
     --main-dark-purple: #340926;
     --main-black: black; /* place holder*/
@@ -23,6 +23,8 @@
     --main-dark-grey: #3B3F4E;
     --main-light-grey: #b6b6b6;
     --main-orange: #ffaf00;
+    --card-gradient: linear-gradient(to bottom right, white, #cc96f5);
+    --background-gradient-one: linear-gradient(white, var(--main-purple));
     --main-purple-opac: rgba(112, 12, 188, .75);
 }
 .button-custom-light{
@@ -39,8 +41,12 @@
 
 
 .btn-custom-dark{
+    display: flex;
+    justify-items: center;
+    align-items: center;
     border-radius: 5px;
     border: none;
+    /* border-color: var(--main-light-purple); */
     padding: 1%;
     background: var(--main-purple);
     color: var(--main-light-blue);
