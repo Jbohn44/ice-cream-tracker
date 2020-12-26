@@ -16,13 +16,9 @@
     height: 300px;
     /* background-image: var(--card-gradient); */
     /* border-radius: 0% !important; */
-    animation: profile-animation 2s;
 
 }
-@keyframes profile-animation{
-    from{height: 0px}
-    to{height: 300px}
-}
+
 .profile-pic{
     width: 100px;
     height: 100px;

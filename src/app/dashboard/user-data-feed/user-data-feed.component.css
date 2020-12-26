@@ -9,7 +9,6 @@
     height: 300px;
     /* background-image: var(--card-gradient); */
     /* border-radius: 0% !important; */
-    animation: data-animation 2s;
 
 }
 .my-review-link{
@@ -51,8 +50,4 @@
     color: var(--main-purple);
     border: 5px solid var(--main-light-blue);
 
-}
-@keyframes data-animation{
-    from{opacity: 0%}
-    to{opacity: 100%}
 }

@@ -17,11 +17,5 @@
     height: 400px;
     /* background-image: var(--card-gradient); */
     /* border-radius: 0% !important; */
-    animation: stat-animation 2s;
 
-}
-
-@keyframes stat-animation{
-    from{height: 0px;}
-    to{height: 400px;}
 }

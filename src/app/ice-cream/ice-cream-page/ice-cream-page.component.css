@@ -79,15 +79,6 @@ svg:hover{
         justify-content: center;
     }
 }
-.container-fluid{
-    background: var(--main-purple);
-    animation: page-animation 2s;
-}
-@keyframes page-animation{
-    from{opacity: 0%;}
-    to{opacity: 100%;}
-}
 
-.container-fluid{
-    background-image: var(--background-gradient-one);
-}
+
+

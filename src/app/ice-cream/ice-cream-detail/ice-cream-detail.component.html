@@ -1,4 +1,10 @@
-<div class="container-fluid">
-    <app-ice-cream-card [iceCream]="this.iceCream" name="iceCreamCard"
-                                        (deleted)="delete($event)"></app-ice-cream-card>
+<div class="container-fluid page-background">
+    <div class="row">
+        <div class="col-md-12">
+            <app-ice-cream-card [iceCream]="this.iceCream" name="iceCreamCard"
+            (deleted)="delete($event)"></app-ice-cream-card>
+        </div>
+
+    </div>
+    
 </div>

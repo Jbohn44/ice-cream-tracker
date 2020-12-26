@@ -3,10 +3,6 @@
     padding: 1%;
 }
 
-.container-fluid{
-    /* background: var(--main-purple-opac); */
-    background-image: var(--background-gradient-one);
-}
 
 @media screen and (max-width: 600px){
     .container-fluid{

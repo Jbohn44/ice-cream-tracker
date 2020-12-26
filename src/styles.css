@@ -24,6 +24,7 @@
     --main-light-grey: #b6b6b6;
     --main-orange: #ffaf00;
     --card-gradient: linear-gradient(to bottom right, white, #cc96f5);
+    --background-gradient-start: linear-gradient(rgba(255, 255, 255, 0), #700cbc00);
     --background-gradient-one: linear-gradient(white, var(--main-purple));
     --main-purple-opac: rgba(112, 12, 188, .75);
 }
@@ -114,4 +115,13 @@ p{
     height: 50px;
     width: 50px;
     box-shadow: -20px -20px 0 0 var(--main-orange);
+}
+
+.page-background{
+    background-image: var(--background-gradient-one);
+    animation: fade-in 3s;
+}
+@keyframes fade-in{
+    from{opacity: 0%;}
+    to{opacity: 100%;}
 }
