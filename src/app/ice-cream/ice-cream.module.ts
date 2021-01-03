@@ -17,6 +17,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { SortComponent } from './sort/sort.component';
 import { IceCreamTableCardComponent } from './ice-cream-table-card/ice-cream-table-card.component';
 import { IceCreamDetailComponent } from './ice-cream-detail/ice-cream-detail.component';
+import { ImagePageComponent } from './image-page/image-page.component';
 @NgModule({
   declarations: [
     IceCreamPageComponent,
@@ -25,7 +26,7 @@ import { IceCreamDetailComponent } from './ice-cream-detail/ice-cream-detail.com
     UploadComponent, 
     AddPageComponent, 
     CategoryDisplayComponent, 
-    CategoryAddComponent, SortComponent, IceCreamTableCardComponent, IceCreamDetailComponent],
+    CategoryAddComponent, SortComponent, IceCreamTableCardComponent, IceCreamDetailComponent, ImagePageComponent],
   imports: [
     CommonModule,
     IceCreamRoutingModule,

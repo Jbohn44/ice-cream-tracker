@@ -15,4 +15,5 @@
 
 .navbar{
     background-color: var(--main-orange) !important;
+    /* opacity: 25%; */
 }

@@ -113,25 +113,28 @@
 
         <div class="modal-header">
             <h4 class="modal-title pull-left">Images</h4>
-            <button class="btn btn-custom-dark" [routerLink]="['../../upload', this.iceCream.IceCreamId]"
-                (click)="imageModalRef.hide()">Upload Images</button>
+            
             <button type="button" class="close pull-right" aria-label="Close" (click)="closeImageModal()">
                 <span aria-hidden="true">&times;</span>
             </button>
+         
         </div>
         <div class="modal-body">
-            <div *ngIf="imageList.length === 0" class="image-container">
-                <h1>
-                    No Images Uploaded
-                </h1>
-            </div>
-            <div class="image-container">
-                <div *ngFor="let image of imageList" class="image-child-container">
-                    <img width="460" height="240" [src]="image.src" />
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="btn btn-custom-dark" [routerLink]="['../../upload', this.iceCream.IceCreamId]"
+                    (click)="imageModalRef.hide()">Upload Images</button>
                 </div>
             </div>
+              <div class="row">
+                  <div class="col-md-4" *ngFor="let image of imageList" >
+                    <img width="460" height="240" [src]="image.src" />
+                  </div>
+
+              </div>
+               
+            </div>
         </div>
-    </div>
 
 </ng-template>
 
