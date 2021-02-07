@@ -28,6 +28,10 @@
     --background-gradient-one: linear-gradient(white, var(--main-purple));
     --main-purple-opac: rgba(112, 12, 188, .75);
 }
+
+*, *::after, *::before{
+    box-sizing: border-box;
+}
 .button-custom-light{
     border-color: var(--main-light-blue) !important;
     background: transparent;

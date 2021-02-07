@@ -72,7 +72,7 @@ export class IceCreamCardComponent implements OnInit {
   openImageModal(templateRef: any) {
     this.imageService.getImages(this.iceCream.IceCreamId).subscribe(x => {
       x.forEach(element => {
-        console.log(typeof (element.Image));
+        console.log(element.Image);
         let image = new Image(300, 500);
         image.src = 'data:image/jpg;base64,' + element.Image;
         this.imageList.push(image);
