@@ -122,8 +122,9 @@ p{
 }
 
 .page-background{
-    background-image: var(--background-gradient-one);
+    background-color: var(--main-purple);
     animation: fade-in 3s;
+    height: 120vh;
 }
 @keyframes fade-in{
     from{opacity: 0%;}

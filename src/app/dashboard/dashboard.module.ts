@@ -9,6 +9,7 @@ import { UserDataFeedComponent } from './user-data-feed/user-data-feed.component
 import { OtherUserFeedComponent } from './other-user-feed/other-user-feed.component';
 import { UserStatsComponent } from './user-stats/user-stats.component';
 import { RatingModule } from 'ngx-bootstrap/rating';
+import { NavBarComponent } from '../shared/nav-bar/nav-bar.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { RatingModule } from 'ngx-bootstrap/rating';
     UserProfileComponent, 
     UserDataFeedComponent, 
     OtherUserFeedComponent, 
-    UserStatsComponent
+    UserStatsComponent,
+    NavBarComponent
   ],
   imports: [
     CommonModule,

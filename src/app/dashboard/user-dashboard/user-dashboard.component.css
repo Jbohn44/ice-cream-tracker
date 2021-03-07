@@ -1,13 +1,11 @@
-.row.content {
-    height: 100%;
-    padding: 1%;
+.row{
+    padding-top: 3rem;
 }
-
-
-@media screen and (max-width: 600px){
+/* @media screen and (max-width: 600px){
     .container-fluid{
     height: 100%;
     background-image: var(--background-gradient-one);
-    /* background: var(--main-purple-opac); */
+    background: var(--main-purple-opac);
     }
-}
+} */
+

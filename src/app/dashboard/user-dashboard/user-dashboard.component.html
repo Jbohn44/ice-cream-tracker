@@ -1,18 +1,17 @@
+<app-nav-bar></app-nav-bar>
+
 <div class="container-fluid page-background">
-    <div class="row content">
+    <div class="row">
         <div class="col-md-4">
             <app-user-profile [user]="this.user"></app-user-profile>
         </div>
         <div class="col-md-8">
             <app-user-data-feed [userId]="this.user.UserId"></app-user-data-feed>
-
         </div>
-       
     </div>
-    <div class="row content">
+    <div class="row">
         <div class="col-md-6">
             <app-user-stats></app-user-stats>
-
         </div>
         <div class="col-md-6">
             <app-other-user-feed></app-other-user-feed>

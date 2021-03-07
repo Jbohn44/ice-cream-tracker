@@ -13,7 +13,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { RatingModule } from 'ngx-bootstrap/rating';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
-import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
+// import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { UserSignInComponent } from './shared/user-sign-in/user-sign-in.component';
 import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider } from 'angularx-social-login';
@@ -31,7 +31,7 @@ export function provideConfig() {
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent,
+    // NavBarComponent,
     UserSignInComponent,
     PageNotFoundComponent,
   ],

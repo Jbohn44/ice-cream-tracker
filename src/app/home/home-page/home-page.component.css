@@ -11,15 +11,19 @@
 .info-div{
     margin: 2%;
     position: relative;
-    background-color: lightgray;
-    opacity: 50%;
+    background-color: rgba(255, 255, 255, 0.507);
     height: 100%;
     width: 50%;
-    border-radius: 5%;
+    border-radius: 2%;
+    /* border: 5px solid white; */
+    display: flex;
+    justify-content: center;
 }
 .row{
     height: 75%;
 }
+
+
 
 
 
